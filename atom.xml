@@ -3,11 +3,11 @@
   <title>Wangxf | 博客</title>
   
   
-  <link href="https://blog.likasi.top/atom.xml" rel="self"/>
+  <link href="https://wangxf2023.github.io/Wangxf/atom.xml" rel="self"/>
   
-  <link href="https://blog.likasi.top/"/>
+  <link href="https://wangxf2023.github.io/Wangxf/"/>
   <updated>2023-11-12T08:16:30.794Z</updated>
-  <id>https://blog.likasi.top/</id>
+  <id>https://wangxf2023.github.io/Wangxf/</id>
   
   <author>
     <name>Wangxf</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>ivew DatePicker组件计算相隔天数</title>
-    <link href="https://blog.likasi.top/2023/11/10/ivew-DatePicker%E7%BB%84%E4%BB%B6%E8%AE%A1%E7%AE%97%E7%9B%B8%E9%9A%94%E5%A4%A9%E6%95%B0/"/>
-    <id>https://blog.likasi.top/2023/11/10/ivew-DatePicker%E7%BB%84%E4%BB%B6%E8%AE%A1%E7%AE%97%E7%9B%B8%E9%9A%94%E5%A4%A9%E6%95%B0/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/11/10/ivew-DatePicker%E7%BB%84%E4%BB%B6%E8%AE%A1%E7%AE%97%E7%9B%B8%E9%9A%94%E5%A4%A9%E6%95%B0/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/11/10/ivew-DatePicker%E7%BB%84%E4%BB%B6%E8%AE%A1%E7%AE%97%E7%9B%B8%E9%9A%94%E5%A4%A9%E6%95%B0/</id>
     <published>2023-11-10T07:55:13.000Z</published>
     <updated>2023-11-12T08:16:30.794Z</updated>
     
@@ -34,14 +34,14 @@
     
     
     
-    <category term="前端" scheme="https://blog.likasi.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://wangxf2023.github.io/Wangxf/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>微信小程序在使用`wx.request` API时候出现错误</title>
-    <link href="https://blog.likasi.top/2023/10/21/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9C%A8%E4%BD%BF%E7%94%A8-wx-request-API%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF/"/>
-    <id>https://blog.likasi.top/2023/10/21/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9C%A8%E4%BD%BF%E7%94%A8-wx-request-API%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/10/21/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9C%A8%E4%BD%BF%E7%94%A8-wx-request-API%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/10/21/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9C%A8%E4%BD%BF%E7%94%A8-wx-request-API%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF/</id>
     <published>2023-10-21T07:53:22.000Z</published>
     <updated>2023-11-12T08:11:53.757Z</updated>
     
@@ -56,14 +56,14 @@
     
     
     
-    <category term="前端" scheme="https://blog.likasi.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://wangxf2023.github.io/Wangxf/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>记一次微信小程序使用Vant组件库（Vant Weapp）顺序与坑</title>
-    <link href="https://blog.likasi.top/2023/10/10/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Vant%E7%BB%84%E4%BB%B6%E5%BA%93%EF%BC%88Vant-Weapp%EF%BC%89%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%9D%91/"/>
-    <id>https://blog.likasi.top/2023/10/10/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Vant%E7%BB%84%E4%BB%B6%E5%BA%93%EF%BC%88Vant-Weapp%EF%BC%89%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%9D%91/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/10/10/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Vant%E7%BB%84%E4%BB%B6%E5%BA%93%EF%BC%88Vant-Weapp%EF%BC%89%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%9D%91/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/10/10/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Vant%E7%BB%84%E4%BB%B6%E5%BA%93%EF%BC%88Vant-Weapp%EF%BC%89%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%9D%91/</id>
     <published>2023-10-10T07:42:08.000Z</published>
     <updated>2023-11-12T07:56:22.870Z</updated>
     
@@ -78,14 +78,14 @@
     
     
     
-    <category term="前端" scheme="https://blog.likasi.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://wangxf2023.github.io/Wangxf/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>记一次python操作Word</title>
-    <link href="https://blog.likasi.top/2023/07/24/%E8%AE%B0%E4%B8%80%E6%AC%A1python%E6%93%8D%E4%BD%9CWord/"/>
-    <id>https://blog.likasi.top/2023/07/24/%E8%AE%B0%E4%B8%80%E6%AC%A1python%E6%93%8D%E4%BD%9CWord/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/07/24/%E8%AE%B0%E4%B8%80%E6%AC%A1python%E6%93%8D%E4%BD%9CWord/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/07/24/%E8%AE%B0%E4%B8%80%E6%AC%A1python%E6%93%8D%E4%BD%9CWord/</id>
     <published>2023-07-24T13:54:19.000Z</published>
     <updated>2023-07-27T05:30:06.933Z</updated>
     
@@ -100,14 +100,14 @@
     
     
     
-    <category term="python" scheme="https://blog.likasi.top/tags/python/"/>
+    <category term="python" scheme="https://wangxf2023.github.io/Wangxf/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>MacBook Pro A1706更换touchbar</title>
-    <link href="https://blog.likasi.top/2023/06/28/MacBook-Pro-A1706%E6%9B%B4%E6%8D%A2touchbar/"/>
-    <id>https://blog.likasi.top/2023/06/28/MacBook-Pro-A1706%E6%9B%B4%E6%8D%A2touchbar/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/06/28/MacBook-Pro-A1706%E6%9B%B4%E6%8D%A2touchbar/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/06/28/MacBook-Pro-A1706%E6%9B%B4%E6%8D%A2touchbar/</id>
     <published>2023-06-28T14:11:24.000Z</published>
     <updated>2023-06-28T15:01:11.587Z</updated>
     
@@ -122,14 +122,14 @@
     
     
     
-    <category term="折腾" scheme="https://blog.likasi.top/tags/%E6%8A%98%E8%85%BE/"/>
+    <category term="折腾" scheme="https://wangxf2023.github.io/Wangxf/tags/%E6%8A%98%E8%85%BE/"/>
     
   </entry>
   
   <entry>
     <title>一次游记—昆明长虫山</title>
-    <link href="https://blog.likasi.top/2023/06/17/%E4%B8%80%E6%AC%A1%E6%B8%B8%E8%AE%B0%E2%80%94%E6%98%86%E6%98%8E%E9%95%BF%E8%99%AB%E5%B1%B1/"/>
-    <id>https://blog.likasi.top/2023/06/17/%E4%B8%80%E6%AC%A1%E6%B8%B8%E8%AE%B0%E2%80%94%E6%98%86%E6%98%8E%E9%95%BF%E8%99%AB%E5%B1%B1/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/06/17/%E4%B8%80%E6%AC%A1%E6%B8%B8%E8%AE%B0%E2%80%94%E6%98%86%E6%98%8E%E9%95%BF%E8%99%AB%E5%B1%B1/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/06/17/%E4%B8%80%E6%AC%A1%E6%B8%B8%E8%AE%B0%E2%80%94%E6%98%86%E6%98%8E%E9%95%BF%E8%99%AB%E5%B1%B1/</id>
     <published>2023-06-17T12:39:18.000Z</published>
     <updated>2023-06-28T14:08:33.394Z</updated>
     
@@ -145,14 +145,14 @@
     
     
     
-    <category term="游记" scheme="https://blog.likasi.top/tags/%E6%B8%B8%E8%AE%B0/"/>
+    <category term="游记" scheme="https://wangxf2023.github.io/Wangxf/tags/%E6%B8%B8%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>一些有用的东西</title>
-    <link href="https://blog.likasi.top/2023/05/25/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E4%B8%9C%E8%A5%BF/"/>
-    <id>https://blog.likasi.top/2023/05/25/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E4%B8%9C%E8%A5%BF/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/05/25/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E4%B8%9C%E8%A5%BF/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/05/25/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E4%B8%9C%E8%A5%BF/</id>
     <published>2023-05-25T07:05:42.000Z</published>
     <updated>2023-10-10T03:26:32.536Z</updated>
     
@@ -167,14 +167,14 @@
     
     
     
-    <category term="有用" scheme="https://blog.likasi.top/tags/%E6%9C%89%E7%94%A8/"/>
+    <category term="有用" scheme="https://wangxf2023.github.io/Wangxf/tags/%E6%9C%89%E7%94%A8/"/>
     
   </entry>
   
   <entry>
     <title>霜冻前夜乐队live</title>
-    <link href="https://blog.likasi.top/2023/05/22/%E9%9C%9C%E5%86%BB%E5%89%8D%E5%A4%9C%E4%B9%90%E9%98%9Flive/"/>
-    <id>https://blog.likasi.top/2023/05/22/%E9%9C%9C%E5%86%BB%E5%89%8D%E5%A4%9C%E4%B9%90%E9%98%9Flive/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/05/22/%E9%9C%9C%E5%86%BB%E5%89%8D%E5%A4%9C%E4%B9%90%E9%98%9Flive/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/05/22/%E9%9C%9C%E5%86%BB%E5%89%8D%E5%A4%9C%E4%B9%90%E9%98%9Flive/</id>
     <published>2023-05-22T01:14:01.000Z</published>
     <updated>2023-06-28T14:10:00.802Z</updated>
     
@@ -190,14 +190,14 @@
     
     
     
-    <category term="live" scheme="https://blog.likasi.top/tags/live/"/>
+    <category term="live" scheme="https://wangxf2023.github.io/Wangxf/tags/live/"/>
     
   </entry>
   
   <entry>
     <title>视频语音自动识别生成字幕工具VideoSrt</title>
-    <link href="https://blog.likasi.top/2023/05/09/%E8%A7%86%E9%A2%91%E8%AF%AD%E9%9F%B3%E8%87%AA%E5%8A%A8%E8%AF%86%E5%88%AB%E7%94%9F%E6%88%90%E5%AD%97%E5%B9%95%E5%B7%A5%E5%85%B7VideoSrt/"/>
-    <id>https://blog.likasi.top/2023/05/09/%E8%A7%86%E9%A2%91%E8%AF%AD%E9%9F%B3%E8%87%AA%E5%8A%A8%E8%AF%86%E5%88%AB%E7%94%9F%E6%88%90%E5%AD%97%E5%B9%95%E5%B7%A5%E5%85%B7VideoSrt/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/05/09/%E8%A7%86%E9%A2%91%E8%AF%AD%E9%9F%B3%E8%87%AA%E5%8A%A8%E8%AF%86%E5%88%AB%E7%94%9F%E6%88%90%E5%AD%97%E5%B9%95%E5%B7%A5%E5%85%B7VideoSrt/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/05/09/%E8%A7%86%E9%A2%91%E8%AF%AD%E9%9F%B3%E8%87%AA%E5%8A%A8%E8%AF%86%E5%88%AB%E7%94%9F%E6%88%90%E5%AD%97%E5%B9%95%E5%B7%A5%E5%85%B7VideoSrt/</id>
     <published>2023-05-09T06:27:02.000Z</published>
     <updated>2023-05-13T15:59:16.544Z</updated>
     
@@ -212,14 +212,14 @@
     
     
     
-    <category term="工具" scheme="https://blog.likasi.top/tags/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="https://wangxf2023.github.io/Wangxf/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>密码管理工具KeePass</title>
-    <link href="https://blog.likasi.top/2023/04/21/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7KeePass/"/>
-    <id>https://blog.likasi.top/2023/04/21/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7KeePass/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/04/21/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7KeePass/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/04/21/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7KeePass/</id>
     <published>2023-04-21T03:39:11.000Z</published>
     <updated>2023-04-21T06:27:17.478Z</updated>
     
@@ -234,14 +234,14 @@
     
     
     
-    <category term="工具" scheme="https://blog.likasi.top/tags/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="https://wangxf2023.github.io/Wangxf/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>不止喜剧——大乐透拼盘</title>
-    <link href="https://blog.likasi.top/2023/04/21/%E4%B8%8D%E6%AD%A2%E5%96%9C%E5%89%A7%E2%80%94%E2%80%94%E5%A4%A7%E4%B9%90%E9%80%8F%E6%8B%BC%E7%9B%98/"/>
-    <id>https://blog.likasi.top/2023/04/21/%E4%B8%8D%E6%AD%A2%E5%96%9C%E5%89%A7%E2%80%94%E2%80%94%E5%A4%A7%E4%B9%90%E9%80%8F%E6%8B%BC%E7%9B%98/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/04/21/%E4%B8%8D%E6%AD%A2%E5%96%9C%E5%89%A7%E2%80%94%E2%80%94%E5%A4%A7%E4%B9%90%E9%80%8F%E6%8B%BC%E7%9B%98/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/04/21/%E4%B8%8D%E6%AD%A2%E5%96%9C%E5%89%A7%E2%80%94%E2%80%94%E5%A4%A7%E4%B9%90%E9%80%8F%E6%8B%BC%E7%9B%98/</id>
     <published>2023-04-21T03:06:26.000Z</published>
     <updated>2023-05-13T15:54:42.733Z</updated>
     
@@ -257,14 +257,14 @@
     
     
     
-    <category term="live" scheme="https://blog.likasi.top/tags/live/"/>
+    <category term="live" scheme="https://wangxf2023.github.io/Wangxf/tags/live/"/>
     
   </entry>
   
   <entry>
     <title>记一次百度智能云OCR简单了解</title>
-    <link href="https://blog.likasi.top/2023/03/07/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BE%E5%BA%A6%E6%99%BA%E8%83%BD%E4%BA%91OCR%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/"/>
-    <id>https://blog.likasi.top/2023/03/07/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BE%E5%BA%A6%E6%99%BA%E8%83%BD%E4%BA%91OCR%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/03/07/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BE%E5%BA%A6%E6%99%BA%E8%83%BD%E4%BA%91OCR%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/03/07/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BE%E5%BA%A6%E6%99%BA%E8%83%BD%E4%BA%91OCR%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/</id>
     <published>2023-03-07T07:18:26.000Z</published>
     <updated>2023-03-07T09:26:38.997Z</updated>
     
@@ -279,14 +279,14 @@
     
     
     
-    <category term="OCR" scheme="https://blog.likasi.top/tags/OCR/"/>
+    <category term="OCR" scheme="https://wangxf2023.github.io/Wangxf/tags/OCR/"/>
     
   </entry>
   
   <entry>
     <title>记一些日常摄影</title>
-    <link href="https://blog.likasi.top/2023/03/03/%E8%AE%B0%E4%B8%80%E4%BA%9B%E6%97%A5%E5%B8%B8%E6%91%84%E5%BD%B1/"/>
-    <id>https://blog.likasi.top/2023/03/03/%E8%AE%B0%E4%B8%80%E4%BA%9B%E6%97%A5%E5%B8%B8%E6%91%84%E5%BD%B1/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/03/03/%E8%AE%B0%E4%B8%80%E4%BA%9B%E6%97%A5%E5%B8%B8%E6%91%84%E5%BD%B1/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/03/03/%E8%AE%B0%E4%B8%80%E4%BA%9B%E6%97%A5%E5%B8%B8%E6%91%84%E5%BD%B1/</id>
     <published>2023-03-03T06:47:46.000Z</published>
     <updated>2023-03-03T07:43:20.660Z</updated>
     
@@ -301,14 +301,14 @@
     
     
     
-    <category term="摄影" scheme="https://blog.likasi.top/tags/%E6%91%84%E5%BD%B1/"/>
+    <category term="摄影" scheme="https://wangxf2023.github.io/Wangxf/tags/%E6%91%84%E5%BD%B1/"/>
     
   </entry>
   
   <entry>
     <title>《米店》</title>
-    <link href="https://blog.likasi.top/2023/03/01/%E3%80%8A%E7%B1%B3%E5%BA%97%E3%80%8B/"/>
-    <id>https://blog.likasi.top/2023/03/01/%E3%80%8A%E7%B1%B3%E5%BA%97%E3%80%8B/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/03/01/%E3%80%8A%E7%B1%B3%E5%BA%97%E3%80%8B/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/03/01/%E3%80%8A%E7%B1%B3%E5%BA%97%E3%80%8B/</id>
     <published>2023-03-01T01:30:25.000Z</published>
     <updated>2023-03-01T02:02:04.933Z</updated>
     
@@ -325,14 +325,14 @@
     
     
     
-    <category term="音乐" scheme="https://blog.likasi.top/tags/%E9%9F%B3%E4%B9%90/"/>
+    <category term="音乐" scheme="https://wangxf2023.github.io/Wangxf/tags/%E9%9F%B3%E4%B9%90/"/>
     
   </entry>
   
   <entry>
     <title>一次游记——云南丽江</title>
-    <link href="https://blog.likasi.top/2023/02/13/%E4%B8%80%E6%AC%A1%E6%B8%B8%E8%AE%B0-%E4%BA%91%E5%8D%97%E4%B8%BD%E6%B1%9F/"/>
-    <id>https://blog.likasi.top/2023/02/13/%E4%B8%80%E6%AC%A1%E6%B8%B8%E8%AE%B0-%E4%BA%91%E5%8D%97%E4%B8%BD%E6%B1%9F/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/02/13/%E4%B8%80%E6%AC%A1%E6%B8%B8%E8%AE%B0-%E4%BA%91%E5%8D%97%E4%B8%BD%E6%B1%9F/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/02/13/%E4%B8%80%E6%AC%A1%E6%B8%B8%E8%AE%B0-%E4%BA%91%E5%8D%97%E4%B8%BD%E6%B1%9F/</id>
     <published>2023-02-13T08:54:29.000Z</published>
     <updated>2023-02-13T15:02:45.684Z</updated>
     
@@ -348,14 +348,14 @@
     
     
     
-    <category term="游记" scheme="https://blog.likasi.top/tags/%E6%B8%B8%E8%AE%B0/"/>
+    <category term="游记" scheme="https://wangxf2023.github.io/Wangxf/tags/%E6%B8%B8%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>Hexo迁移到服务器</title>
-    <link href="https://blog.likasi.top/2023/02/13/Hexo%E8%BF%81%E7%A7%BB%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    <id>https://blog.likasi.top/2023/02/13/Hexo%E8%BF%81%E7%A7%BB%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/02/13/Hexo%E8%BF%81%E7%A7%BB%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/02/13/Hexo%E8%BF%81%E7%A7%BB%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
     <published>2023-02-13T06:12:46.000Z</published>
     <updated>2023-02-13T07:44:24.334Z</updated>
     
@@ -370,14 +370,14 @@
     
     
     
-    <category term="hexo" scheme="https://blog.likasi.top/tags/hexo/"/>
+    <category term="hexo" scheme="https://wangxf2023.github.io/Wangxf/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>follow.it简单使用</title>
-    <link href="https://blog.likasi.top/2023/01/31/follow.it%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
-    <id>https://blog.likasi.top/2023/01/31/follow.it%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/01/31/follow.it%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/01/31/follow.it%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</id>
     <published>2023-01-31T08:34:15.000Z</published>
     <updated>2023-02-10T08:25:24.459Z</updated>
     
@@ -392,14 +392,14 @@
     
     
     
-    <category term="工具" scheme="https://blog.likasi.top/tags/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="https://wangxf2023.github.io/Wangxf/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>2022年度音乐分享</title>
-    <link href="https://blog.likasi.top/2023/01/19/2022%E5%B9%B4%E5%BA%A6%E9%9F%B3%E4%B9%90%E5%88%86%E4%BA%AB/"/>
-    <id>https://blog.likasi.top/2023/01/19/2022%E5%B9%B4%E5%BA%A6%E9%9F%B3%E4%B9%90%E5%88%86%E4%BA%AB/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/01/19/2022%E5%B9%B4%E5%BA%A6%E9%9F%B3%E4%B9%90%E5%88%86%E4%BA%AB/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/01/19/2022%E5%B9%B4%E5%BA%A6%E9%9F%B3%E4%B9%90%E5%88%86%E4%BA%AB/</id>
     <published>2023-01-19T13:27:43.000Z</published>
     <updated>2023-02-10T08:23:30.316Z</updated>
     
@@ -414,14 +414,14 @@
     
     
     
-    <category term="音乐" scheme="https://blog.likasi.top/tags/%E9%9F%B3%E4%B9%90/"/>
+    <category term="音乐" scheme="https://wangxf2023.github.io/Wangxf/tags/%E9%9F%B3%E4%B9%90/"/>
     
   </entry>
   
   <entry>
     <title>图片压缩工具图压</title>
-    <link href="https://blog.likasi.top/2023/01/11/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%B7%A5%E5%85%B7%E5%9B%BE%E5%8E%8B/"/>
-    <id>https://blog.likasi.top/2023/01/11/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%B7%A5%E5%85%B7%E5%9B%BE%E5%8E%8B/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/01/11/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%B7%A5%E5%85%B7%E5%9B%BE%E5%8E%8B/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/01/11/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%B7%A5%E5%85%B7%E5%9B%BE%E5%8E%8B/</id>
     <published>2023-01-11T02:56:36.000Z</published>
     <updated>2023-01-11T06:17:47.125Z</updated>
     
@@ -436,14 +436,14 @@
     
     
     
-    <category term="工具" scheme="https://blog.likasi.top/tags/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="https://wangxf2023.github.io/Wangxf/tags/%E5%B7%A5%E5%85%B7/"/>
     
   </entry>
   
   <entry>
     <title>将Hexo博客网站收录进百度、Bing、谷歌搜索引擎</title>
-    <link href="https://blog.likasi.top/2023/01/06/%E5%B0%86Hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%94%B6%E5%BD%95%E8%BF%9B%E7%99%BE%E5%BA%A6%E3%80%81Bing%E3%80%81%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
-    <id>https://blog.likasi.top/2023/01/06/%E5%B0%86Hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%94%B6%E5%BD%95%E8%BF%9B%E7%99%BE%E5%BA%A6%E3%80%81Bing%E3%80%81%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</id>
+    <link href="https://wangxf2023.github.io/Wangxf/2023/01/06/%E5%B0%86Hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%94%B6%E5%BD%95%E8%BF%9B%E7%99%BE%E5%BA%A6%E3%80%81Bing%E3%80%81%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    <id>https://wangxf2023.github.io/Wangxf/2023/01/06/%E5%B0%86Hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%94%B6%E5%BD%95%E8%BF%9B%E7%99%BE%E5%BA%A6%E3%80%81Bing%E3%80%81%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</id>
     <published>2023-01-06T03:30:01.000Z</published>
     <updated>2023-01-06T08:42:57.332Z</updated>
     
@@ -458,7 +458,7 @@
     
     
     
-    <category term="hexo" scheme="https://blog.likasi.top/tags/hexo/"/>
+    <category term="hexo" scheme="https://wangxf2023.github.io/Wangxf/tags/hexo/"/>
     
   </entry>
   
