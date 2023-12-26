@@ -1,0 +1,458 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mybatis学习笔记 | Wangxf | 博客</title><meta name="keywords" content="mybatis"><meta name="author" content="Wangxf"><meta name="copyright" content="Wangxf"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="MyBatis学习笔记第一章 框架概述框架：三层架构：页面层，业务逻辑层，数据访问层 框架：是一个半成品软件，定义好了一些基础功能，需要加入你的功能就是完善的，基础功能时可以重复使用的，可升级的。 框架特点：一般不是全能的，针对某一个领域有效 JDBC缺陷：代码冗余（处理结果集的时候代码冗余，以及整个jdbc操作，核心语句没几句，其他都是重复的） 不能自动完成实体类和查询结果的映射（需要在处理结果">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis学习笔记">
+<meta property="og:url" content="https://wangxf2023.github.io/Wangxf/2021/10/26/Mybatis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Wangxf | 博客">
+<meta property="og:description" content="MyBatis学习笔记第一章 框架概述框架：三层架构：页面层，业务逻辑层，数据访问层 框架：是一个半成品软件，定义好了一些基础功能，需要加入你的功能就是完善的，基础功能时可以重复使用的，可升级的。 框架特点：一般不是全能的，针对某一个领域有效 JDBC缺陷：代码冗余（处理结果集的时候代码冗余，以及整个jdbc操作，核心语句没几句，其他都是重复的） 不能自动完成实体类和查询结果的映射（需要在处理结果">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2022/05/18/OoL1K0.jpg">
+<meta property="article:published_time" content="2021-10-26T14:47:44.000Z">
+<meta property="article:modified_time" content="2022-05-18T07:10:32.585Z">
+<meta property="article:author" content="Wangxf">
+<meta property="article:tag" content="mybatis">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/05/18/OoL1K0.jpg"><link rel="shortcut icon" href="https://s1.ax1x.com/2022/05/18/OoLPgI.jpg"><link rel="canonical" href="https://wangxf2023.github.io/Wangxf/2021/10/26/Mybatis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/Wangxf/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5a2c350900e803fd44a847666bc842f2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/Wangxf/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Wangxf","link":"链接: ","source":"来源: Wangxf | 博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Mybatis学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-18 15:10:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="APlayer.min.css"><div id="aplayer"></div><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" async></script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/Wangxf/atom.xml" title="Wangxf | 博客" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s1.ax1x.com/2022/05/18/OoLPgI.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/Wangxf/archives/"><div class="headline">文章</div><div class="length-num">46</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/Wangxf/tags/"><div class="headline">标签</div><div class="length-num">19</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Wangxf/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Wangxf/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-pencil"></i><span> 文字</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Wangxf/artitalk/"><i class="fa-fw fas fa-feather-alt"></i><span> 闲言碎语</span></a></li><li><a class="site-page child" href="/Wangxf/liuyan/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-feather-alt"></i><span> 时光</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Wangxf/playlist/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Wangxf/images/"><i class="fa-fw fas fa-images"></i><span> 壁纸</span></a></li><li><a class="site-page child" href="/Wangxf/html/subscribe.html"><i class="fa-fw fas fa-star"></i><span> 订阅</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-palette"></i><span> 分享</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Wangxf/books/"><i class="fa-fw fas fa-book-open"></i><span> 书籍</span></a></li><li><a class="site-page child" href="/Wangxf/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Wangxf/games/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s1.ax1x.com/2022/05/18/OoL1K0.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/Wangxf/">Wangxf | 博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Wangxf/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Wangxf/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-pencil"></i><span> 文字</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Wangxf/artitalk/"><i class="fa-fw fas fa-feather-alt"></i><span> 闲言碎语</span></a></li><li><a class="site-page child" href="/Wangxf/liuyan/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-feather-alt"></i><span> 时光</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Wangxf/playlist/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Wangxf/images/"><i class="fa-fw fas fa-images"></i><span> 壁纸</span></a></li><li><a class="site-page child" href="/Wangxf/html/subscribe.html"><i class="fa-fw fas fa-star"></i><span> 订阅</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-palette"></i><span> 分享</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Wangxf/books/"><i class="fa-fw fas fa-book-open"></i><span> 书籍</span></a></li><li><a class="site-page child" href="/Wangxf/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Wangxf/games/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Mybatis学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-10-26T14:47:44.000Z" title="发表于 2021-10-26 22:47:44">2021-10-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-18T07:10:32.585Z" title="更新于 2022-05-18 15:10:32">2022-05-18</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Mybatis学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="MyBatis学习笔记"><a href="#MyBatis学习笔记" class="headerlink" title="MyBatis学习笔记"></a>MyBatis学习笔记</h1><h2 id="第一章-框架概述"><a href="#第一章-框架概述" class="headerlink" title="第一章 框架概述"></a>第一章 框架概述</h2><h3 id="框架："><a href="#框架：" class="headerlink" title="框架："></a>框架：</h3><p>三层架构：页面层，业务逻辑层，数据访问层</p>
+<p>框架：是一个半成品软件，定义好了一些基础功能，需要加入你的功能就是完善的，基础功能时可以重复使用的，可升级的。</p>
+<p>框架特点：一般不是全能的，针对某一个领域有效</p>
+<h3 id="JDBC缺陷："><a href="#JDBC缺陷：" class="headerlink" title="JDBC缺陷："></a>JDBC缺陷：</h3><p>代码冗余（处理结果集的时候代码冗余，以及整个jdbc操作，核心语句没几句，其他都是重复的）</p>
+<p>不能自动完成实体类和查询结果的映射（需要在处理结果集的时候手动把查询结果封装到实体类）</p>
+<h3 id="MyBatis框架概述"><a href="#MyBatis框架概述" class="headerlink" title="MyBatis框架概述"></a>MyBatis框架概述</h3><blockquote>
+<p>MyBatis SQL Mapper Framework For Java</p>
+</blockquote>
+<h4 id="SQL-mapper："><a href="#SQL-mapper：" class="headerlink" title="SQL mapper："></a>SQL mapper：</h4><p>sql映射，可以把数据库中的一行数据，映射为一个java对象，操作这个对象，就相当于操作表中的数据</p>
+<h4 id="Data-Aceess-Object：（DAOS）"><a href="#Data-Aceess-Object：（DAOS）" class="headerlink" title="Data Aceess Object：（DAOS）"></a>Data Aceess Object：（DAOS）</h4><p>数据库访问，对数据库进行增删改查操作</p>
+<h4 id="mybatis提供了哪些功能？"><a href="#mybatis提供了哪些功能？" class="headerlink" title="mybatis提供了哪些功能？"></a>mybatis提供了哪些功能？</h4><ol>
+<li>提供了创建Connection、Statement、ResultSet的能力，不用开发人员创建这些对象了</li>
+<li>sql语句执行能力</li>
+<li>循环sql能力，把sql结果转化为java对象，List集合的能力</li>
+<li>关闭资源的能力，关闭Connection、Statement、ResultSet</li>
+</ol>
+<p><strong>开发人员提供sql语句——mybatis处理sql——开发人员得到List集合或java对象（表中的数据）</strong></p>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h4><p>mybatis是一个sql映射框架，提供操作数据库的能力，增强的JDBC，开发人员集中写sql就行了，不用关心Connection、Statement、ResultSet的创建、关闭，sql执行。</p>
+<h2 id="第二章-mybatis入门"><a href="#第二章-mybatis入门" class="headerlink" title="第二章  mybatis入门"></a>第二章  mybatis入门</h2><h3 id="入门案例："><a href="#入门案例：" class="headerlink" title="入门案例："></a>入门案例：</h3><h4 id="实现步骤："><a href="#实现步骤：" class="headerlink" title="实现步骤："></a>实现步骤：</h4><ol>
+<li><p>数据库新建student表</p>
+</li>
+<li><p>创建java项目，加入maven的mybatis坐标、mysql驱动坐标</p>
+</li>
+<li><p>创建实体类</p>
+</li>
+<li><p>创建持久层的dao接口，定义操作数据库的方法</p>
+</li>
+<li><p>创建一个mybatis使用的配置文件，叫做sql映射文件，用来写sql语句的，一班一个表一个sql映射文件，这个文件是xml文件，写在接口所在的目录中，文件名和接口保持一致</p>
+</li>
+<li><p>创建mybatis主配置文件，一般一个项目一个主配置文件，主配置文件提供了数据库的连接信息和sql映射文件的位置信息</p>
+</li>
+<li><p>创建使用mybatis类</p>
+</li>
+</ol>
+<h3 id="主要类的介绍"><a href="#主要类的介绍" class="headerlink" title="主要类的介绍"></a>主要类的介绍</h3><p>1.Resource：mybatis中的一个类，负责读取主配置文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java">InputStream in = Resources.getResourceAsStream(config);<br></code></pre></td></tr></table></figure>
+
+<p>2.SqlSessionFactoryBulider：创建SqlSessionFactory对象，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">SqlSessionFactoryBuilder builder = <span class="hljs-keyword">new</span> SqlSessionFactoryBuilder();<br>SqlSessionFactory factory = builder.build(in);<br></code></pre></td></tr></table></figure>
+
+<p>3.SqlSessionFactory：重量级对象，程序创建一个对象耗时较长，使用资源比较多，在整个项目中，有一个就够用了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java">SqlSessionFactory接口，接口实现类DefaultSqlSessionFactory<br>SqlSessionFactory作用: 获取SqlSession对象，<br>SqlSession sqlSession = factory.openSession();<br>openSession()方法说明：<br>    openSession():无参数的，获取的是非自动提交事务的SqlSession对象<br>    openSession(<span class="hljs-keyword">boolean</span>): openSession(<span class="hljs-keyword">true</span>)获取的是自动提交事的SqlSession对象,<span class="hljs-keyword">false</span>                           获取的是非自动提交事务的SqlSession对象<br>                 <br></code></pre></td></tr></table></figure>
+
+<p>4.SqlSession：接口，定义了操作数据的方法，selectOne()，selectList()，insert()，update()，delete()，commit()，rollback()等</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown">SqlSession接口的实现类DefaultSqlSession<br></code></pre></td></tr></table></figure>
+
+<p>使用要求：SqlSession对象不是线程安全的，需要在方法内部使用，在sql语句执行之前，使用openSession()获取SqlSession对象，在sql语句执行之后，使用SqlSession.close()关闭，确保它是线程安全的。线程安全就是避免共享数据被污染。</p>
+<h2 id="第三章"><a href="#第三章" class="headerlink" title="第三章"></a>第三章</h2><h3 id="1-动态代理："><a href="#1-动态代理：" class="headerlink" title="1.动态代理："></a>1.动态代理：</h3><p>mybatis帮你创建接口实现类，在实现类中调用SqlSession的方法执行sql语句</p>
+<p>要求：</p>
+<ol>
+<li>dao接口和mapper文件放在一起，同一个目录</li>
+<li>dao接口和mapper文件名称一致</li>
+<li>mapper文件中的namespace值是dao接口的全限定名称</li>
+<li>mapper文件中的<code>&lt;select&gt;&lt;update&gt;&lt;insert&gt;</code>等标签的id值dao接口中的方法名称</li>
+<li>dao接口中不要使用重载方法</li>
+</ol>
+<p>使用SqlSession.getMapper(dao接口.calss)获取这个dao接口的对象，是一个动态代理对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * mybatis动态代理</span><br><span class="hljs-comment">*/</span><br><span class="hljs-meta">@Test</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test3</span><span class="hljs-params">()</span></span>&#123;<br>    SqlSession sqlSession = MybatisUtils.getSqlSession();<br>    <span class="hljs-comment">//mybatis动态代理 sqlSession.getMapper()</span><br>    StudentDao dao = sqlSession.getMapper(StudentDao.class);<br>    System.out.println(<span class="hljs-string">&quot;dao=&quot;</span>+dao);<br>    List&lt;Student&gt; list = dao.selectAllStudent();<br>    <span class="hljs-keyword">for</span> (Student student : list) &#123;<br>        System.out.println(student);<br>    &#125;<br>    <span class="hljs-comment">//关闭连接</span><br>    sqlSession.close();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="2-传入参数："><a href="#2-传入参数：" class="headerlink" title="2.传入参数："></a>2.传入参数：</h3><p>从java代码中把数据传入到mapper文件的sql语句中</p>
+<ul>
+<li><p>parameType：写在mapper文件中的一个属性，表示dao接口中方法的参数的数据类型</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function">pubulic Student <span class="hljs-title">selectAll</span><span class="hljs-params">(Int id)</span></span>;<br>&lt;!--<br>parameType:dao接口中方法参数的数据类<br>值是java数据类型的全限定名或者是mybatis定义的别名<br>例如：parameType=<span class="hljs-string">&quot;java.lang.Integer&quot;</span><br>     parameType=<span class="hljs-string">&quot;int&quot;</span><br>注意：别名不是必需的，因为mybatis通过反射可以知道接口中方法的参数的类型<br>--&gt;<br></code></pre></td></tr></table></figure></li>
+<li><p>一个简单类型的参数</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--</span><br><span class="hljs-comment">在mapper文件中，获取一个简单类型的一个参数的值，使用#&#123;任意字符&#125;</span><br><span class="hljs-comment">--&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p>多个参数@Param命名参数（常用）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">接口：<span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Student&gt; <span class="hljs-title">selectMultiParam</span><span class="hljs-params">(String nane,<span class="hljs-keyword">int</span> age)</span></span>;<br>使用：<span class="hljs-meta">@Param(&quot;参数名&quot;)</span> <span class="hljs-function">String name</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Student&gt; <span class="hljs-title">selectMultiParam</span><span class="hljs-params">(<span class="hljs-meta">@Param(&quot;name&quot;)</span>String nane,<span class="hljs-meta">@Param(&quot;age&quot;)</span>Int age)</span></span>;<br></code></pre></td></tr></table></figure></li>
+<li><p>多个参数——使用对象（常用）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">最完整方式：很少用#&#123;对象的属性名，javaType类型名称，jdbcType数据类型&#125; #&#123;Student,javaType=java.lang.String,jdbcType=VARCHAR&#125;简化方式：常用#&#123;对象的属性名&#125; javaType类型名称，jdbcType数据类型反射获取不用写<br></code></pre></td></tr></table></figure></li>
+<li><p>多个参数——按位置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">mybatis3.4之前，使用#&#123;0&#125;，#&#123;1&#125;mybatis3.4之后，使用#&#123;arg0&#125;,#&#123;arg1&#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>多个参数——使用Map</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plaintext">使用语法：#&#123;map中的key&#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="3-和-的区别"><a href="#3-和-的区别" class="headerlink" title="3.#和$的区别"></a>3.#和$的区别</h3><p>#：占位符，使用PrepareStatement对象执行sql语句，相当于jdbc中的 ？</p>
+<p>$：字符串替换，使用Statement对象执行sql语句</p>
+<p>$ 可以替换列名或者表名</p>
+<h3 id="4-mybatis输出结果"><a href="#4-mybatis输出结果" class="headerlink" title="4.mybatis输出结果"></a>4.mybatis输出结果</h3><blockquote>
+<p>mybatis执行sql语句后，得到的java对象</p>
+</blockquote>
+<p>resultType结果类型：</p>
+<p>指sql语句执行完毕后，数据转为java对象，是任意类型的对象</p>
+<p>​    处理方式：</p>
+<ol>
+<li>mybatis执行sql语句，然后mybatis调用类的无参构造方法，创建对象</li>
+<li>mybatis把ResultSet指定列值赋给同名的属性</li>
+</ol>
+<p>​    </p>
+<p>自定义类型的别名：</p>
+<p>不建议使用别名，建议使用全限定名</p>
+<p>在mybatis主配置文件中定义，</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">第一种方式：<span class="hljs-tag">&lt;<span class="hljs-name">typeAliases</span>&gt;</span>	<span class="hljs-tag">&lt;<span class="hljs-name">typeAlias</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;yxnu.deu.entity.Student&quot;</span> <span class="hljs-attr">alias</span>=<span class="hljs-string">&quot;student&quot;</span>/&gt;</span>	<span class="hljs-tag">&lt;<span class="hljs-name">typeAlias</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;yxnu.deu.entity.Person&quot;</span> <span class="hljs-attr">alias</span>=<span class="hljs-string">&quot;person&quot;</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">typeAliases</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">第二种方式：name是包名，这个包中的所有类，类名就是别名（类名不区分大小写）<span class="hljs-tag">&lt;<span class="hljs-name">package</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;yxnu.deu.entity&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>Map:</p>
+<p>列名是map的可以，列值是map的value</p>
+<p>返回map的时候最多只能返回<strong>一行</strong>记录，否则报错</p>
+<p>resultMap：</p>
+<p>结果映射，指定列名和java对象的属性对应关系</p>
+<ul>
+<li>自定义列值赋值给哪个属性</li>
+<li><strong>当你的列名和属性名不一样时</strong>，一定是要resultMap</li>
+</ul>
+<p>注：resultType和resultMap不要一起使用</p>
+<p>当你的列名和属性名不一样时：</p>
+<p>第一种方式：resultMap</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--1.先定义resultMap    id:自定义名称    type:java类型的全限定名称2.在select标签中，使用resultMap引用1定义的--&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">resultMap</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;studentMap&quot;</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;yxnu.edu.entity.Student&quot;</span>&gt;</span>    <span class="hljs-comment">&lt;!--    column:列名    property:java类型的属性名    --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">id</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;id&quot;</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;id&quot;</span>/&gt;</span>    <span class="hljs-comment">&lt;!--    非主键列，使用result    --&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;name&quot;</span>/&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">column</span>=<span class="hljs-string">&quot;email&quot;</span> <span class="hljs-attr">property</span>=<span class="hljs-string">&quot;email&quot;</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">resultMap</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectAllStudent&quot;</span> <span class="hljs-attr">resultMap</span>=<span class="hljs-string">&quot;studentMap&quot;</span>&gt;</span>    select id, name, email    from student<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>第二种方式：起列别名</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectAllStudent&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;yxnu.edu.entity.Student&quot;</span>&gt;</span>    select id as stuId, name as stuName, email as stuEmail    from student<span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="5-模糊查询"><a href="#5-模糊查询" class="headerlink" title="5.模糊查询"></a>5.模糊查询</h3><p>like查询</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//like模糊查询List&lt;Student&gt; selectLike(String name);</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--    第一种模糊查询，在java代码中指定like的内容--&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectLike&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;yxnu.edu.entity.Student&quot;</span>&gt;</span>        select id,name,email from student where name like #&#123;name&#125;    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><span class="hljs-comment">&lt;!--    第二种方式，拼接出#&#123;name&#125; &quot;%&quot;--&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/** * 测试like查询*/</span><span class="hljs-meta">@Testpublic</span> <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">test7</span><span class="hljs-params">()</span></span>&#123;    SqlSession sqlSession = MybatisUtils.getSqlSession();    StudentDao dao = sqlSession.getMapper(StudentDao.class);    String name=<span class="hljs-string">&quot;李%&quot;</span>;    List&lt;Student&gt; lists = dao.selectLike(name);    <span class="hljs-keyword">for</span> (Student list : lists) &#123;        System.out.println(list);    &#125;    <span class="hljs-comment">//关闭连接    sqlSession.close();&#125;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="第四章-动态Sql"><a href="#第四章-动态Sql" class="headerlink" title="第四章 动态Sql"></a>第四章 动态Sql</h2><p>动态sql：sql的内容是变化的，可以根据条件获取到不同sql语句，主要是指where部分，使用的是mybatis提供的标签，<code>&lt;if&gt; &lt;where&gt; &lt;foreach&gt;</code></p>
+<ul>
+<li><p><code>&lt;if&gt;</code>是判断条件的，语法：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;判断java对象的属性值&quot;</span>&gt;</span>	部分sql语句<span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//动态sql,使用java对象作为参数List&lt;Student&gt; selectStudentIf(Student student);</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--动态sql&lt;if test=&quot;使用参数java对象的属性值作为判断条件 &quot;--&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectStudentIf&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;yxnu.edu.entity.Student&quot;</span>&gt;</span>    select id,name,email,age from student    where 1=1    <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;name!=null and name!=&#x27;&#x27;&quot;</span>&gt;</span>        name=#&#123;name&#125;    <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>    <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;age&gt;0&quot;</span>&gt;</span>        and age&gt;#&#123;age&#125;    <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/** * 测试动态sql */</span>    <span class="hljs-meta">@Test</span>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test8</span><span class="hljs-params">()</span></span>&#123;        SqlSession sqlSession = MybatisUtils.getSqlSession();        StudentDao dao = sqlSession.getMapper(StudentDao.class);        Student student = <span class="hljs-keyword">new</span> Student();<span class="hljs-comment">//        student.setName(&quot;李卡斯&quot;);        student.setAge(22);        List&lt;Student&gt; list = dao.selectStudentIf(student);        for (Student student1 : list) &#123;            System.out.println(student1);        &#125;    &#125;</span><br></code></pre></td></tr></table></figure>
+
+<p>如果是第一个<code>&lt;if&gt;</code>部门，不满足的话，在where 后面加上1=1或者id&gt;0等恒成立条件，这样的话第二个<code>&lt;if&gt;</code>才不会sql语法报错</p>
+</li>
+<li><p><code>&lt;where&gt;</code>是用来包含多个<code>&lt;if&gt;</code>的，当多个<code>&lt;if&gt;</code>有一个成立的，<code>&lt;where&gt;</code>会自动增加一个where关键字，并去掉 if 中多余的 and ，or等，这样的话就不用加什么1=1之类的了。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectStudentIf&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;yxnu.edu.entity.Student&quot;</span>&gt;</span>    select id,name,email,age from student    <span class="hljs-tag">&lt;<span class="hljs-name">where</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;name!=null and name!=&#x27;&#x27;&quot;</span>&gt;</span>            name=#&#123;name&#125;        <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>        <span class="hljs-tag">&lt;<span class="hljs-name">if</span> <span class="hljs-attr">test</span>=<span class="hljs-string">&quot;age&gt;0&quot;</span>&gt;</span>            and age&gt;#&#123;age&#125;        <span class="hljs-tag">&lt;/<span class="hljs-name">if</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">where</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure></li>
+<li><p><code>&lt;foreach&gt;</code>循环java中的数组，list集合的，主要用在sql的 in 语句中</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">学生id是1001,1002,1003的三个学生select * from student where id id(1001,1002,1003)<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">foreach</span> <span class="hljs-attr">collection</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">item</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">open</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">close</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">separator</span>=<span class="hljs-string">&quot;&quot;</span>&gt;</span>    <span class="hljs-tag">&lt;/<span class="hljs-name">foreach</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>collection：表示接口中的方法的参数的类型，如果是数组使用array，如果是list集合使用list</p>
+<p>item：自定义的，表示数组和集合成员的变量</p>
+<p>open：循环开始的字符</p>
+<p>close：循环结束时的字符</p>
+<p>separator：集合成员之间的分隔符</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//foreach 用法1List&lt;Student&gt; selectForeach(List&lt;Integer&gt; list);//foreach 用法2List&lt;Student&gt; selectForeachTwo(List&lt;Student&gt; stulist);</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--foreach使用1--&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectForeach&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;yxnu.edu.entity.Student&quot;</span>&gt;</span>    select * from student where id in    <span class="hljs-tag">&lt;<span class="hljs-name">foreach</span> <span class="hljs-attr">collection</span>=<span class="hljs-string">&quot;list&quot;</span> <span class="hljs-attr">item</span>=<span class="hljs-string">&quot;myid&quot;</span> <span class="hljs-attr">open</span>=<span class="hljs-string">&quot;(&quot;</span> <span class="hljs-attr">close</span>=<span class="hljs-string">&quot;)&quot;</span> <span class="hljs-attr">separator</span>=<span class="hljs-string">&quot;,&quot;</span>&gt;</span>        #&#123;myid&#125;    <span class="hljs-tag">&lt;/<span class="hljs-name">foreach</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><span class="hljs-comment">&lt;!--foreach使用2--&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;selectForeachTwo&quot;</span> <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;yxnu.edu.entity.Student&quot;</span>&gt;</span>        select * from student where id in        <span class="hljs-tag">&lt;<span class="hljs-name">foreach</span> <span class="hljs-attr">collection</span>=<span class="hljs-string">&quot;list&quot;</span> <span class="hljs-attr">item</span>=<span class="hljs-string">&quot;stu&quot;</span> <span class="hljs-attr">open</span>=<span class="hljs-string">&quot;(&quot;</span> <span class="hljs-attr">close</span>=<span class="hljs-string">&quot;)&quot;</span> <span class="hljs-attr">separator</span>=<span class="hljs-string">&quot;,&quot;</span>&gt;</span><span class="hljs-comment">&lt;!-- 相当于使用对象的getId()--&gt;</span>            #&#123;stu.id&#125;        <span class="hljs-tag">&lt;/<span class="hljs-name">foreach</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/** * 测试foreach用法1 */</span><span class="hljs-meta">@Testpublic</span> <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">test9</span><span class="hljs-params">()</span> </span>&#123;    SqlSession sqlSession = MybatisUtils.getSqlSession();    StudentDao dao = sqlSession.getMapper(StudentDao.class);    List&lt;Integer&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();    list.add(<span class="hljs-number">1001</span>);    list.add(<span class="hljs-number">1002</span>);    list.add(<span class="hljs-number">1003</span>);    List&lt;Student&gt; list1 = dao.selectForeach(list);    <span class="hljs-keyword">for</span> (Student student : list1) &#123;        System.out.println(student);    &#125;&#125;<span class="hljs-comment">/*** 测试foreach用法2*/</span>    <span class="hljs-meta">@Test</span>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test10</span><span class="hljs-params">()</span></span>&#123;        SqlSession sqlSession = MybatisUtils.getSqlSession();        StudentDao dao = sqlSession.getMapper(StudentDao.class);        List&lt;Student&gt; stulist=<span class="hljs-keyword">new</span> ArrayList&lt;&gt;();        Student student = <span class="hljs-keyword">new</span> Student();        student.setId(<span class="hljs-number">1005</span>);        stulist.add(student);        student = <span class="hljs-keyword">new</span> Student();        student.setId(<span class="hljs-number">1006</span>);        stulist.add(student);        List&lt;Student&gt; lists = dao.selectForeachTwo(stulist);        <span class="hljs-keyword">for</span> (Student list : lists) &#123;            System.out.println(list);        &#125;    &#125;<br></code></pre></td></tr></table></figure></li>
+<li><p>sql代码片段，就是复用一些sql语句</p>
+<p>步骤：先定义，再使用</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">1.先定义<span class="hljs-tag">&lt;<span class="hljs-name">sql</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;自定义名称唯一&quot;</span>&gt;</span>           sql语句，表名，字段等       <span class="hljs-tag">&lt;/<span class="hljs-name">sql</span>&gt;</span>           2.使用，<span class="hljs-tag">&lt;<span class="hljs-name">include</span> <span class="hljs-attr">refid</span>=<span class="hljs-string">&quot;id值&quot;</span>/&gt;</span>       <br></code></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h2><p>1.数据库的属性配置文件，把数据库连接信息放到一个单独的properties文件中，和mybatis主配置文件分开</p>
+<ul>
+<li><p>在resources目录下定义一个属性配置文件，例如 jdbc.propertoes</p>
+<p>key：一般做多级目录，两级三级比较合适</p>
+<p>jdbc.mysql.driver   jdbc.driver</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs xml">mybatis主配置文件<br><span class="hljs-comment">&lt;!--指定properties文件的位置，从类路径开始找文件--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">properties</span> <span class="hljs-attr">resource</span>=<span class="hljs-string">&quot;jdbc.properties&quot;</span>/&gt;</span><br><br>在resources目录下定义jdbc.properties<br>jdbc.driver=com.mysql.cj.jdbc.Driver<br>...<br><br><span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;driver&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;$&#123;jdbc.driver&#125;&quot;</span>/&gt;</span><br>...<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>2.多个mapper文件</p>
+<ul>
+<li><p>第一种就是写多个<code>&lt;mapper&gt;</code></p>
+</li>
+<li><p>使用包名，<code>&lt;package name=&quot;存放mapper文件的全限定包名&quot;/&gt;</code>，这样这个包下所有的mapper文件一次都能加载给mybatis主配置文件</p>
+<p>使用要求：</p>
+<ul>
+<li>mapper文件名称要和接口名称一样，区分大写的一样</li>
+<li>mapper文件和dao接口在同一目录</li>
+</ul>
+</li>
+</ul>
+<h2 id="第六章-扩展"><a href="#第六章-扩展" class="headerlink" title="第六章 扩展"></a>第六章 扩展</h2><p>PageHelper：用来做数据分页查询</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Wangxf</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://wangxf2023.github.io/Wangxf/2021/10/26/Mybatis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://wangxf2023.github.io/Wangxf/2021/10/26/Mybatis学习笔记/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://wangxf2023.github.io/Wangxf" target="_blank">Wangxf | 博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/Wangxf/tags/mybatis/">mybatis</a></div><div class="post_share"><div class="social-share" data-image="https://s1.ax1x.com/2022/05/18/OoL1K0.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Wangxf/2021/11/26/hello-world/"><img class="prev-cover" src="https://s1.ax1x.com/2022/05/18/OoL1K0.jpg" onerror="onerror=null;src='/Wangxf/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Hello World</div></div></a></div><div class="next-post pull-right"><a href="/Wangxf/2021/10/26/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="https://s1.ax1x.com/2022/05/18/OoL1K0.jpg" onerror="onerror=null;src='/Wangxf/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SpringBoot学习笔记</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s1.ax1x.com/2022/05/18/OoLPgI.jpg" onerror="this.onerror=null;this.src='/Wangxf/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Wangxf</div><div class="author-info__description">虽千万人吾往矣</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/Wangxf/archives/"><div class="headline">文章</div><div class="length-num">46</div></a></div><div class="card-info-data-item is-center"><a href="/Wangxf/tags/"><div class="headline">标签</div><div class="length-num">19</div></a></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://music.163.com/#/user/home?id=305509227" target="_blank" title="网易云音乐"><i class="fas fa-music"></i></a><a class="social-icon" href="http://photo.likasi.top" target="_blank" title="时光相册"><i class="fas fa-images"></i></a><a class="social-icon" href="https://blog.likasi.top/atom.xml" target="_blank" title=""><i class="fas fa-rss"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MyBatis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">MyBatis学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%A1%86%E6%9E%B6%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">第一章 框架概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%EF%BC%9A"><span class="toc-number">1.1.1.</span> <span class="toc-text">框架：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JDBC%E7%BC%BA%E9%99%B7%EF%BC%9A"><span class="toc-number">1.1.2.</span> <span class="toc-text">JDBC缺陷：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MyBatis%E6%A1%86%E6%9E%B6%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.3.</span> <span class="toc-text">MyBatis框架概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SQL-mapper%EF%BC%9A"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">SQL mapper：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Data-Aceess-Object%EF%BC%9A%EF%BC%88DAOS%EF%BC%89"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">Data Aceess Object：（DAOS）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mybatis%E6%8F%90%E4%BE%9B%E4%BA%86%E5%93%AA%E4%BA%9B%E5%8A%9F%E8%83%BD%EF%BC%9F"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">mybatis提供了哪些功能？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">1.1.3.4.</span> <span class="toc-text">总结：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-mybatis%E5%85%A5%E9%97%A8"><span class="toc-number">1.2.</span> <span class="toc-text">第二章  mybatis入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">入门案例：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">实现步骤：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E7%B1%BB%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.2.2.</span> <span class="toc-text">主要类的介绍</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0"><span class="toc-number">1.3.</span> <span class="toc-text">第三章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%EF%BC%9A"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.动态代理：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BC%A0%E5%85%A5%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.传入参数：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%92%8C-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.#和$的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-mybatis%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-number">1.3.4.</span> <span class="toc-text">4.mybatis输出结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.3.5.</span> <span class="toc-text">5.模糊查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%8A%A8%E6%80%81Sql"><span class="toc-number">1.4.</span> <span class="toc-text">第四章 动态Sql</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0"><span class="toc-number">1.5.</span> <span class="toc-text">第五章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%89%A9%E5%B1%95"><span class="toc-number">1.6.</span> <span class="toc-text">第六章 扩展</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Wangxf/2023/11/10/ivew-DatePicker%E7%BB%84%E4%BB%B6%E8%AE%A1%E7%AE%97%E7%9B%B8%E9%9A%94%E5%A4%A9%E6%95%B0/" title="ivew DatePicker组件计算相隔天数"><img src="https://s3.bmp.ovh/imgs/2023/11/12/32e13bf0777c27ba.jpg" onerror="this.onerror=null;this.src='/Wangxf/img/404.jpg'" alt="ivew DatePicker组件计算相隔天数"/></a><div class="content"><a class="title" href="/Wangxf/2023/11/10/ivew-DatePicker%E7%BB%84%E4%BB%B6%E8%AE%A1%E7%AE%97%E7%9B%B8%E9%9A%94%E5%A4%A9%E6%95%B0/" title="ivew DatePicker组件计算相隔天数">ivew DatePicker组件计算相隔天数</a><time datetime="2023-11-10T07:55:13.000Z" title="发表于 2023-11-10 15:55:13">2023-11-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Wangxf/2023/10/21/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9C%A8%E4%BD%BF%E7%94%A8-wx-request-API%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF/" title="微信小程序在使用`wx.request` API时候出现错误"><img src="https://s3.bmp.ovh/imgs/2023/11/12/fccb0ca61762ee29.png" onerror="this.onerror=null;this.src='/Wangxf/img/404.jpg'" alt="微信小程序在使用`wx.request` API时候出现错误"/></a><div class="content"><a class="title" href="/Wangxf/2023/10/21/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9C%A8%E4%BD%BF%E7%94%A8-wx-request-API%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF/" title="微信小程序在使用`wx.request` API时候出现错误">微信小程序在使用`wx.request` API时候出现错误</a><time datetime="2023-10-21T07:53:22.000Z" title="发表于 2023-10-21 15:53:22">2023-10-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Wangxf/2023/10/10/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Vant%E7%BB%84%E4%BB%B6%E5%BA%93%EF%BC%88Vant-Weapp%EF%BC%89%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%9D%91/" title="记一次微信小程序使用Vant组件库（Vant Weapp）顺序与坑"><img src="https://s3.bmp.ovh/imgs/2023/11/12/9ffb698cb4c398ea.jpg" onerror="this.onerror=null;this.src='/Wangxf/img/404.jpg'" alt="记一次微信小程序使用Vant组件库（Vant Weapp）顺序与坑"/></a><div class="content"><a class="title" href="/Wangxf/2023/10/10/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Vant%E7%BB%84%E4%BB%B6%E5%BA%93%EF%BC%88Vant-Weapp%EF%BC%89%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%9D%91/" title="记一次微信小程序使用Vant组件库（Vant Weapp）顺序与坑">记一次微信小程序使用Vant组件库（Vant Weapp）顺序与坑</a><time datetime="2023-10-10T07:42:08.000Z" title="发表于 2023-10-10 15:42:08">2023-10-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s1.ax1x.com/2022/05/18/OoL1K0.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2023 By Wangxf</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Wangxf/js/utils.js"></script><script src="/Wangxf/js/main.js"></script><script src="/Wangxf/js/tw_cn.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '9pI0Ca2v6csYKeFLTpzO7X8g-gzGzoHsz',
+      appKey: '9ClmAht8ht5AVSWb8sz7Jfex',
+      placeholder: '请留下你的脚步(๑◔‿◔๑)',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+      requiredFields: ["nick"],
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="7288961534" data-server="netease" data-type="playlist" data-mini="true" data-fixed="true" data-autoplay="false"> </div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="勤奋,思考,阅读,健康,学习,控制" data-fontsize="15px" data-random="true" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

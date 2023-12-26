@@ -1,0 +1,450 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Spring MVC学习笔记 | Wangxf | 博客</title><meta name="keywords" content="java"><meta name="author" content="Wangxf"><meta name="copyright" content="Wangxf"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Spring MVC学习笔记     springmvc是servlet的升级，在servlet的基础上加入一些功能，让web开发方便 springmvc能够创建对象，放入到springmvc容器中 使用@Controller注解创建的是一个普通类的对象，不是servlet对象，springmvc赋予了控制器对象一些额外的功能 web开发的底层就是servlet，springmvc中有一个对象是s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring MVC学习笔记">
+<meta property="og:url" content="https://wangxf2023.github.io/Wangxf/2021/10/21/Spring-MVC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Wangxf | 博客">
+<meta property="og:description" content="Spring MVC学习笔记     springmvc是servlet的升级，在servlet的基础上加入一些功能，让web开发方便 springmvc能够创建对象，放入到springmvc容器中 使用@Controller注解创建的是一个普通类的对象，不是servlet对象，springmvc赋予了控制器对象一些额外的功能 web开发的底层就是servlet，springmvc中有一个对象是s">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2022/05/18/OoL1K0.jpg">
+<meta property="article:published_time" content="2021-10-21T15:17:31.000Z">
+<meta property="article:modified_time" content="2022-05-18T07:10:36.835Z">
+<meta property="article:author" content="Wangxf">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2022/05/18/OoL1K0.jpg"><link rel="shortcut icon" href="https://s1.ax1x.com/2022/05/18/OoLPgI.jpg"><link rel="canonical" href="https://wangxf2023.github.io/Wangxf/2021/10/21/Spring-MVC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/Wangxf/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5a2c350900e803fd44a847666bc842f2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/Wangxf/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":1,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Wangxf","link":"链接: ","source":"来源: Wangxf | 博客","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Spring MVC学习笔记',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-18 15:10:36'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="APlayer.min.css"><div id="aplayer"></div><script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js" async></script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/Wangxf/atom.xml" title="Wangxf | 博客" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://s1.ax1x.com/2022/05/18/OoLPgI.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/Wangxf/archives/"><div class="headline">文章</div><div class="length-num">46</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/Wangxf/tags/"><div class="headline">标签</div><div class="length-num">19</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Wangxf/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Wangxf/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-pencil"></i><span> 文字</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Wangxf/artitalk/"><i class="fa-fw fas fa-feather-alt"></i><span> 闲言碎语</span></a></li><li><a class="site-page child" href="/Wangxf/liuyan/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-feather-alt"></i><span> 时光</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Wangxf/playlist/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Wangxf/images/"><i class="fa-fw fas fa-images"></i><span> 壁纸</span></a></li><li><a class="site-page child" href="/Wangxf/html/subscribe.html"><i class="fa-fw fas fa-star"></i><span> 订阅</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-palette"></i><span> 分享</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Wangxf/books/"><i class="fa-fw fas fa-book-open"></i><span> 书籍</span></a></li><li><a class="site-page child" href="/Wangxf/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Wangxf/games/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s1.ax1x.com/2022/05/18/OoL1K0.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/Wangxf/">Wangxf | 博客</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/Wangxf/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/Wangxf/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-pencil"></i><span> 文字</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Wangxf/artitalk/"><i class="fa-fw fas fa-feather-alt"></i><span> 闲言碎语</span></a></li><li><a class="site-page child" href="/Wangxf/liuyan/"><i class="fa-fw fas fa-comments"></i><span> 留言板</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-feather-alt"></i><span> 时光</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Wangxf/playlist/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Wangxf/images/"><i class="fa-fw fas fa-images"></i><span> 壁纸</span></a></li><li><a class="site-page child" href="/Wangxf/html/subscribe.html"><i class="fa-fw fas fa-star"></i><span> 订阅</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-palette"></i><span> 分享</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Wangxf/books/"><i class="fa-fw fas fa-book-open"></i><span> 书籍</span></a></li><li><a class="site-page child" href="/Wangxf/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Wangxf/games/"><i class="fa-fw fas fa-gamepad"></i><span> 游戏</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Spring MVC学习笔记</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-10-21T15:17:31.000Z" title="发表于 2021-10-21 23:17:31">2021-10-21</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-18T07:10:36.835Z" title="更新于 2022-05-18 15:10:36">2022-05-18</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Spring MVC学习笔记"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Spring-MVC学习笔记"><a href="#Spring-MVC学习笔记" class="headerlink" title="Spring MVC学习笔记"></a>Spring MVC学习笔记</h1><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=800 height=86 src="//music.163.com/outchain/player?type=2&id=1885421530&auto=1&height=66"></iframe>
+
+
+
+<blockquote>
+<p>springmvc是servlet的升级，在servlet的基础上加入一些功能，让web开发方便</p>
+<p>springmvc能够创建对象，放入到springmvc容器中</p>
+<p>使用@Controller注解创建的是一个普通类的对象，不是servlet对象，springmvc赋予了控制器对象一些额外的功能</p>
+<p>web开发的底层就是servlet，springmvc中有一个对象是servlet：DispatherServlet（中央调度器）也叫前端控制器，font controller</p>
+<p>index.jsp——DispatherServlet——转发，分配给——Controllet对象（@Controller创建的对象）</p>
+</blockquote>
+<h2 id="第一个springmvc项目"><a href="#第一个springmvc项目" class="headerlink" title="第一个springmvc项目"></a>第一个springmvc项目</h2><p>需求：用户在页面发起一个请求，请求交给springmvc的控制器对象，并显示请求的处理结果</p>
+<p>实现步骤：</p>
+<ol>
+<li><p>新建web maven</p>
+</li>
+<li><p>加入依赖  spring-webmvc依赖 ，jsp依赖，servlet依赖</p>
+</li>
+<li><p>重点：</p>
+<p>在web.xml中注册springmvc的核心对象DispacherServlet</p>
+<p><strong>DispacherServlet是一个servlet</strong>，负责接收用户提交的请求，调用其它的控制对象，并把请求的处理结果显示给用户 ,方法返回值 void Object String  ModelAndView </p>
+</li>
+<li><p>创建一个发起请求的index.jsp</p>
+</li>
+<li><p>创建控制器类</p>
+<p>在类上面加上注解@Controller注解，创建对象，并加入到springmvc容器中</p>
+<p>在类中的方法上面加入@RequestMapping注解,请求映射</p>
+</li>
+<li><p>创建显示结果的jsp</p>
+</li>
+<li><p>创建springmvc的配置文件，springmvc.xml</p>
+<p>声明组件扫描器，指定@Controller注解所在的包名</p>
+<p>声明视图解析器，帮助处理视图的</p>
+</li>
+</ol>
+<h2 id="springmvc执行简单源码过程分析"><a href="#springmvc执行简单源码过程分析" class="headerlink" title="springmvc执行简单源码过程分析"></a>springmvc执行简单源码过程分析</h2><ol>
+<li><p>tomcat启动时，创建容器的过程</p>
+<ul>
+<li><p>通过load-on-start标签指定的1，在启动tomcat时创建DispacherServlet对象</p>
+</li>
+<li><p>DispacherServlet的父类是继承HttpServlet，是一个servlet，在被创建时，会执行init（）方法</p>
+</li>
+<li><p>在init（）方法中，创建容器，读取配置文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//创建容器，读取配置文件</span><br>WebApplicationContext ctx=<span class="hljs-keyword">new</span> ClassPathXmlApplicationContext(<span class="hljs-string">&quot;springmvc.xml&quot;</span>)<br><span class="hljs-comment">//把容器对象放入到servletContext中</span><br>getServletContext().setAttribute(key,value)<br></code></pre></td></tr></table></figure></li>
+<li><p>上面创建容器的作用：创建@Controller注解所在类的对象，进而创建Controller对象，把对象放到springmvc容器中</p>
+</li>
+</ul>
+</li>
+<li><p>请求处理的过程</p>
+<ul>
+<li>执行servlet的service方法调用doDispach方法调用Controller对象中对应的方法</li>
+</ul>
+</li>
+</ol>
+<h2 id="接收请求的参数"><a href="#接收请求的参数" class="headerlink" title="接收请求的参数"></a>接收请求的参数</h2><ol>
+<li>HttpServletRequest </li>
+<li>HttpServletResponse  </li>
+<li>HttpSession   </li>
+<li>用户提交的数据<ul>
+<li>逐个接收</li>
+<li>对象接收</li>
+</ul>
+</li>
+</ol>
+<h2 id="处理器方法的返回值"><a href="#处理器方法的返回值" class="headerlink" title="处理器方法的返回值"></a>处理器方法的返回值</h2><ol>
+<li>ModelAndView——既有数据，又有视图，对视图进行forward</li>
+<li>String——表示视图，可以是逻辑名称，也可以是完整视图路径</li>
+<li>void——不能表示数据，也不能表示视图，在处理Ajax时，可以使用void返回值，通过HttpServletResponse输出数据，响应AJax请求</li>
+<li>Object——表示数据，和视图无关，可以使用对象表示的数据，响应ajax请求</li>
+</ol>
+<p>用Object返回值做JAjax，主要使用json的数据格式，实现步骤：</p>
+<ol>
+<li><p>加入处理json的依赖，springmvc默认使用jackson</p>
+</li>
+<li><p>在springmvc配置文件中加入 <code>&lt;mvc:annotation-driven&gt;</code>注解驱动</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs xml">相当于做了<br>json=om.writerValueAsString(student);<br></code></pre></td></tr></table></figure></li>
+<li><p>在处理器方法的上面加上@ResponseBody注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java">相当于做了<br>response.setContentType(<span class="hljs-string">&quot;application/json;charset=utf-8&quot;</span>);<br>response.getWriter.write(json);<br></code></pre></td></tr></table></figure></li>
+<li><p><code>&lt;mvc:annotation-driven&gt;</code>注解驱动原理</p>
+<p>完成java对象到json、xml、tetx、二进制等数据格式的转换</p>
+<p>HttpMessageConverter接口：消息转换器，这个接口有很多实现类，完成java对象到json、xml、tetx、二进制等数据格式的转换</p>
+</li>
+<li><p>@ResponseBody注解：把处理器方法返回对象转换为json后，通过HttpServletResponse输出给浏览器</p>
+</li>
+</ol>
+<p><strong>区分返回值String是视图还是数据，看有没有@ResponseBody注解，有的话返回的是数据，没有是视图</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//设置中文乱码produces属性</span><br><span class="hljs-meta">@RequestMapping(value = &quot;/string.do&quot;，produces=&quot;text/plain;chaset=utf-8&quot;)</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>tomcat本身能处理静态资源的访问，例如图片、HTML、js等</p>
+<p>tomcat的web.xml文件中有一个名为default的servlet，在服务器启动时创建</p>
+<p>作用：1.处理静态资源</p>
+<p>​            2.未映射到其它servlet的请求</p>
+<p>url-parrern可以使用两种值<br>1.扩展名方式：**.xx,例如*  *.do<br>2.使用斜杠 “/”</p>
+<p>​    当项目中使用 /  ，它会替代tomcat中的default这个servlet的mapping</p>
+<p>​    导致所有的静态资源都给DispacherServlet处理，默认情况下 DispacherServlet是没有处理静态    资源的控制器对象的，所以访问静态资源是404</p>
+<p>​    动态资源可以访问，因为我们程序中定义了对应的控制器对象</p>
+<p>url-pattern 使用 / 处理静态资源的方式：</p>
+<p>第一种</p>
+<p>在springmvc配置文件中加入 <code>&lt;mvc:default-servlet-handler&gt;</code></p>
+<p>原理是：加入这个标签后，框架会创建控制器对象DefaultServletHttpRequestHandler，类似于我们自己创建的控制器对象，这个对象把接收的请求转发给tomcat的default这个servlet</p>
+<p>第二种</p>
+<p>在springmvc配置文件中加入 <code>&lt;mvc:resources mapping=&quot;&quot; location=&quot;&quot;&gt;</code></p>
+<p>加入后框架会创建ResourceHttpRequestHandler这个处理器对象，用这个对象处理静态资源，不依赖tomcat服务器</p>
+<p>mapping：访问静态资源的url地址，使用通配符 **</p>
+<p>location：静态资源在你的项目中的目录位置</p>
+<p>直接把静态资源放在statics目录下</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">mvc:resources</span> <span class="hljs-attr">mapping</span>=<span class="hljs-string">&quot;/statics/**&quot;</span> <span class="hljs-attr">location</span>=<span class="hljs-string">&quot;/statics/&quot;</span>/&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>路径+资源：localhost：8080/chapter06/user/index.html</p>
+<p>路径：localhost：8080/chapter06/user/</p>
+<p>资源：index.html</p>
+<p>访问路径不加 / 时，</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;form action=<span class="hljs-string">&quot;user/some.do&quot;</span> method=<span class="hljs-string">&quot;post&quot;</span>&gt;<br></code></pre></td></tr></table></figure>
+
+<p>访问路径加上 / 时，使用EL表达式 <code>$&#123;pageContext.request.contextPath&#125;</code></p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs jsp">&lt;form action=<span class="hljs-string">&quot;$&#123;pageContext.request.contextPath&#125;/user/some.do&quot;</span> method=<span class="hljs-string">&quot;post&quot;</span>&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+<p>当在index.jsp点击后，第一次点击跳转正常<code>localhost：8080/chapter06/user/index.html</code>，第二次报404错误<code>localhost：8080/chapter06/user/user/index.html</code></p>
+<p>解决方法：</p>
+<ol>
+<li>在跳转地址上面加上EL表达式 <code>$&#123;pageContext.request.contextPath&#125;</code>，但是如果有多个跳转地址，就需要加多个</li>
+<li>使用html的base标签，基地址，<code>&lt;base href=&quot;http://localhost:8080/chapter06/&quot;&gt;</code></li>
+</ol>
+<p>如果每个页面都要自己写base标签中的值得话，很麻烦</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs jsp">request.getContextPath()可以返回当前页面所在的应用的名字;<br>request.getScheme()可以返回当前页面使用的协议，http 或是 https;<br><br>&lt;%<br>String 	 basePath=request.getScheme()+<span class="hljs-string">&quot;://&quot;</span>+request.getServerName()+<span class="hljs-string">&quot;:&quot;</span>+request.getServerPort()+request.getContextPath()+<span class="hljs-string">&quot;/&quot;</span><br>%&gt;<br><br>&lt;base href=&lt;%=basePath%&gt;/&gt;<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="SSM整合"><a href="#SSM整合" class="headerlink" title="SSM整合"></a>SSM整合</h2><p>SSM也叫SSI（IBatis），第一个容器是Spring容器，负责管理service、dao、工具类对象的，第二个容器是SpringMVC容器，负责管理控制器对象、web开发相关对象的，我们要做的就是把使用的对象交给合适容器创建，管理。</p>
+<p>spring容器和springmvc容器是由关系的，关系已经确定好了，springmvc容器是spring容器的子容器，类似于java中的继承，子可以访问父的内容</p>
+<p>实现步骤：</p>
+<blockquote>
+<p>数据库表：student（id 自增型 ，name,age）</p>
+</blockquote>
+<ol>
+<li><p>新建maven web项目</p>
+</li>
+<li><p>加入依赖，spring，springmvc，mybatis三个框架的依赖，jackson依赖，mysql驱动，druid连接池，jsp，servlet依赖</p>
+</li>
+<li><p>写web.xml</p>
+<ol>
+<li><p>注册DispacherServlet，目的：1，创建springmvc容器，才能创建控制器对象</p>
+<p>​                                                      2，创建的是servlet，才能接收用户请求</p>
+</li>
+<li><p>注册spring的监听器：ContextLoderListener，目的：创建spring的容器对象，才能创建service，dao等对象</p>
+</li>
+<li><p>注册字符集过滤器，解决post请求乱码的问题</p>
+</li>
+</ol>
+</li>
+<li><p>创建包，controller, service, dao ,entity </p>
+</li>
+<li><p>写springmvc，spring，mybatis配置文件，数据库属性配置文件</p>
+</li>
+<li><p>写代码，dao接口，mapper文件，service和实现类，controller，实体类</p>
+</li>
+<li><p>写jsp页面</p>
+</li>
+</ol>
+<h2 id="SpringMVC核心技术"><a href="#SpringMVC核心技术" class="headerlink" title="SpringMVC核心技术"></a>SpringMVC核心技术</h2><p>forward：表示转发，实现request.getRequestDispacher().forward()</p>
+<p>redirect：表示重定向，实现reponse.sendRedirect()</p>
+<p><strong>请求转发是可以访问WEB-INF中的资源的，而重定向是不可以的</strong></p>
+<p>显式转发，扩展了默认的转发操作，<strong>不受视图解析器的控制</strong></p>
+<p>语法：setViewName(“forward:/WEB-INF/view/hello.jsp”);</p>
+<p>作用和setViewName(“hello”);是一样的，如果view下面没有hello.jsp的话，用视图器这个访问不能访问到WEB-INF下面的内容，这个时候用forward就方便</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Wangxf</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://wangxf2023.github.io/Wangxf/2021/10/21/Spring-MVC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">https://wangxf2023.github.io/Wangxf/2021/10/21/Spring-MVC学习笔记/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://wangxf2023.github.io/Wangxf" target="_blank">Wangxf | 博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/Wangxf/tags/java/">java</a></div><div class="post_share"><div class="social-share" data-image="https://s1.ax1x.com/2022/05/18/OoL1K0.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Wangxf/2021/10/26/SpringBoot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><img class="prev-cover" src="https://s1.ax1x.com/2022/05/18/OoL1K0.jpg" onerror="onerror=null;src='/Wangxf/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">SpringBoot学习笔记</div></div></a></div><div class="next-post pull-right"><a href="/Wangxf/2021/10/21/Spring%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"><img class="next-cover" src="https://s1.ax1x.com/2022/05/18/OoL1K0.jpg" onerror="onerror=null;src='/Wangxf/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Spring学习笔记</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/Wangxf/2022/12/25/将SpringBoot应用打包成exe程序/" title="将SpringBoot应用打包成exe程序"><img class="cover" src="https://s1.ax1x.com/2022/05/18/OoL1K0.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-12-25</div><div class="title">将SpringBoot应用打包成exe程序</div></div></a></div><div><a href="/Wangxf/2021/10/26/SpringBoot学习笔记/" title="SpringBoot学习笔记"><img class="cover" src="https://s1.ax1x.com/2022/05/18/OoL1K0.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-26</div><div class="title">SpringBoot学习笔记</div></div></a></div><div><a href="/Wangxf/2021/10/21/Spring学习笔记/" title="Spring学习笔记"><img class="cover" src="https://s1.ax1x.com/2022/05/18/OoL1K0.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-21</div><div class="title">Spring学习笔记</div></div></a></div><div><a href="/Wangxf/2021/09/01/Maven入门/" title="Maven入门"><img class="cover" src="https://s1.ax1x.com/2022/05/18/OoL1K0.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-01</div><div class="title">Maven入门</div></div></a></div><div><a href="/Wangxf/2021/09/01/java注解和反射学习笔记/" title="java注解和反射学习笔记"><img class="cover" src="https://s1.ax1x.com/2022/05/18/OoL1K0.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-09-01</div><div class="title">java注解和反射学习笔记</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://s1.ax1x.com/2022/05/18/OoLPgI.jpg" onerror="this.onerror=null;this.src='/Wangxf/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Wangxf</div><div class="author-info__description">虽千万人吾往矣</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/Wangxf/archives/"><div class="headline">文章</div><div class="length-num">46</div></a></div><div class="card-info-data-item is-center"><a href="/Wangxf/tags/"><div class="headline">标签</div><div class="length-num">19</div></a></div></div><div class="card-info-social-icons is-center"><a class="social-icon" href="https://music.163.com/#/user/home?id=305509227" target="_blank" title="网易云音乐"><i class="fas fa-music"></i></a><a class="social-icon" href="http://photo.likasi.top" target="_blank" title="时光相册"><i class="fas fa-images"></i></a><a class="social-icon" href="https://blog.likasi.top/atom.xml" target="_blank" title=""><i class="fas fa-rss"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring-MVC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text">Spring MVC学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AAspringmvc%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.1.</span> <span class="toc-text">第一个springmvc项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#springmvc%E6%89%A7%E8%A1%8C%E7%AE%80%E5%8D%95%E6%BA%90%E7%A0%81%E8%BF%87%E7%A8%8B%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">springmvc执行简单源码过程分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E6%94%B6%E8%AF%B7%E6%B1%82%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text">接收请求的参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%84%E7%90%86%E5%99%A8%E6%96%B9%E6%B3%95%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-number">1.4.</span> <span class="toc-text">处理器方法的返回值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SSM%E6%95%B4%E5%90%88"><span class="toc-number">1.5.</span> <span class="toc-text">SSM整合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SpringMVC%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF"><span class="toc-number">1.6.</span> <span class="toc-text">SpringMVC核心技术</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Wangxf/2023/11/10/ivew-DatePicker%E7%BB%84%E4%BB%B6%E8%AE%A1%E7%AE%97%E7%9B%B8%E9%9A%94%E5%A4%A9%E6%95%B0/" title="ivew DatePicker组件计算相隔天数"><img src="https://s3.bmp.ovh/imgs/2023/11/12/32e13bf0777c27ba.jpg" onerror="this.onerror=null;this.src='/Wangxf/img/404.jpg'" alt="ivew DatePicker组件计算相隔天数"/></a><div class="content"><a class="title" href="/Wangxf/2023/11/10/ivew-DatePicker%E7%BB%84%E4%BB%B6%E8%AE%A1%E7%AE%97%E7%9B%B8%E9%9A%94%E5%A4%A9%E6%95%B0/" title="ivew DatePicker组件计算相隔天数">ivew DatePicker组件计算相隔天数</a><time datetime="2023-11-10T07:55:13.000Z" title="发表于 2023-11-10 15:55:13">2023-11-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Wangxf/2023/10/21/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9C%A8%E4%BD%BF%E7%94%A8-wx-request-API%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF/" title="微信小程序在使用`wx.request` API时候出现错误"><img src="https://s3.bmp.ovh/imgs/2023/11/12/fccb0ca61762ee29.png" onerror="this.onerror=null;this.src='/Wangxf/img/404.jpg'" alt="微信小程序在使用`wx.request` API时候出现错误"/></a><div class="content"><a class="title" href="/Wangxf/2023/10/21/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9C%A8%E4%BD%BF%E7%94%A8-wx-request-API%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF/" title="微信小程序在使用`wx.request` API时候出现错误">微信小程序在使用`wx.request` API时候出现错误</a><time datetime="2023-10-21T07:53:22.000Z" title="发表于 2023-10-21 15:53:22">2023-10-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Wangxf/2023/10/10/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Vant%E7%BB%84%E4%BB%B6%E5%BA%93%EF%BC%88Vant-Weapp%EF%BC%89%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%9D%91/" title="记一次微信小程序使用Vant组件库（Vant Weapp）顺序与坑"><img src="https://s3.bmp.ovh/imgs/2023/11/12/9ffb698cb4c398ea.jpg" onerror="this.onerror=null;this.src='/Wangxf/img/404.jpg'" alt="记一次微信小程序使用Vant组件库（Vant Weapp）顺序与坑"/></a><div class="content"><a class="title" href="/Wangxf/2023/10/10/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Vant%E7%BB%84%E4%BB%B6%E5%BA%93%EF%BC%88Vant-Weapp%EF%BC%89%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%9D%91/" title="记一次微信小程序使用Vant组件库（Vant Weapp）顺序与坑">记一次微信小程序使用Vant组件库（Vant Weapp）顺序与坑</a><time datetime="2023-10-10T07:42:08.000Z" title="发表于 2023-10-10 15:42:08">2023-10-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s1.ax1x.com/2022/05/18/OoL1K0.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2023 By Wangxf</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/Wangxf/js/utils.js"></script><script src="/Wangxf/js/main.js"></script><script src="/Wangxf/js/tw_cn.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '9pI0Ca2v6csYKeFLTpzO7X8g-gzGzoHsz',
+      appKey: '9ClmAht8ht5AVSWb8sz7Jfex',
+      placeholder: '请留下你的脚步(๑◔‿◔๑)',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+      requiredFields: ["nick"],
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="7288961534" data-server="netease" data-type="playlist" data-mini="true" data-fixed="true" data-autoplay="false"> </div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script id="click-show-text" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-show-text.min.js" data-mobile="true" data-text="勤奋,思考,阅读,健康,学习,控制" data-fontsize="15px" data-random="true" async="async"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
