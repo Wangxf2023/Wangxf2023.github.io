@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Wangxf | 博客</title>
+  
+  
+  <link href="https://blog.likasi.top/atom.xml" rel="self"/>
+  
+  <link href="https://blog.likasi.top/"/>
+  <updated>2023-11-12T08:16:30.794Z</updated>
+  <id>https://blog.likasi.top/</id>
+  
+  <author>
+    <name>Wangxf</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ivew DatePicker组件计算相隔天数</title>
+    <link href="https://blog.likasi.top/2023/11/10/ivew-DatePicker%E7%BB%84%E4%BB%B6%E8%AE%A1%E7%AE%97%E7%9B%B8%E9%9A%94%E5%A4%A9%E6%95%B0/"/>
+    <id>https://blog.likasi.top/2023/11/10/ivew-DatePicker%E7%BB%84%E4%BB%B6%E8%AE%A1%E7%AE%97%E7%9B%B8%E9%9A%94%E5%A4%A9%E6%95%B0/</id>
+    <published>2023-11-10T07:55:13.000Z</published>
+    <updated>2023-11-12T08:16:30.794Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="记一次vue2使用ivew-DatePicker组件type为daterange计算相隔天数"><a href="#记一次vue2使用ivew-DatePicker组件type为daterange计算相隔天数" class="headerlink" title="记一次vue2使用ivew DatePicker组件type为daterange计算相隔天数"></a>记一次vue2使用ivew DatePicker组件type为daterange计算相隔天数</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs vue">&lt;div&gt;<br>&lt;DatePicker type=&quot;daterange&quot; placeholder=&quot;请选择起止日期&quot; :clearable=&quot;false&quot; v-model=&quot;sendForm.date&quot; @on-change=&quot;getDays()&quot;&lt;/DatePicker&gt;&lt;span style=&quot;color: red&quot; v-show=&quot;bew_days&gt;0&quot;&gt;&amp;emsp;&#123;&#123;bew_days&#125;&#125;&amp;nbsp;天&lt;/span&gt;<br>&lt;/div&gt;<br><br>&lt;script&gt;<br> export default&#123;<br>    ...<br>    data()&#123;<br> return&#123;<br>bew_days:0,<br>&#125;<br>&#125;,<br>    methods:&#123;<br> getDays()&#123;<br>var s_date=Date.parse(this.sendForm.date[0].toLocaleDateString())<br>      var e_date=Date.parse(this.sendForm.date[1].toLocaleDateString())<br>      this.bew_days=(e_date-s_date)/(1*24*60*60*1000)<br>&#125;<br>&#125;<br> &#125;   <br>&lt;/script&gt;<br></code></pre></td></tr></table></figure><p>写的比较懒了，没想封装好一点，ivew的date组件日期格式是这种<code>Wed Nov 01 2023 00:00:00 GMT+0800 (澳大利亚西部标准时间)</code>官方文档也没有这个api，但其实就是一个简单转化。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;记一次vue2使用ivew-DatePicker组件type为daterange计算相隔天数&quot;&gt;&lt;a href=&quot;#记一次vue2使用ivew-DatePicker组件type为daterange计算相隔天数&quot; class=&quot;headerlink&quot; title=&quot;</summary>
+      
+    
+    
+    
+    
+    <category term="前端" scheme="https://blog.likasi.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信小程序在使用`wx.request` API时候出现错误</title>
+    <link href="https://blog.likasi.top/2023/10/21/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9C%A8%E4%BD%BF%E7%94%A8-wx-request-API%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF/"/>
+    <id>https://blog.likasi.top/2023/10/21/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%9C%A8%E4%BD%BF%E7%94%A8-wx-request-API%E6%97%B6%E5%80%99%E5%87%BA%E7%8E%B0%E9%94%99%E8%AF%AF/</id>
+    <published>2023-10-21T07:53:22.000Z</published>
+    <updated>2023-11-12T08:11:53.757Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="微信小程序在使用wx-request-API时候出现错误"><a href="#微信小程序在使用wx-request-API时候出现错误" class="headerlink" title="微信小程序在使用wx.request API时候出现错误"></a>微信小程序在使用<code>wx.request</code> API时候出现错误</h4><p>如若已在管理后台更新域名配置，请刷新项目配置后重新编译项目，操作路径：“详情-域名信息”<br> <a href="https://www.xxx.cn/">https://www.xxx.cn</a> 不在以下 request 合法域名列表中，请参考文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/ability/network.html">https://developers.weixin.qq.com/miniprogram/dev/framework/ability/network.html</a>(env: Windows,mp,1.06.2308310; lib: 3.1.3)</p><p>解决办法：开发者工具点击详情-&gt;本地设置，找到**不检验合法域名、web-view（业务域名）…**，勾选这个，重新编译下就正常使用了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;微信小程序在使用wx-request-API时候出现错误&quot;&gt;&lt;a href=&quot;#微信小程序在使用wx-request-API时候出现错误&quot; class=&quot;headerlink&quot; title=&quot;微信小程序在使用wx.request API时候出现错误&quot;&gt;&lt;/a&gt;微信</summary>
+      
+    
+    
+    
+    
+    <category term="前端" scheme="https://blog.likasi.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记一次微信小程序使用Vant组件库（Vant Weapp）顺序与坑</title>
+    <link href="https://blog.likasi.top/2023/10/10/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Vant%E7%BB%84%E4%BB%B6%E5%BA%93%EF%BC%88Vant-Weapp%EF%BC%89%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%9D%91/"/>
+    <id>https://blog.likasi.top/2023/10/10/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8Vant%E7%BB%84%E4%BB%B6%E5%BA%93%EF%BC%88Vant-Weapp%EF%BC%89%E9%A1%BA%E5%BA%8F%E4%B8%8E%E5%9D%91/</id>
+    <published>2023-10-10T07:42:08.000Z</published>
+    <updated>2023-11-12T07:56:22.870Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="记一次微信小程序使用Vant组件库（Vant-Weapp）顺序与坑"><a href="#记一次微信小程序使用Vant组件库（Vant-Weapp）顺序与坑" class="headerlink" title="记一次微信小程序使用Vant组件库（Vant Weapp）顺序与坑"></a>记一次微信小程序使用Vant组件库（Vant Weapp）顺序与坑</h4><ol><li><p>小程序<strong>根目录</strong>执行<code>npm init -y</code>，创建package.json</p></li><li><p><code>vant npm i @vant/weapp -S --production</code>，安装Vant Weapp</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-section"># 设置npm镜像源为国内镜像源，我几次安装都卡在这，直到设置为国内镜像源，几秒钟不夸张！！！</span><br>npm config set registry https://registry.npmmirror.com<br><span class="hljs-section"># 查看是否设成功</span><br>npm get registry<br></code></pre></td></tr></table></figure></li><li><p>打开微信开发者工具，点击 工具 -&gt; 构建 npm</p></li><li><p>修改app.json，去除“style”:  “v2”，小程序的新版基础组件强行加上了许多样式，难以覆盖，不关闭将造成部分组件样式混乱</p></li><li><p>修改project.config.json，如下</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs json">&#123;<br>...<br><span class="hljs-attr">&quot;packNpmManually&quot;</span>: <span class="hljs-literal">true</span>,<br>    <span class="hljs-attr">&quot;packNpmRelationList&quot;</span>: [<br>      &#123;<br>        <span class="hljs-attr">&quot;packageJsonPath&quot;</span>: <span class="hljs-string">&quot;./package.json&quot;</span>,<br>        <span class="hljs-attr">&quot;miniprogramNpmDistDir&quot;</span>: <span class="hljs-string">&quot;./&quot;</span><br>      &#125;<br>    ],<br>...<br><br>&#125;<br></code></pre></td></tr></table></figure></li><li><p>使用组件</p><ul><li><p>全局引入，在 app.json配置usingComponents选项引入组件</p></li><li><p>局部引入，在对应页面的xxx.json配置usingComponents选项引入组件</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-comment">//这里以使用button组件为例</span><br>&#123;<br>    ...<br>    <span class="hljs-attr">&quot;usingComponents&quot;</span>: &#123;<br>      <span class="hljs-attr">&quot;van-button&quot;</span>: <span class="hljs-string">&quot;@vant/weapp/button/index&quot;</span><br>    &#125;<br>    ...<br>&#125;<br></code></pre></td></tr></table></figure><p>在wxml中使用组件</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">view</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">van-button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;primary&quot;</span>&gt;</span>主要按钮<span class="hljs-tag">&lt;/<span class="hljs-name">van-button</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">view</span>&gt;</span><br></code></pre></td></tr></table></figure></li></ul><p>Vant 中默认包含了一些常用样式，可以直接通过 className 的方式使用。</p><p>在 app.wxss 中引入内置样式。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@import</span> <span class="hljs-string">&#x27;@vant/weapp/common/index.wxss&#x27;</span>;<br></code></pre></td></tr></table></figure><p>如果报错的话，<code>File not found: @vant/weapp/common/index.wxss</code></p><p>解决方法，使用相对路径</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs css"><span class="hljs-keyword">@import</span> <span class="hljs-string">&#x27;./miniprogram_npm/@vant/weapp/common/index.wxss&#x27;</span>;<br></code></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;记一次微信小程序使用Vant组件库（Vant-Weapp）顺序与坑&quot;&gt;&lt;a href=&quot;#记一次微信小程序使用Vant组件库（Vant-Weapp）顺序与坑&quot; class=&quot;headerlink&quot; title=&quot;记一次微信小程序使用Vant组件库（Vant Wea</summary>
+      
+    
+    
+    
+    
+    <category term="前端" scheme="https://blog.likasi.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记一次python操作Word</title>
+    <link href="https://blog.likasi.top/2023/07/24/%E8%AE%B0%E4%B8%80%E6%AC%A1python%E6%93%8D%E4%BD%9CWord/"/>
+    <id>https://blog.likasi.top/2023/07/24/%E8%AE%B0%E4%B8%80%E6%AC%A1python%E6%93%8D%E4%BD%9CWord/</id>
+    <published>2023-07-24T13:54:19.000Z</published>
+    <updated>2023-07-27T05:30:06.933Z</updated>
+    
+    <content type="html"><![CDATA[<p>工作中遇到的一个问题，要把一个单机软件导出的A报告（Word格式的）的数据放到B报告（同样也是Word格式的），这个步骤一直是手工复制粘贴实现，极费时间。想过用OCR识别，看了一下价格有点抵不住，毕竟这个量不少，于是打算用python操作Word，刚好学习浅尝一下python。之前没接触过python，花了几天缝缝补补弄了一个并打包<code>Pyinstaller</code>打包成exe，这样的好处是拷贝到别人电脑也能用，不用考虑对方电脑有没有python环境，因为还得下载依赖库。</p><p>用的<code>python docx</code>以及<code>python docx template</code>，前者是一个可以读取、修改、创建Word的库，后者是一个可以替换Word制定内容的库。</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-section"># Word模板</span><br><br>亲爱的&#123;&#123;user&#125;&#125;您好:<br><span class="hljs-code">您在&#123;&#123;url&#125;&#125;上的邮件地址&#123;&#123;mail&#125;&#125;需要被确认，以便您接收通知消息。</span><br><span class="hljs-code"></span><br></code></pre></td></tr></table></figure><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-section"># 表格循环替换</span><br></code></pre></td></tr></table></figure><p><img src="https://s3.bmp.ovh/imgs/2023/07/24/263f8e4f6d9f36ca.png"></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 渲染替换代码</span><br><span class="hljs-keyword">from</span> docxtpl <span class="hljs-keyword">import</span> DocxTemplate<br><br>tpl = DocxTemplate(<span class="hljs-string">&#x27;template/SJ046-02-XXXX-检测报告.docx&#x27;</span>)<br><br>context=&#123;<br>    <span class="hljs-string">&#x27;user&#x27;</span>:<span class="hljs-string">&#x27;likasi&#x27;</span>,<br>    <span class="hljs-string">&#x27;url&#x27;</span>:<span class="hljs-string">&#x27;httpblog.likasi.top&#x27;</span>,<br>    <span class="hljs-string">&#x27;mail&#x27;</span>:<span class="hljs-string">&#x27;yyyy@qq.com&#x27;</span>,<br>    <span class="hljs-string">&#x27;res&#x27;</span>:[<br>       &#123;<br>       <span class="hljs-string">&#x27;serial&#x27;</span>:<span class="hljs-string">&#x27;001&#x27;</span>,<br>          <span class="hljs-string">&#x27;number&#x27;</span>:<span class="hljs-string">&#x27;YNZH109203810&#x27;</span>,<br>          <span class="hljs-string">&#x27;name&#x27;</span>:<span class="hljs-string">&#x27;张三&#x27;</span>,<br>          <span class="hljs-string">&#x27;gendr&#x27;</span>:<span class="hljs-string">&#x27;男&#x27;</span>,<br>          <span class="hljs-string">&#x27;type&#x27;</span>:<span class="hljs-string">&#x27;放射卫生&#x27;</span>,<br>          <span class="hljs-string">&#x27;value&#x27;</span>:<span class="hljs-string">&#x27;0.03&#x27;</span><br>       &#125;,<br>       &#123;<br>       <span class="hljs-string">&#x27;serial&#x27;</span>:<span class="hljs-string">&#x27;002&#x27;</span>,<br>          <span class="hljs-string">&#x27;number&#x27;</span>:<span class="hljs-string">&#x27;YNZH109203811&#x27;</span>,<br>          <span class="hljs-string">&#x27;name&#x27;</span>:<span class="hljs-string">&#x27;李丽&#x27;</span>,<br>          <span class="hljs-string">&#x27;gendr&#x27;</span>:<span class="hljs-string">&#x27;女&#x27;</span>,<br>          <span class="hljs-string">&#x27;type&#x27;</span>:<span class="hljs-string">&#x27;职业卫生&#x27;</span>,<br>          <span class="hljs-string">&#x27;value&#x27;</span>:<span class="hljs-string">&#x27;0.02&#x27;</span><br>       &#125;, <br>    ]<br>&#125;<br><br>path = <span class="hljs-string">&quot;E:\\ReportReplace\\output\\&quot;</span><br><br>tpl.render(context)<br><br>tpl.save(path+<span class="hljs-string">&#x27;relace.docx&#x27;</span>)<br></code></pre></td></tr></table></figure><p>思路就是通过<code>python docx</code>读取Word内容，然后正则匹配出来，封装成想要渲染的context数据，再用<code>python docx template</code>渲染。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 读取数据代码</span><br><span class="hljs-keyword">import</span> docx<br><br>file=docx.Document(<span class="hljs-string">&#x27;XXXX.docx&#x27;</span>)<br><br><span class="hljs-comment"># 输出每一段的内容</span><br>para_list = []<br><span class="hljs-comment"># 段落</span><br><span class="hljs-keyword">for</span> para <span class="hljs-keyword">in</span> file.paragraphs:<br>    para_list.append(para.text)<br><br><span class="hljs-comment"># 上半部表 按行读取</span><br>table_list_top = []<br><span class="hljs-keyword">for</span> table <span class="hljs-keyword">in</span> file.tables:<br>    <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> table.rows:<br>        <span class="hljs-keyword">for</span> cell <span class="hljs-keyword">in</span> row.cells:<br>            table_list_top.append(cell.text)<br><br><span class="hljs-comment"># 下半部表 按列读取</span><br>table_list_bottom = []<br><span class="hljs-keyword">for</span> table <span class="hljs-keyword">in</span> file.tables:<br>    <span class="hljs-keyword">for</span> column <span class="hljs-keyword">in</span> table.columns:<br>        <span class="hljs-keyword">for</span> cell <span class="hljs-keyword">in</span> column.cells:<br>            table_list_bottom.append(cell.text)<br><br><span class="hljs-comment"># 正则匹配 </span><br>...<br><br><span class="hljs-comment"># 封装为dict</span><br><span class="hljs-meta">... </span>         <br></code></pre></td></tr></table></figure><p>以上都是只截取了部分代码，因为都放上也没有意义，这个还得根据实际文档来拿数据。在你Word模板设置字体字号就设置好，替换后的也就是那个字体和字号格式等。</p><p>人生苦短，我选python也不是没有道理的，各种库拿来就是用啊，还是很方便的。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;工作中遇到的一个问题，要把一个单机软件导出的A报告（Word格式的）的数据放到B报告（同样也是Word格式的），这个步骤一直是手工复制粘贴实现，极费时间。想过用OCR识别，看了一下价格有点抵不住，毕竟这个量不少，于是打算用python操作Word，刚好学习浅尝一下pytho</summary>
+      
+    
+    
+    
+    
+    <category term="python" scheme="https://blog.likasi.top/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MacBook Pro A1706更换touchbar</title>
+    <link href="https://blog.likasi.top/2023/06/28/MacBook-Pro-A1706%E6%9B%B4%E6%8D%A2touchbar/"/>
+    <id>https://blog.likasi.top/2023/06/28/MacBook-Pro-A1706%E6%9B%B4%E6%8D%A2touchbar/</id>
+    <published>2023-06-28T14:11:24.000Z</published>
+    <updated>2023-06-28T15:01:11.587Z</updated>
+    
+    <content type="html"><![CDATA[<p>手上有个MacBook Pro A1706，touchbar能用但是整个右半边不会亮了，看着自然不爽。搜了下配件，淘宝找到一家，看着评论大家换了都不错，和店家沟通感觉也实在。苹果专卖店问过，有的开价到1700多，我向来很相信电子产品的京东问了一家，也是坑的我和客服沟通不愉快。于是买了touchbar配件(带排线)和螺丝刀。</p><p>MacBook Pro恶心的很啊，说下整个过程，首先拆后盖，螺丝用的就不是常规的梅花，该叫六角梅花吗，说不来，两长四短，靠近风扇位置的那两颗长，拆后盖，需要先从底部翘起来，直到听到扳开的声音，然后拿着后盖往下拽，得使劲拽。</p><p>接下来拆主板，各种大小不一的螺丝，起码两三种，给我的感觉就是，有点像塑料材质的接线末端带金属导线插到主板口子上，几乎都是那种很小很小的插口，然后用金属片上螺丝盖住。因为第一次接触，给我的感觉就是很恶心，生怕别人拆开来一样！然后换个touchar就得把主板拆下来，风扇还是什么排线，就这么三个点按在主板上！</p><p>把旧的touchbar拿下来，没工具，没办法只能暴力铲除，本来想学网上把底部胶吹热一整个划起来，人家用的热熔枪，我用吹风机，结果把我键盘两个键帽吹了烫了变形用不了，整个铲除过程太恶心了，这个胶粘的死的一比。花了起码四十多分钟。</p><p>装上之后上主板螺丝说实话心理都没谱，有的螺丝感觉上错了，虽然最后还是上完了（整个后盖都装上发现还剩一颗螺丝，检查了不知道是哪的，也没管，不想拆了）。</p><p>不出所料，开不开机，后来我把电源线重新扣了一下，应该是压着电源排线那颗大螺丝没上紧，重新上紧了，开机了，试了touchbar也正常。然后我上后盖，上后盖的时候我感觉我为了压紧拍了后盖，装touchbar排线那个地方我也拍了，导致装上后盖开机能正常显示变化，就是点了不起作用，我心想，新换的不会这么一下次就坏了吧，后来把后盖拆了，重新扣了下touchbar排线，上了下那里螺丝，正常了，然后这次上后盖没敢为了压紧使劲拍后盖了哈哈，装上也正常。</p><p>就是我记着这款四个typec接口，充电都行的，但是我的左边插上没反应了，当时心里一惊，卧槽，怎么办充电坏了，好在右边能充，也懒得拆了，有朋友知道是为什么吗？难道跟那个剩下的螺丝有关，那个螺丝是上在左边有个双排线的地方吗？</p><p>最后放几张图</p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/5600faec43925008.jpg"></p><p><em>PS：硬是怕别人拆解更换零件吗？</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/ff5d33a19e3999dc.jpg"></p><p><em>PS：MD屎都铲出来了</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/c9ede44a81f44e74.jpg"></p><p><em>PS：看着不戳眼睛了</em></p><p>网上各种搜，没搜到这款完整的拆机视频，很失望，修这个东西报价也是大几百到一千多都有。我的配件连上买的一套螺丝刀一百出头点。</p><p>后来是照着油管的搜到的这款拆机更换touchar看到一半怎么拆主板，然后自己摸索着换了touchbar。</p><p>贴个视频链接：<a href="https://www.youtube.com/watch?v=Yp2k0bdgIXU">https://www.youtube.com/watch?v=Yp2k0bdgIXU</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;手上有个MacBook Pro A1706，touchbar能用但是整个右半边不会亮了，看着自然不爽。搜了下配件，淘宝找到一家，看着评论大家换了都不错，和店家沟通感觉也实在。苹果专卖店问过，有的开价到1700多，我向来很相信电子产品的京东问了一家，也是坑的我和客服沟通不愉快</summary>
+      
+    
+    
+    
+    
+    <category term="折腾" scheme="https://blog.likasi.top/tags/%E6%8A%98%E8%85%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一次游记—昆明长虫山</title>
+    <link href="https://blog.likasi.top/2023/06/17/%E4%B8%80%E6%AC%A1%E6%B8%B8%E8%AE%B0%E2%80%94%E6%98%86%E6%98%8E%E9%95%BF%E8%99%AB%E5%B1%B1/"/>
+    <id>https://blog.likasi.top/2023/06/17/%E4%B8%80%E6%AC%A1%E6%B8%B8%E8%AE%B0%E2%80%94%E6%98%86%E6%98%8E%E9%95%BF%E8%99%AB%E5%B1%B1/</id>
+    <published>2023-06-17T12:39:18.000Z</published>
+    <updated>2023-06-28T14:08:33.394Z</updated>
+    
+    <content type="html"><![CDATA[<p>第一次听到看到长虫山样貌是在QQ空间一个高中同级同学动态看到，很好看拍的。直到这次自己去了看到照片中的这个场景，不是非常像，但是大概地形轮廓是这个大差不差这个样子。</p><p>说来也巧，那天突然就想去爬，抖音搜了一下，好巧刚好头天刚开山，搜了一点上山路线，结果怎么说呢，下午去的时候百度地图搜的定位到人最多访问的那个地方，结果滴滴司机也是第一次拉，那个地方车是不能直接到达的，后来我们猜测那个地方有可能是山北面。（当时还遇到几个也是去长虫山的导航到这，我还下去问路，人家说我们也是照着导航走到这！）导航到<strong>长虫山观景台</strong>，从这里上山小车可以到半山停车场，摩托甚至是可以干到山顶的，中途也有面包车拉到山顶下一小点的，也不贵。</p><p>风景挺不错的，那天天气很给力，黄昏一整个金色洒在大地。我现在更喜欢野景，路上听到一个下山的中年妇女说，这个就是纯纯爬山啊，吃的玩的也没有，硬生生爬山😂。沿途全是人啊，跟赶集一样，下山时候十一点多了，还是很多人在上山，可能因为刚开山，天气也比较好，加上是周末。</p><p>总体感觉不累，就是走多了脚有点疼，这样山林景爬山我很享受。下面贴点图，视频也拍了点懒得放上去了，非常后悔的是当天没带相机，当时是想带又怕爬山嫌重，结果后大悔。</p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/32749ae7a3e29dfb.jpg"></p><p><em>PS：一整个全景看上去给我的感觉就像东非大裂谷哈哈</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/f0255b954daa9a03.jpg"></p><p><em>PS：这是到达的第一个比较高的地方看到此景</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/1a6c23feb954685a.jpg"></p><p><em>PS：这是到达的第二个比较高的地方看到此景</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/dc1c8d81593dffd2.jpg"></p><p><em>PS：金色的光影穿梭移动</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/9db9e18ec7bac091.jpg"></p><p><em>PS：来个背影</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/dbdcb310848e4e31.jpg"></p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/159616e314cf446b.jpg"></p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/3281d1323e96af0f.jpg"></p><p><em>PS：夕阳无限好 (sei yang wu hen hou oh ~)</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/405afda2e3576876.jpg"></p><p><em>PS：可惜大家不高歌一首《海阔天空》</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/8afbe84e2ba86de0.jpg"></p><p><em>PS：凝望</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/799e9dcda9ffe62f.jpg"></p><p><em>PS：不要乱丢垃圾！！</em></p><p>不知下次再去是什么时候，不知什么时候感叹年轻真好，不知什么时候….，也许就明天，也许永远！但上山的路更有盼头。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;第一次听到看到长虫山样貌是在QQ空间一个高中同级同学动态看到，很好看拍的。直到这次自己去了看到照片中的这个场景，不是非常像，但是大概地形轮廓是这个大差不差这个样子。&lt;/p&gt;
+&lt;p&gt;说来也巧，那天突然就想去爬，抖音搜了一下，好巧刚好头天刚开山，搜了一点上山路线，结果怎么说呢，</summary>
+      
+    
+    
+    
+    
+    <category term="游记" scheme="https://blog.likasi.top/tags/%E6%B8%B8%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一些有用的东西</title>
+    <link href="https://blog.likasi.top/2023/05/25/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E4%B8%9C%E8%A5%BF/"/>
+    <id>https://blog.likasi.top/2023/05/25/%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E4%B8%9C%E8%A5%BF/</id>
+    <published>2023-05-25T07:05:42.000Z</published>
+    <updated>2023-10-10T03:26:32.536Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="免费在线MySQL"><a href="#免费在线MySQL" class="headerlink" title="免费在线MySQL"></a>免费在线MySQL</h3><p>某天在网上发现的，后来才知道这类免费的在线数据库其实还是有一些，但是稳不稳定就不一定了，我上次注册了个<code>db4free.net</code>，我写这个的时候应该还是过去几个月了，还在，除了速度有点慢，但不保证以后一直都在。</p><p>写这个的目的是知道有这种在线的免费数据库平台，但是仅仅是用来测试用，不能用于实际生成应用，安全、稳定等等很多因素都无法保证。</p><h3 id="EXIF信息查看器"><a href="#EXIF信息查看器" class="headerlink" title="EXIF信息查看器"></a>EXIF信息查看器</h3><p>查看一些照片的信息，但要保证是原图的话就会数据很全。比如是什么设备拍的，相机快门数有多少了，什么时间拍的，光圈、快门、ISO等等。所以照片的一些隐私信息分享到互联网的时候最好还是去除一下。不过现在的主流社交平台会做这步，比如QQ微信朋友圈上传的照片你再下载后查看这些信息基本没有了。</p><p>但是，EXIF信息也是可以修改的哦！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3 id=&quot;免费在线MySQL&quot;&gt;&lt;a href=&quot;#免费在线MySQL&quot; class=&quot;headerlink&quot; title=&quot;免费在线MySQL&quot;&gt;&lt;/a&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="有用" scheme="https://blog.likasi.top/tags/%E6%9C%89%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>霜冻前夜乐队live</title>
+    <link href="https://blog.likasi.top/2023/05/22/%E9%9C%9C%E5%86%BB%E5%89%8D%E5%A4%9C%E4%B9%90%E9%98%9Flive/"/>
+    <id>https://blog.likasi.top/2023/05/22/%E9%9C%9C%E5%86%BB%E5%89%8D%E5%A4%9C%E4%B9%90%E9%98%9Flive/</id>
+    <published>2023-05-22T01:14:01.000Z</published>
+    <updated>2023-06-28T14:10:00.802Z</updated>
+    
+    <content type="html"><![CDATA[<p>霜冻前夜——北京城里还在桀骜展声的一支金属乐队。2004年，霜冻前夜乐队于北京成立，是国内尝试叙事主题旋律金属风格的先行者。</p><p>重金属我基本没听过，现场live更是没有，之所以再三纠结下还是买了，看到一次抖音自媒体人打歌介绍，那是我第一次听霜冻前夜，乐队这个名字听着比较牛逼，而且成立十多年了，所以还是去了。</p><p>现场排队进场的时候我就感觉金属乐迷跟其他不太一样，都很酷酷的，更有装扮者。现场当然也是很轰炸啊，第一次在现场亲眼看到像迷笛音乐节战国舞台一排排搭建甩头。主唱肌肉男。现场很炸，当晚回来一直到第二天耳朵还是耳鸣嗡嗡嗡的。</p><p>比较欣赏的一点就是，不拘泥于传统印象重金属，歌曲会穿插中国传统乐器，这点很欣慰。美中不足是，迟到，没有安可，一个现场停下来有点审美疲劳。贴几张现场图，视频就不太想传了，有点麻烦。</p><p><img src="https://s3.bmp.ovh/imgs/2023/05/23/004052796a56de3d.jpg"></p><p><em>PS：崩了模糊了</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/05/23/9b3b82f995ebe0ab.jpg"></p><p><em>PS：太酷辣！</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/05/23/f7fce6cf181c2768.jpg"></p><p><img src="https://s3.bmp.ovh/imgs/2023/05/23/7c76dbc2f4452786.jpg"></p><p><img src="https://s3.bmp.ovh/imgs/2023/05/31/cb6b478600bfd0ee.jpg"></p><p><em>PS：认识我的人有没有看到我在哪？</em></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;霜冻前夜——北京城里还在桀骜展声的一支金属乐队。2004年，霜冻前夜乐队于北京成立，是国内尝试叙事主题旋律金属风格的先行者。&lt;/p&gt;
+&lt;p&gt;重金属我基本没听过，现场live更是没有，之所以再三纠结下还是买了，看到一次抖音自媒体人打歌介绍，那是我第一次听霜冻前夜，乐队这个名字</summary>
+      
+    
+    
+    
+    
+    <category term="live" scheme="https://blog.likasi.top/tags/live/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>视频语音自动识别生成字幕工具VideoSrt</title>
+    <link href="https://blog.likasi.top/2023/05/09/%E8%A7%86%E9%A2%91%E8%AF%AD%E9%9F%B3%E8%87%AA%E5%8A%A8%E8%AF%86%E5%88%AB%E7%94%9F%E6%88%90%E5%AD%97%E5%B9%95%E5%B7%A5%E5%85%B7VideoSrt/"/>
+    <id>https://blog.likasi.top/2023/05/09/%E8%A7%86%E9%A2%91%E8%AF%AD%E9%9F%B3%E8%87%AA%E5%8A%A8%E8%AF%86%E5%88%AB%E7%94%9F%E6%88%90%E5%AD%97%E5%B9%95%E5%B7%A5%E5%85%B7VideoSrt/</id>
+    <published>2023-05-09T06:27:02.000Z</published>
+    <updated>2023-05-13T15:59:16.544Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前段时间在弄一个短视频的时候给它配了字幕，非常笨的方法，一句一句卡点给打上的😅。可能以后还会弄到，不可能一直这么纯手动卡点打上吧，如果视频比较短还好，效率和卡点纯手工始终有点不行。</p><p>其实一开始也想过找一个根据视频语音自动生成字幕的工具，找了好几个大多要不光看界面就很垃圾，要不就晚上那些工具的老套路，注册开通vip充值，但是有点太贵，我只是偶尔会弄个视频要点字幕，而且也不敢保证这个工具的质量如何，充值了vip后会不会没多久就倒闭跑路了，数据安全问题能得到保障吗？</p><p>终于今天在52pj看到一个界面比较清爽的工具<code>VideoSrt</code>，看了一下还是开源的，只不过pro版本提供收费服务。</p><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><blockquote><p><a href="https://github.com/wxbool/video-srt-windows">https://github.com/wxbool/video-srt-windows</a></p></blockquote><p><code>VideoSrt</code> 是用 <code>Golang</code>语言，基于 <a href="https://github.com/lxn/walk">lxn/walk</a> Windows-GUI 工具包开发。</p><p>这是一个可以识别视频语音自动生成字幕SRT文件的开源软件工具。<br>适用于快速、批量的为媒体（视频/音频）生成中/英文字幕、文本文件的业务场景。</p><p>0.3.5 版本会用到以下接口：</p><ul><li>阿里云 OSS对象存储</li><li>阿里云 录音文件识别</li><li>腾讯云 翻译Api / 百度云 翻译Api</li></ul><p>工具的大致原理是，调用ffmpeg将视频转为mp3存储到阿里云OSS，然后用阿里云(或者其他)语音识别服务识别成文本，如果存在需要翻译的话调用翻译服务，然后生成字幕格式文件SRT或者LRC。</p><h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><ul><li><p>创建阿里云OSS，这里需要注意的是读写权限设置为<strong>公共读</strong>（我一开始用的私有，测试错误提示要改为公共读），记下Endpoint、AccessKeyId、AccessKeySercet、BucketName、BucketDomain填写到工具的阿里云OSS配置。</p></li><li><p>开通智能语音交互服务，创建项目，应该是可以创建多个项目的，语音识别类型可以有很多，中文普通话、英文、四川话、北京话、粤语等等。</p></li><li><p>开通腾讯云机器翻译</p></li></ul><p>然后以上都搞好后，依次配置到工具对应的配置。</p><p>具体创建我这里就不想写了(截图，压缩，水印，上传图床太繁琐了)，可参考作者给的<a href="https://www.yuque.com/viggo-t7cdi/videosrt">VideoSrt文档 (yuque.com)</a></p><p><img src="https://s3.bmp.ovh/imgs/2023/05/09/6a1f6077ff0a41fb.png"></p><p>PS：可以猜得出来是我国哪个地方口音？好像不行</p><p>如果不选择文件输出目录，会默认保存到和原视频同一位置，工具的右下角地方有执行日志，而且生成完毕后会自动清理掉阿里云OSS的存储。</p><h4 id="收费"><a href="#收费" class="headerlink" title="收费"></a>收费</h4><p>工具本身是开源的，收费的只是这些第三方云服务，以下是作者给的说明文档上面的。</p><p>具体的费用资费，请参考各大平台的产品介绍及价格明细表，参考链接如下：</p><ul><li><p>阿里云OSS对象存储：<a href="https://www.aliyun.com/price/product?spm=5176.7933691.1309819.7.77572a66GPAu1Y&amp;aly_as=bQ0LXW2f#/oss/detail">https://www.aliyun.com/price/product?spm=5176.7933691.1309819.7.77572a66GPAu1Y&amp;aly_as=bQ0LXW2f#/oss/detail</a></p></li><li><p>阿里云录音文件识别：<a href="https://help.aliyun.com/document_detail/84881.html?spm=5176.12157752.1251724..3fee75acYOrZ60#h1-u8BA1u8D39u65B9u5F0Fu548Cu62A5u4EF73">https://help.aliyun.com/document_detail/84881.html?spm=5176.12157752.1251724..3fee75acYOrZ60#h1-u8BA1u8D39u65B9u5F0Fu548Cu62A5u4EF73</a></p></li><li><p>百度翻译：<a href="http://api.fanyi.baidu.com/product/112">http://api.fanyi.baidu.com/product/112</a></p></li><li><p>腾讯云翻译：<a href="https://cloud.tencent.com/product/tmt/pricing">https://cloud.tencent.com/product/tmt/pricing</a></p></li></ul><p>目前，阿里云录音文件识别、百度翻译、腾讯云翻译 等服务目前都有一定的免费额度。</p><p>免费额度说明如下：</p><ul><li><p><a href="https://ai.aliyun.com/nls/filetrans?spm=5176.12061031.1228726.1.47fe3cb43I34mn">阿里云录音文件识别</a>（可开通试用版，允许每日 2小时 免费识别时长额度，试用版从开通之日起，有3个月的使用时间，3个月之后将会自动切换为商业版，按照后付费的方式计费）</p></li><li><p><a href="http://api.fanyi.baidu.com/api/trans/product/index">百度翻译</a>（通用翻译服务，标准版免费，高级版每月 200 万字免费）</p></li><li><p><a href="https://cloud.tencent.com/product/tmt">腾讯云翻译</a>（文本翻译服务，每月免费额度 500万 字符）</p></li><li><p><a href="https://www.aliyun.com/product/oss?spm=5176.8030368.h2v3icoap.38.1ad03aa49m8j4m">阿里云OSS对象存储</a>（无免费额度，正常情况下，仅会产生少量的流量费用，在不开通 <a href="https://ai.aliyun.com/nls/filetrans?spm=5176.12061031.1228726.1.47fe3cb43I34mn">录音文件识别商业版</a> 的情况下，充值1元可以正常使用30~60天左右）</p></li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>繁琐的是创建开通自己的这些云服务，费用的话就是语音识别有点贵，OSS和翻译不贵。今天我试了一下一个三分钟左右的视频，翻译字符数272，腾讯云每月免费额度500万字符，语音识别试用版三个月每天允许2小时，OSS我以前用的时候冲了10块，这个不贵的。</p><p>把生成的SRT字幕打开把不对的地方修改下，然后导入到视频剪辑工具，省事省力。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;前段时间在弄一个短视频的时候给它配了字幕，非常笨的方法，一句一句卡点给打上的😅。可能以后还会弄到，不可能一直这么纯手动卡点打上吧，如果视频</summary>
+      
+    
+    
+    
+    
+    <category term="工具" scheme="https://blog.likasi.top/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>密码管理工具KeePass</title>
+    <link href="https://blog.likasi.top/2023/04/21/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7KeePass/"/>
+    <id>https://blog.likasi.top/2023/04/21/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7KeePass/</id>
+    <published>2023-04-21T03:39:11.000Z</published>
+    <updated>2023-04-21T06:27:17.478Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在当下这个时代，我们会接触到很多产品，这就难免会导致一些平台过段时间来登录的时候忘记了账号密码，大多数是忘记了密码。有的产品忘记密码只需要邮箱或者电话号码找回密码，最多再加下人脸验证等，但是有的产品的话忘记密码是很糟糕的，很难找回的，有的产品可能因为网络等原因导致频繁响应然后异常封号，如twitter。而且，经常忘记密码找回这个事情本身就很繁琐。</p><p>所以，我一直想找一款可以记录存储账号密码的并且可以加密的工具。</p><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><code>KeePass</code>，一款开源、免费、支持全平台（官网只提供Windows版本，但是也提供了第三方的下载链接，如Linux、Mac等）、数据存储在本地，也可以通过WebDAV服务同步数据到云端，如国内的坚果云。</p><blockquote><p>​    官网：<a href="https://keepass.info/">KeePass Password Safe</a></p></blockquote><p>下载安装后，默认语言是英语，可以到官网（Translations）板块下载语言包，有中文简体语言包。</p><p>创建数据库，创建管理数据库的密码，注意：<strong>这个密码非常重要，它是打开这个数据库的唯一凭证，如果忘记将打不开数据库</strong>，然后选择位置，我们可以放到坚果云文件夹下，这样的话，每次添加记录保存的话会自动同步到坚果云文件夹下。</p><p>添加记录，填写标题，账号，密码，备注，网址等。</p><p>设置安全策略，软件默认是关闭后每次打开都需要输入数据库管理密码的，还可以设置比如当系统切换用户、系统挂起时等等的反正安全策略有很多，如全局页面下按<code>Esc</code>键锁定，密码定时过期，提醒，生成密码等。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在这之前我一直都是把一些账号密码记在文档里面，以及靠浏览器自动保存账号密码。其实，密码保存的工具有很多，我粗略的对比了之下我选择了<code>KeePass</code>，有的密码存储在云端（需要网络），有的需要付费使用等。</p><p>当然，没有绝对的安全，定期更换密码，增加密码复杂度，做什么有个安全隐私的思想等相对要好一点。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在当下这个时代，我们会接触到很多产品，这就难免会导致一些平台过段时间来登录的时候忘记了账号密码，大多数是忘记了密码。有的产品忘记密码只需要邮</summary>
+      
+    
+    
+    
+    
+    <category term="工具" scheme="https://blog.likasi.top/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>不止喜剧——大乐透拼盘</title>
+    <link href="https://blog.likasi.top/2023/04/21/%E4%B8%8D%E6%AD%A2%E5%96%9C%E5%89%A7%E2%80%94%E2%80%94%E5%A4%A7%E4%B9%90%E9%80%8F%E6%8B%BC%E7%9B%98/"/>
+    <id>https://blog.likasi.top/2023/04/21/%E4%B8%8D%E6%AD%A2%E5%96%9C%E5%89%A7%E2%80%94%E2%80%94%E5%A4%A7%E4%B9%90%E9%80%8F%E6%8B%BC%E7%9B%98/</id>
+    <published>2023-04-21T03:06:26.000Z</published>
+    <updated>2023-05-13T15:54:42.733Z</updated>
+    
+    <content type="html"><![CDATA[<p>本来那天是去看纪念黄家驹30载致敬beyond的演出的，结果去了发现被延期了，今天是脱口秀，票价也便宜，也还有余票，来都来了就买了一张看。第一次看脱口秀，它这个是大乱斗拼盘，演员还是各有一般刷子，即兴表达发挥和舞台能力都非常不错。</p><p><img src="https://s3.bmp.ovh/imgs/2023/05/13/908e4d665c51d4c5.jpg"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;本来那天是去看纪念黄家驹30载致敬beyond的演出的，结果去了发现被延期了，今天是脱口秀，票价也便宜，也还有余票，来都来了就买了一张看。第一次看脱口秀，它这个是大乱斗拼盘，演员还是各有一般刷子，即兴表达发挥和舞台能力都非常不错。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http</summary>
+      
+    
+    
+    
+    
+    <category term="live" scheme="https://blog.likasi.top/tags/live/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记一次百度智能云OCR简单了解</title>
+    <link href="https://blog.likasi.top/2023/03/07/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BE%E5%BA%A6%E6%99%BA%E8%83%BD%E4%BA%91OCR%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/"/>
+    <id>https://blog.likasi.top/2023/03/07/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BE%E5%BA%A6%E6%99%BA%E8%83%BD%E4%BA%91OCR%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/</id>
+    <published>2023-03-07T07:18:26.000Z</published>
+    <updated>2023-03-07T09:26:38.997Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>OCR</strong>(Optical Character Recognition)光学字符识别，这个东西现在已经做的很好很成熟了，昨天跟别人聊到一个东西的时候说起来，大概是把那种word表格拍照然后上传到一个系统，然后这个系统导出word或者pdf报告。</p><h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>如果让我来做这个事情以我现在的认知水平，我的做法是把拍照上传的照片通过OCR提取想要的字段，然后代码操作（例如POI）word或者pdf。</p><p>我新用户百度智能云，个人认证之后可以免费领取一定时长的资源包使用，于是试了一下自定义模板OCR识别，简单的说一下使用感受。</p><p>识别的时候还是依靠你所框选的识别区域，比较适用于所框选的区域是比较固定面积大小的那种，比如规格定制的那种表单，识别区域所占大小其实差不大多，这样的话识别准确率才高，但是如果识别区域大小面积不固定，你在按照那个模板来识别就会把其他区域也识别进去，得重新制作模板。然后可以创建一个分类器，至少要求添加两个模板，每个模板至少上传30张训练集图片，才可训练模型。</p><p><img src="https://s3.bmp.ovh/imgs/2023/03/07/a5c87ce56b1b626e.png"></p><p><em>注：识别区域(费用类别和主要业务说明)内容面积不大</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/03/07/f35f9ae2da4fb410.png"></p><p><em>注：识别区域(费用类别和主要业务说明)内容面积较大</em></p><p>如上是我自定义的两个模板，一个费用类别和主要业务说明这两块内容比较少（面积比较小），一个比较大。按理说通过分类器的上传的图片训练集训练后，费用类别和主要业务说明这两块内容（面积大小）夹在这个区间之内的图片都应该有一个较准确的识别率，但是测试结果识别准确率只有19.22%，我的理想状态是内容（面积大小）夹在这个区间之内的图片应该可以较准确的识别出来起码有个80%以上。</p><p>可能是我的训练集图片不够有价值，因为我偷懒只是搞了十张各种不同的，其余的是这十张的复制，导致这个训练集没有价值。再一个是模板只有两个，可能代表性不足。</p><p>后面我又重新加了模板（有代表性的那种），先是加了一个，后面加了两个，测试OCR短准确率较上一版降低了，而测试OCR长提高了，四个模板的分类器测试结果识别准确率只有8.61%，测试后反而是在内容面积不大的会分类到识别内容面积大的那个模板，自然就导致用了识别区域面积较大模板而把本身在要识别区域下面的不识别的区域也给识别上了，例如原本应该是 <code>实报金额  666元 </code>，但是结果是 <code>实报金额  666元总经理签</code>，因为分类到识别内容面积大的那个模板，而把这个单元格下面的内容也识别上了一部分。</p><p><img src="https://s3.bmp.ovh/imgs/2023/03/07/a6c99c484471966e.png"></p><p><img src="https://s3.bmp.ovh/imgs/2023/03/07/04043d229d1008b2.png"></p><p><em>注：使用四个模板的训练准确率</em></p><p>而在使用两个模板的时候，上面这种情况基本不会出现，识别内容面积不大的基本都是正确的。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后，总的来说还是很厉害的百度智能云的自定义模板OCR识别，我感觉可能更适用于那种识别区域所占面积大小比较固定的，然后你标出识别区域范围变化不会太大，这种情况下识别准确率会很高。</p><p>继而就想到有时候有些东西规范化有它的好处，方便管理、使用，例如身份证、驾驶证这种，都一样的布局，假若要使用OCR识别的话，因为它的布局和字段等都是固定统一的，所以操作起来就会好很多，甚至都不用你自定义模板OCR识别，有人家给你做好的现成的xxOCR识别。但凡事不是绝对的，很多时候要学会根据实际场景需求来个性化定制这点很重要。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;OCR&lt;/strong&gt;(Optical Character Recognition)光学字符识别，这个东西现在已经做的很好</summary>
+      
+    
+    
+    
+    
+    <category term="OCR" scheme="https://blog.likasi.top/tags/OCR/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记一些日常摄影</title>
+    <link href="https://blog.likasi.top/2023/03/03/%E8%AE%B0%E4%B8%80%E4%BA%9B%E6%97%A5%E5%B8%B8%E6%91%84%E5%BD%B1/"/>
+    <id>https://blog.likasi.top/2023/03/03/%E8%AE%B0%E4%B8%80%E4%BA%9B%E6%97%A5%E5%B8%B8%E6%91%84%E5%BD%B1/</id>
+    <published>2023-03-03T06:47:46.000Z</published>
+    <updated>2023-03-03T07:43:20.660Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>记得 <code>links</code> 曾经在他的一个视频里说过，<em>“ 无论你手上用的是哪一台相机，我都由衷的建议你走出去，去看看这个美丽的世界，欣赏久未凝视过的日出和日落，还有城市里难能一见的满天星辰，灿烂星河，按下快门，去拍下你眼中看到的曼妙风景，去记录你所在乎的人和事。只有这样，相机的参数才被赋予了真正的意义。”</em></p><p>2022年我终于入手了自己的第一台相机(尼康单反)，从看到想拍的画面到眼睛看着取景框然后按下快门屏幕呈现画面那一刻很享受。刚接触单反，还很垃圾，但是我还是想把它们记录下来。</p><p>在这里我基本不会分享人像的画面，主要有几点顾虑，一是人像万一涉及到别人的隐私，二是怕人像被别有用心的人用在不好的地方。图片一般我会压缩之后在上传的，不然加载速度太慢。</p><h3 id="2023年02月18日——翠湖"><a href="#2023年02月18日——翠湖" class="headerlink" title="2023年02月18日——翠湖"></a>2023年02月18日——翠湖</h3><p>郁金香开了，来过多的海鸥还在，是一个阳光温暖的初春又感觉有点冬日的下午。</p><p><img src="https://s3.bmp.ovh/imgs/2023/03/03/90192b44cb21dff5.jpg"></p><p><em>注：有人在投食给海鸥吃拍下的画面</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/03/03/06be9627c794d173.jpg"></p><p><em>注：小船</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/03/03/b338be1064ea8e50.jpg"></p><p><em>注：大鹅在晒太阳</em></p><h3 id="2023年02月26日——街道"><a href="#2023年02月26日——街道" class="headerlink" title="2023年02月26日——街道"></a>2023年02月26日——街道</h3><p>和大学同学好久没见了</p><p><img src="https://s3.bmp.ovh/imgs/2023/03/03/b797d5c5e3696874.jpg"></p><p><em>注：陆军讲武堂</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/03/03/bfdab172357e0ae6.jpg"></p><p><em>注：陆军讲武堂</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/03/03/9c24fa5ff2c9886b.jpg"></p><p><em>注：圆通寺</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/03/03/2418f0a70c0c3135.jpg"></p><p><em>注：桥(有点金门大桥那种)</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/03/03/2c1bd27943bac9a2.jpg"></p><p><em>注：站在桥上的风景</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/03/03/0d5758d6daeaa79d.jpg"></p><p><em>注：仿佛若有光</em></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;记得 &lt;code&gt;links&lt;/code&gt; 曾经在他的一个视频里说过，&lt;em&gt;“ 无论你手上用的是哪一台相机，我都由衷的建议你走出去，去看看</summary>
+      
+    
+    
+    
+    
+    <category term="摄影" scheme="https://blog.likasi.top/tags/%E6%91%84%E5%BD%B1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《米店》</title>
+    <link href="https://blog.likasi.top/2023/03/01/%E3%80%8A%E7%B1%B3%E5%BA%97%E3%80%8B/"/>
+    <id>https://blog.likasi.top/2023/03/01/%E3%80%8A%E7%B1%B3%E5%BA%97%E3%80%8B/</id>
+    <published>2023-03-01T01:30:25.000Z</published>
+    <updated>2023-03-01T02:02:04.933Z</updated>
+    
+    <content type="html"><![CDATA[<p>又到了三月了，又想起这首歌《米店》，点开听了几遍，网上看到的一段摘抄：</p><p>“  其实三月成为“米店月”的字面原因非常简单，无非是因为《米店》开头的那一句：<strong>“三月的烟雨飘摇的南方。”</strong></p><p>这是张玮玮写于<strong>2007年的</strong>一首歌，就像很多民谣歌曲中俗套的“南方”和“姑娘”这种爱情故事一样，<strong>当时的张玮玮一个人在北京，他的爱人在南方，而“米店”是他爱人当时想要开的一家杂货铺的名字。</strong></p><p>但《米店》的魅力在于，<strong>它写出来一种独属于春天的温柔又迷蒙的情绪，关乎于爱情，但并不止于爱情。</strong></p><p>从烟雨飘摇的春天到街上匆忙的人群，再到舞步划过空房间的寂寞和码头上停泊的船只，<strong>《米店》在情歌之外，延展出一种从日常到命运的人生隐喻，让人逐渐迷失在那些悱恻的阴雨天气，在手风琴怀旧的旋律中徘徊良久。</strong> ”</p><p>《米店》这首歌有很多歌手、乐队翻唱、改编过，一首歌听了很多翻唱后还是最喜欢原唱，我觉得真情实感，有自己的创作理解。</p><p>三月的烟雨飘摇的南方<br>你坐在你空空的米店<br>你一手拿着苹果一手拿着命运<br>在寻找你自己的香</p><p>窗外的人们匆匆忙忙<br>把眼光丢在潮湿的路上<br>你的舞步划过空空的房间<br>时光就变成了烟</p><p>爱人 你可感到明天已经来临<br>码头上停着我们的船<br>我会洗干净头发爬上桅杆<br>撑起我们葡萄枝嫩叶般的家</p><p>《米店》——张玮玮</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;又到了三月了，又想起这首歌《米店》，点开听了几遍，网上看到的一段摘抄：&lt;/p&gt;
+&lt;p&gt;“  其实三月成为“米店月”的字面原因非常简单，无非是因为《米店》开头的那一句：&lt;strong&gt;“三月的烟雨飘摇的南方。”&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这是张玮玮写于&lt;strong&gt;2</summary>
+      
+    
+    
+    
+    
+    <category term="音乐" scheme="https://blog.likasi.top/tags/%E9%9F%B3%E4%B9%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一次游记——云南丽江</title>
+    <link href="https://blog.likasi.top/2023/02/13/%E4%B8%80%E6%AC%A1%E6%B8%B8%E8%AE%B0-%E4%BA%91%E5%8D%97%E4%B8%BD%E6%B1%9F/"/>
+    <id>https://blog.likasi.top/2023/02/13/%E4%B8%80%E6%AC%A1%E6%B8%B8%E8%AE%B0-%E4%BA%91%E5%8D%97%E4%B8%BD%E6%B1%9F/</id>
+    <published>2023-02-13T08:54:29.000Z</published>
+    <updated>2023-02-13T15:02:45.684Z</updated>
+    
+    <content type="html"><![CDATA[<p>时间过得真快，不知不觉新的一年真正意义上的开始。风乍暖，日初长，花竞开，大家也都各自忙活，有机会三两朋友凑到一起出去逛逛很难得，记录下那惬意时光。</p><p>出发时候我已经够晚了，我们四连票，当时只剩不到十分钟他们还没上来，然后再只剩一分钟了还没来，我心想，卧槽不会出什么意外了吧？不会被放鸽子了吧？发消息也没人回，直到车已经开了快两分钟了，他们才从前面车厢找着过来，一个二个一头汗，喘着大气，有一个直接把衣服脱了，好家伙我一摸一身汗，才知道他们在检票的最后时候跑着上来的，赶忙从前面车厢先钻进来哈哈哈哈。</p><p>去玉龙雪山那天，早上五点多就起来，我们去的是早上，那天是多云，整个就是白茫茫天灰灰的样子，快要下山的时候出了一阵子太阳，当时山上好多人开心的叫着，下午到蓝月谷的时候天晴了，眼光下那种青蓝色水闪着亮晶晶的光斑波光粼粼，又是冬天下午的舒服的太阳，看见好几对新人在拍婚纱照，祝福他们！</p><p>下面是选了一些照片弄了个视频，嵌入进来就是不能显示1080P，播放起来很糊。视频原链接<a href="https://www.bilibili.com/video/BV1as4y1a79p/?vd_source=46e6ace7c5bc985e088f5baf62c27ecf">https://www.bilibili.com/video/BV1as4y1a79p/?vd_source=46e6ace7c5bc985e088f5baf62c27ecf</a></p><iframe src="//player.bilibili.com/player.html?aid=949372457&bvid=BV1as4y1a79p&cid=1006503846&page=1&high_quality=1&danmaku=0" allowfullscreen="allowfullscreen" width="100%" height="500" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"> </iframe><p>原图、原视频都还是清晰的，贴两张原图如下，B站嵌入外链参数加上了也只有720P，点视频原链接的来看比较就没压缩了。</p><p><img src="https://s3.bmp.ovh/imgs/2023/02/13/e26e45377051833d.jpg"></p><p><em>注：玉龙雪山4680</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/02/13/e066249458a85424.jpg"></p><p><em>注：象牙山半山腰</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/02/13/056fa217d4844e96.jpg"></p><p><em>注：蓝月谷</em></p><p>记录一下的意义对于我是什么？有时候你看着院子里的那颗花，想起种下去的时候才一小颗苗，过些日子来看，咦！长这么大哩，开花了，人的成长似乎也是如此，不知不觉的一天天在成长。以前看过个帖子，古书中三十万难民就概括了老百姓的一生，所以，你想记录些的时候就记录下来，日后不经意间翻翻看看也是一种美好的回忆！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;时间过得真快，不知不觉新的一年真正意义上的开始。风乍暖，日初长，花竞开，大家也都各自忙活，有机会三两朋友凑到一起出去逛逛很难得，记录下那惬意时光。&lt;/p&gt;
+&lt;p&gt;出发时候我已经够晚了，我们四连票，当时只剩不到十分钟他们还没上来，然后再只剩一分钟了还没来，我心想，卧槽不会出什</summary>
+      
+    
+    
+    
+    
+    <category term="游记" scheme="https://blog.likasi.top/tags/%E6%B8%B8%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo迁移到服务器</title>
+    <link href="https://blog.likasi.top/2023/02/13/Hexo%E8%BF%81%E7%A7%BB%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>https://blog.likasi.top/2023/02/13/Hexo%E8%BF%81%E7%A7%BB%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+    <published>2023-02-13T06:12:46.000Z</published>
+    <updated>2023-02-13T07:44:24.334Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>hexo可以部署在gitee、github、或者服务器上，各有千秋。gitee国内速度快，但是审核恶心，我感觉纯属无脑机器人关键字审核；github审核相对宽松，并且支持绑定域名，但是国内速度就较慢了；服务器的话你就得考虑服务器的费用了。</p><p>大概2022年十月份左右，当时好久没更新了便更新了一篇，但是在gitee pages审核页面的时候<em>“审核可能包含违禁违规内容，请排查调整后再行重试”</em>，后面我修改了，台湾为tw，疫情为yq，审核通过了。后面的几篇也都没再出现这个问题，一度我都以为审核终于不无脑了，直到最近的几篇我实在是忍不了，<em>“《春 日光》，…太长了不好看…”</em>这些emmm我都还能理解，但是我改了依旧审核不通过，有一篇我干脆把文字截图放上，甚至审核还不通过，又不给个提醒，自己排查，长篇幅难道要一点点找找试试？刚好手里有一台，于是终于换上服务器，用来博客网站足够。</p><h2 id="二、过程"><a href="#二、过程" class="headerlink" title="二、过程"></a>二、过程</h2><h4 id="1、本地git生成公钥"><a href="#1、本地git生成公钥" class="headerlink" title="1、本地git生成公钥"></a>1、本地git生成公钥</h4><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx">ssh-<span class="hljs-attribute">keygen</span> -t rsa -C<br></code></pre></td></tr></table></figure><p>会在本地<code>C:\Users\likasi\.ssh</code> 生成一个<code>id_rsa.pub</code> 文件</p><h4 id="2、服务器安装git（我用的centos）"><a href="#2、服务器安装git（我用的centos）" class="headerlink" title="2、服务器安装git（我用的centos）"></a>2、服务器安装git（我用的centos）</h4><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">yum</span> -y install git<br></code></pre></td></tr></table></figure><h4 id="3、创建git用户"><a href="#3、创建git用户" class="headerlink" title="3、创建git用户"></a>3、创建git用户</h4><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">adduser</span> git<br></code></pre></td></tr></table></figure><p>接着找到<code>/根目录/etc/sudoers</code> ，将权限修改为740，并编辑<code>sudoers</code>文件，找到这行</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">root</span>    ALL=(ALL)   ALL<br></code></pre></td></tr></table></figure><p>在下面添加一行，保存退出</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">git</span>    ALL=(ALL)    ALL<br></code></pre></td></tr></table></figure><h4 id="4、配置密钥"><a href="#4、配置密钥" class="headerlink" title="4、配置密钥"></a>4、配置密钥</h4><p>在服务器git文件夹下(通常在/根目录/home/git)新建一个文件夹命名<code>.ssh</code>，在 <code>.ssh</code> 文件夹中新建文件命名为 <code>authorized_keys</code>，将本地生成的<code>id_rsa.pub</code>内容复制到<code>authorized_keys</code>并保存退出，修改<code>authorized_keys</code>权限为600，修改<code>.ssh</code>权限为700，修改<code>git</code>权限为755</p><h4 id="5、创建网站目录"><a href="#5、创建网站目录" class="headerlink" title="5、创建网站目录"></a>5、创建网站目录</h4><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">mkdir</span> /www/wwwroot/hexo<br></code></pre></td></tr></table></figure><p>添加权限</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">chown</span> git:git -R /www/wwwroot/hexo<br></code></pre></td></tr></table></figure><h4 id="6、自动化部署"><a href="#6、自动化部署" class="headerlink" title="6、自动化部署"></a>6、自动化部署</h4><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">cd</span> /home/git<br></code></pre></td></tr></table></figure><p>建立git仓库</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">git</span> init --bare blog.git<br></code></pre></td></tr></table></figure><p>修改 blog.git 权限</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">chown</span> git:git -R blog.git<br></code></pre></td></tr></table></figure><p>在文件 <code>/home/git/blog.git</code> 下，有一个自动生成的 hooks 文件夹，创建一个新的 git 钩子 <code>post-receive</code>，用于自动部署</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">vim</span> blog.git/hooks/post-receive<br></code></pre></td></tr></table></figure><p>写入以下内容，保存退出</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">git</span> --work-tree=/www/wwwroot/hexo --git-dir=/home/git/blog.git checkout -f<br></code></pre></td></tr></table></figure><p>修改权限</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">chmod</span> +x /home/git/blog.git/hooks/post-receive<br></code></pre></td></tr></table></figure><h4 id="7、添加站点"><a href="#7、添加站点" class="headerlink" title="7、添加站点"></a>7、添加站点</h4><p>我用的宝塔面板，直接找到网站-&gt;添加站点，根目录选择<code>/www/wwwroot/hexo</code>，有安全证书的话部署下。</p><h4 id="8、同步至服务器"><a href="#8、同步至服务器" class="headerlink" title="8、同步至服务器"></a>8、同步至服务器</h4><p>本地hexo目录下打开_config.yml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span><br><span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br><span class="hljs-attr">repo:</span> <span class="hljs-string">root@这里改为服务器公网IP:/home/git/blog.git</span><br><span class="hljs-attr">branch:</span> <span class="hljs-string">master</span><br></code></pre></td></tr></table></figure><p>然后开始同步，同步部署的时候会让你输入服务器密码</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">hexo</span> clean<br>hexo g<br>hexo deploy<br></code></pre></td></tr></table></figure><p>至此，我从原来的<a href="https://likasi.gitee.io/">https://likasi.gitee.io</a></p><p>迁移到了<a href="https://blog.likasi.top/">https://blog.likasi.top</a></p><p><img src="https://s3.bmp.ovh/imgs/2023/02/13/b86428af4240363b.png"></p><h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2><p>迁移到服务器不用被gitee无脑审核恶心，但是就得出服务器费用。而且相应的网站统计啊，搜索引擎收录啊，以及一些跟这个域名相关等等的都得重新调整一下。最后本篇有什么问题，欢迎评论区交流！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h2&gt;&lt;p&gt;hexo可以部署在gitee、github、或者服务器上，各有千秋。gitee国内速度快，但是审核恶心，我感觉纯属无脑机器人</summary>
+      
+    
+    
+    
+    
+    <category term="hexo" scheme="https://blog.likasi.top/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>follow.it简单使用</title>
+    <link href="https://blog.likasi.top/2023/01/31/follow.it%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/"/>
+    <id>https://blog.likasi.top/2023/01/31/follow.it%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/</id>
+    <published>2023-01-31T08:34:15.000Z</published>
+    <updated>2023-02-10T08:25:24.459Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>以前逛论坛的时候刷到一个个人内容站，应该是每天都会更新文章，我看见有个订阅选项，于是乎我订阅了，基本每天都会推送到我邮箱今天的新内容，我大多时候都会点开看一下，过一遍。我一直以为是博主网站自己实现的功能，直到今天我无意中点到网站去了。</p><p>发现是一个免费的<code>RSS</code>在线阅读器，可为你的网站创建订阅按钮。订阅一些站点之后，<code>follow.it</code> 将反复读取该的<code>RSS</code>源，如果它发现一个新的文章，就会保存它在 <code>follow.it</code> 服务器上。地区频率取决于<code>RSS</code>源的更新频率。订阅数量目前无限制，可设定每天定时将所有订阅的新文章发送到指定邮箱。我也就尝试了一下在我博客站上面用一下看看。</p><h2 id="二、使用流程"><a href="#二、使用流程" class="headerlink" title="二、使用流程"></a>二、使用流程</h2><h3 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h3><blockquote><p>官网：<a href="https://follow.it/">https://follow.it</a></p></blockquote><p><img src="https://s3.bmp.ovh/imgs/2023/02/01/e3cc3add3ce5b1d8.png"></p><p><em>注：官网首页介绍</em></p><h3 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h3><p>在官网注册登录后，点击顶部的 Are you a publisher? 可以创建一个订阅按钮来放到自己的网站上。（跟随指示往下走就行了，按钮样式等可自定义，然后复制那段代码，放到HTML中，效果如下，输入你的邮箱地址然后去邮箱中找到<code>follow.it</code>发来的确认是否订阅邮件，确认后便可每天将本站最新的文章发送至邮箱。）本站位置，首页-&gt;时光-&gt;订阅</p><p><img src="https://s3.bmp.ovh/imgs/2023/02/01/428ebe5906872802.png"></p><p><em>注：本站订阅按钮</em></p><h3 id="3、番外"><a href="#3、番外" class="headerlink" title="3、番外"></a>3、番外</h3><p>我一开始就去<code>follow.it</code>网站上面为网站创建订阅，报错提示后发现我的hexo站并没有创建<code>RSS</code>。</p><h4 id="Hexo博客Butterfly主题RSS创建如下："><a href="#Hexo博客Butterfly主题RSS创建如下：" class="headerlink" title="Hexo博客Butterfly主题RSS创建如下："></a>Hexo博客Butterfly主题RSS创建如下：</h4><p>hexo本身有rss插件，npm添加</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">npm</span> install hexo-generator-feed --save<br></code></pre></td></tr></table></figure><p>在_config.yml中添加如下配置，这里只写了简要配置，更多详细见官网</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">feed:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">atom</span><br>  <span class="hljs-attr">path:</span> <span class="hljs-string">atom.xml</span><br>  <span class="hljs-attr">limit:</span> <span class="hljs-number">20</span><br></code></pre></td></tr></table></figure><p>在主题的_config.yml添加如下配置，会在public目录下生成一个atom.xml</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">rss:</span> <span class="hljs-string">/atom.xml</span><br></code></pre></td></tr></table></figure><p>在主题的social添加如下配置</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">fas fa-rss:</span> <span class="hljs-string">https://你的网站/atom.xml</span><br></code></pre></td></tr></table></figure><p>然后本地测试一下有无出现RSS的图标，成功后部署。</p><p>不知道该把订阅放在哪，一开始是想放在侧边栏的，后面觉得再加了不好看，而且也忘了怎么加😂，干脆搞个新页面直接用来做订阅，于是乎新建了一个subscribe.html用于订阅。</p><h4 id="Hexo创建静态页面-HTML-："><a href="#Hexo创建静态页面-HTML-：" class="headerlink" title="Hexo创建静态页面(HTML)："></a>Hexo创建静态页面(HTML)：</h4><p>看到有位博主的帖子是这样搞的，再source文件夹下新建一个html文件夹，把html文件写在其中（我感觉这样方便以后再添加其他，维护性、可扩展性好），然后在_config.yaml中设置跳过渲染。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 设置跳过渲染这个文件夹下所有东西</span><br><span class="hljs-attr">skip_render:</span><br><span class="hljs-bullet">-</span> <span class="hljs-string">&quot;文件夹名/**&quot;</span><br></code></pre></td></tr></table></figure><p>在_config.yaml中导航菜单栏上，这里后面跟的就是/html/subscribe.html</p><h4 id="官网客服："><a href="#官网客服：" class="headerlink" title="官网客服："></a>官网客服：</h4><p>这里还有个让我觉得很好的番外，部署审核的问题，一开始是能打开的，后续并不能打开，我能打开是因为本地运行并未部署以及浏览器缓存的原因。右下角跳出的客服我本来只是抱着试试看看，但是人家真能转真人给你耐心答复，中式英语沟通了一波😅，没有对比没有伤害，tx客服纯ex。</p><p><img src="https://s3.bmp.ovh/imgs/2023/02/01/3baf56ee42a3d9f4.png"></p><p><em>注：和官网客服咨询太好笑了open the url</em></p><h3 id="4、成功订阅"><a href="#4、成功订阅" class="headerlink" title="4、成功订阅"></a>4、成功订阅</h3><p>订阅设置可以根据你的时区每天几点推送，推送具体内容还是headline，单封邮件还是推送在一封邮件等等可以设置。</p><p><img src="https://s3.bmp.ovh/imgs/2023/02/01/74b8987cfff5b169.png"></p><p><em>注：邮箱成功订阅后发来的</em></p><h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2><p><code>follow.it</code>免费的<code>RSS</code>在线阅读器，可为你的网站创建订阅按钮，订阅后通过读取RSS源发现新文章就会推送到订阅的邮箱，以及可以推送到Twitter、Facebook、WhatsApp等等的。免费这点太良心了，又没有广告，使用起来又简单，如果你也想让你的网站内容一有更新定时推送到订阅用户，或者订阅你喜欢的博客网站等(前提是它得有<code>RSS</code>)，可以用用试试。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h2&gt;&lt;p&gt;以前逛论坛的时候刷到一个个人内容站，应该是每天都会更新文章，我看见有个订阅选项，于是乎我订阅了，基本每天都会推送到我邮箱今天</summary>
+      
+    
+    
+    
+    
+    <category term="工具" scheme="https://blog.likasi.top/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2022年度音乐分享</title>
+    <link href="https://blog.likasi.top/2023/01/19/2022%E5%B9%B4%E5%BA%A6%E9%9F%B3%E4%B9%90%E5%88%86%E4%BA%AB/"/>
+    <id>https://blog.likasi.top/2023/01/19/2022%E5%B9%B4%E5%BA%A6%E9%9F%B3%E4%B9%90%E5%88%86%E4%BA%AB/</id>
+    <published>2023-01-19T13:27:43.000Z</published>
+    <updated>2023-02-10T08:23:30.316Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>最近看到B站UP主<a href="https://space.bilibili.com/261485584?spm_id_from=333.337.0.0"><code>HOPICO</code></a>(哈哈拿到百大UP了)2023年度个人华语专辑盘点，好快，记忆中2022年的才看了没有多久，但现在几乎没有感觉就快过年了。为什么不是写年度总结呢？依托答辩。现在这些APP好像都会搞点年度总结，音乐类APP都看了一下，网易云有点小拉。</p><p>写这个不是为了安利、推荐，因为这个事情没有任何意义，那我为什么写呢？一是看到HOPICO的年度华语专辑盘点也想翻翻看看自己这一年收藏了啥专辑听了啥专辑，二是想给这一年记录点什么吧(没写个年度总结复盘啥的总要记录总结点啥吧)，三是网站做了搜索引擎收录，真的会有那么一些可能别人在搜下面分享中的一些相关信息的时候，可能会看到点进来，然后去听一下这位歌手的作品，他们值得掌声值得流量，而不像是短视频平台视觉作品的一二十秒的附属品，更甚至离谱到我们一起学X叫。</p><h2 id="二、分享"><a href="#二、分享" class="headerlink" title="二、分享"></a>二、分享</h2><blockquote><p>以下是我2022年收藏的一些专辑(收藏的意义是我觉得值得反复翻出来听听)，单曲我就不列了，因为我觉得全长专辑更能讲述作品故事，更能体现其用心程度和感想。</p></blockquote><p>《菊花夜行军》——交工乐队，很深的感动特别你看了词后，国内找不出第二个有这么人文乡土气息的乐队。</p><p>《阳光普照 电影配乐》——林生祥，把握时间，掌握方向。</p><p>《嘎调》、《他在时间门外》——嘎调、哪吒，少年感，可惜啊，都解散了，<em>“但当年，作为No Beijing的四只乐队之一（其余三支现在都火了，Carsick Cars，Snapline，后海大鲨鱼），他们的歌像针一样刺向年轻人悲伤的心脏”</em>。</p><p>《Happy/Trance Mellow》——Sugar Plant，Dream Pop.</p><p>《余波》、《一些次要的时刻》——卧轨的火车，“<em>它也许并不会是我们之后的主要方向，但我们还是花费了一年多的时间来记录/制作这些音乐</em>”。</p><p>《DEADLINE》——王琳凯，一整张16首歌，是真热爱，而不是像有些参加个xx练习生节目，包装包装出道就来发歌，甚至不如只因。</p><p>《Japan Shoegazer As Only One - EP》——Lemon’s Chair/東京酒吐座</p><p>《Crystallize》——東京酒吐座</p><p>《Myrtle》——Oeil，音墙包裹住，日式钉鞋我每次听到我都感慨哇塞，人家在那个时候就有这样的作品、氛围，真好啊。</p><p>《万松岭》、《事实上我没有名字》、《美梦公司》——许钧，从第一张听到最新的，我自己的感觉是每一张都在蜕变成长，每一张都像是在叙述成长中某个阶段的故事。</p><p>《盖亚》——林忆莲，很震撼，制作精良。</p><p>《阿密特》——张惠妹，华丽，酣畅淋漓，有种我一听我就觉得老天赏饭吃的感觉。</p><p>《Life’s A Struggle》——宋岳庭，天妒英才，嘻哈我觉得词很灵魂，有深度，而不是像现在这些有的搞个啥乱七八糟英文名字来，一天怼这怼那，sdwy。</p><p>《署前街少年》——赵雷，更加温暖。<em>“我们总这样重复分离 却要重新开始 相互送别对方 说着来世再见 再次失忆着相聚”</em>。</p><p>《小霞》——小霞，很优秀高质量的作品，我第一次听很惊讶小霞是谁，一搜才知道原来是黄妈，那没事了。</p><p>《跳金水》——赞诗，有该有的样子，深度，<em>“真正从漩涡里出来的才会发现，出了漩涡之后，还是跳入了更大的河流里”</em>。</p><p>《爱是昂贵的》、《劳动之余》——声音玩具，今年秋天看了他们的巡演，真过瘾，尊重舞台，作品有深度，在我心中另外一个方向的万能青年旅店。</p><p>《希忘Hope》——华晨宇，快乐男声时期最喜欢他跟左立了，我很欣赏他的一点，就是每张专辑风格都不一样，玩过的就不会在出了，一直在探索，大胆、也敢唱，喷就喷，我一样唱。即使我不喜欢但是出新专辑我还是会点开听完。</p><p>《The Tree Ever Green》——不优雅，<em>“少年和青年的界限已經模糊了，《The Tree Ever Green》充滿少年心氣，並講述了一段和這個時代記憶有關的少年之聲——不僅僅是樂聲，也是告別。”</em></p><p>《SEDAR Trio - Vol. 1》——秦四风/武勇恒/田北禾，舒缓，娓娓道来，<em>“不急不忙。他们没有任何思绪，没用任何情绪，只用纯音乐的手法来表达了对美的追求。”</em></p><p>《冀西南林路行》——万能青年旅店，没得说，相比上一张更实验性探索，不愧是十年一专。</p><p>《冬 未了》、《秋 故事》、《陪我歌唱Live》——苏打绿，光是这个专辑的名字就太美了，《春 日光》，《夏 狂热》，《秋 故事》，《冬 未了》。质量也没得说，非常期待苏打绿合体。</p><p>《不》、《不要停止我的音乐》——痛仰，以前看到有个帖子，说当某首歌响起的时候，你会联想到那段日子，我今年夏天有段时间一直听《西湖》，后面有时候听的时候脑海里会想到今年夏天的一些画面。</p><p>《最伟大的作品》——周杰伦，<em>“不爱我就拉倒~~”</em>。</p><p>《Atypical Airship》——肖骏，精致，空间感，个性十足，点开第一首就是和华东合作的，不禁让我想到在乐夏二两人的互动哈哈。</p><p>《The Happy Star》——刘柏辛，在我是歌手第一次听到，成长很大，很酷很用心。</p><p>《马拉美的星期二》——吴青峰，很美的作品，整张听完像是青峰日记。</p><p>《BADモード》——宇多田ヒカル，JPop我一直很欣赏，舒服，治愈，高质量。</p><h2 id="三、结语"><a href="#三、结语" class="headerlink" title="三、结语"></a>三、结语</h2><p>最后，这是我在2022年收藏的全长专辑，纯个人主观兴趣爱好写了个简单的小分享，杠精喷子随意无所吊谓，欢迎大家评论区分享交流！不要宁愿天天刷抖音快手微博B站，也不愿认认真真去听一张专辑。有时候突然想到家乡的长辈，想去看看才发现有的离开了，珍惜眼前人，新的一年，祝愿大家更上一层楼！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h2&gt;&lt;p&gt;最近看到B站UP主&lt;a href=&quot;https://space.bilibili.com/261485584?spm_id_</summary>
+      
+    
+    
+    
+    
+    <category term="音乐" scheme="https://blog.likasi.top/tags/%E9%9F%B3%E4%B9%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>图片压缩工具图压</title>
+    <link href="https://blog.likasi.top/2023/01/11/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%B7%A5%E5%85%B7%E5%9B%BE%E5%8E%8B/"/>
+    <id>https://blog.likasi.top/2023/01/11/%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E5%B7%A5%E5%85%B7%E5%9B%BE%E5%8E%8B/</id>
+    <published>2023-01-11T02:56:36.000Z</published>
+    <updated>2023-01-11T06:17:47.125Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>华为手机高像素模式拍出的照片一张可能5-10多MB，有时候我传到博客或者相册网站，加载半天有时候网不好甚至加载不出来，这个和图片没压缩有一大部分关系，以前也找过图片压缩工具用过，但是是在线网站，一是万一我没网咋办，二是万一网站没了怎么办，三是我用那个压缩效果其实不太行，四是隐私安全问题在线网站不一定能保证，今天推荐的是<strong>图压</strong>，介绍如下。</p><h2 id="二、介绍使用"><a href="#二、介绍使用" class="headerlink" title="二、介绍使用"></a>二、介绍使用</h2><blockquote><p>官网：<a href="https://tuya.xinxiao.tech/">图压 - 简单易用的图片压缩软件 (xinxiao.tech)</a></p></blockquote><p>介绍：官网介绍，简单易用的图片压缩软件，批量将图片压缩到指定尺寸，支持Windows和Mac版本。下载安装即可，官网样例图如下。</p><p><img src="https://s3.bmp.ovh/imgs/2023/01/11/36fca9cd2001c062.png"></p><p>功能：压缩到指定尺寸大小，批量处理，支持多种格式(JPG、PNG、GIF、SVG等)，自定义输出文件夹、文件格式、文件名(可指定文件后缀)，隐私保护(在本地处理不会上传给任何人)。</p><p><img src="https://s3.bmp.ovh/imgs/2023/01/11/d0fb81c3048cccdd.jpg"></p><h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2><p><strong>图压</strong>是一个很不错的图片压缩软件，压缩结果满意，效率高，免费，开源项目，但是有个点就是软件安装会自动安装到C盘，但还好，一百多MB。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h2&gt;&lt;p&gt;华为手机高像素模式拍出的照片一张可能5-10多MB，有时候我传到博客或者相册网站，加载半天有时候网不好甚至加载不出来，这个和</summary>
+      
+    
+    
+    
+    
+    <category term="工具" scheme="https://blog.likasi.top/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>将Hexo博客网站收录进百度、Bing、谷歌搜索引擎</title>
+    <link href="https://blog.likasi.top/2023/01/06/%E5%B0%86Hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%94%B6%E5%BD%95%E8%BF%9B%E7%99%BE%E5%BA%A6%E3%80%81Bing%E3%80%81%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/"/>
+    <id>https://blog.likasi.top/2023/01/06/%E5%B0%86Hexo%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E6%94%B6%E5%BD%95%E8%BF%9B%E7%99%BE%E5%BA%A6%E3%80%81Bing%E3%80%81%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E/</id>
+    <published>2023-01-06T03:30:01.000Z</published>
+    <updated>2023-01-06T08:42:57.332Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>最近在查找某个东西的时候，点开一篇文章，发现是<code>Gitee Pages</code>，突然就想把我的博客网站也给收录到百度、Bing、谷歌搜索引擎，然后都弄了，但是百度的并没有搜索到(好像百度收录得好几个月而且只是首页)，只有Bing和谷歌可以搜索到。写下记录一下怎么把网站收录到搜索引擎以及一些注意事项。</p><h2 id="二、过程"><a href="#二、过程" class="headerlink" title="二、过程"></a>二、过程</h2><h4 id="百度收录"><a href="#百度收录" class="headerlink" title="百度收录"></a>百度收录</h4><p>1、在<a href="https://ziyuan.baidu.com/">百度搜索资源平台</a>，登录找到<strong>用户中心</strong>-&gt;<strong>站点管理</strong>，添加网站，选择站点属性，然后进行网站验证，选择文件验证，下载<code>html</code>文件放到Hexo的<code>source</code>文件夹下面，然后<code>hexo g</code> 生成，<code>hexo deploy</code> 部署，部署完成后开始验证，验证成功即可。</p><p><strong>注</strong>：这里有个注意事项，hexo在每个page加了一个<code>layout</code>，导致认证内容无法识别，这里设置成<code>false</code>即可，否则验证的时候会验证文件内容错误。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs html">---<br>layout: false<br>---<br>56awb49092862b37qr3ad9f87fabfa20<br></code></pre></td></tr></table></figure><p>2、然后按照提示<code>Https</code>验证，照着步骤走，大概几分钟就验证成功了。但是至此我的网站依然没有收录到百度，在百度搜索<code>site:likasi.gitee.io</code>依然没有，好像百度收录得好几个月而且只是首页以及还得看你网站的质量。</p><p><em>网站验证</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/01/06/fa4e0a403f18b565.png"></p><p><em>https认证</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/01/06/37a25d44372a6839.png"></p><h4 id="Bing收录"><a href="#Bing收录" class="headerlink" title="Bing收录"></a>Bing收录</h4><p>1、打开<a href="https://www.bing.com/webmasters">必应网站管理员工具</a>，登录，添加网站，网站验证，下载<code>xml</code>文件放到Hexo的<code>source</code>文件夹下面，然后<code>hexo g</code> 生成，<code>hexo deploy</code> 部署，部署完成后开始验证，验证成功即可。这个时候在<code>Bing</code>已经可以搜索到网站了。</p><p><img src="https://s3.bmp.ovh/imgs/2023/01/06/55284195691861a8.png"></p><p>2、优化一下，添加<strong>网站地图</strong>，提高整站的收录率以及爬虫的抓取效率、排名优化等。</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs markdown"><span class="hljs-section"># 打开hexo目录执行以下命令，会自动生成sitemap.xml</span><br>npm install hexo-generator-sitemap --save<br><br><span class="hljs-section"># 部署</span><br>hexo clean <br>hexo g<br>hexo deploy<br></code></pre></td></tr></table></figure><p>然后在必应网站管理员工具中添加网站地图，例如：<code>https://likasi.gitee.io/sitemap.xml</code>，添加成功如下图。</p><p><img src="https://s3.bmp.ovh/imgs/2023/01/06/3db000c7da3b37ca.png"></p><p>3、测试结果如下图，以及Bing收录一天后的流量数据，应该都是我访问的😂</p><p><img src="https://s3.bmp.ovh/imgs/2023/01/06/ea3ef646ccf5ed4b.png"></p><p><em>搜索夏天到了中秋，因为我有篇名字就叫这个</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/01/06/5c5b8779bbb50448.png"></p><p><em>一天的流量数据</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/01/06/0881d865c89721e5.png"></p><h4 id="谷歌收录"><a href="#谷歌收录" class="headerlink" title="谷歌收录"></a>谷歌收录</h4><p>1、打开<a href="https://search.google.com/search-console">Google Search Console</a>，添加资源，选择网址前缀，添加后按照步骤走，网站验证，下载<code>html</code>文件放到Hexo的<code>source</code>文件夹下面，然后<code>hexo g</code> 生成，<code>hexo deploy</code> 部署，部署完成后开始验证，验证成功即可。</p><p><strong>注</strong>：这里也和百度收录时候一样，设置<code>layout</code>为<code>false</code>。</p><p><img src="https://s3.bmp.ovh/imgs/2023/01/06/50a8e9813c5a0c1a.jpg"></p><p>2、添加<strong>站点地图</strong>，<code>https://likasi.gitee.io/sitemap.xml</code>。</p><p>3、测试结果如下图</p><p><img src="https://s3.bmp.ovh/imgs/2023/01/06/e980a7acf1be714e.png"></p><h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2><p>单单只把网站收录到以上搜索引擎的操作过程很简单，我平时用的最多是<code>Edge</code>浏览器自带的Bing搜索引擎，从以上三个搜索引擎收录来看，Bing也是最理想的。把个人博客网站收录到搜索引擎，好处是不单单只是你一个人可以访问到，别人在搜素引擎搜某些东西的时候也可能访问到网站，增加了流量与关注度，不好的地方是互联网是个有记忆的地方，你不能什么都写在博客里面，并且你现有写的有些东西也可能被不怀好意的人用的不好的地方，但我还是选择收录了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;一、前言&quot;&gt;&lt;a href=&quot;#一、前言&quot; class=&quot;headerlink&quot; title=&quot;一、前言&quot;&gt;&lt;/a&gt;一、前言&lt;/h2&gt;&lt;p&gt;最近在查找某个东西的时候，点开一篇文章，发现是&lt;code&gt;Gitee Pages&lt;/code&gt;，突然就想把我的博客网站也给收</summary>
+      
+    
+    
+    
+    
+    <category term="hexo" scheme="https://blog.likasi.top/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
