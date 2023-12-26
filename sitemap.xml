@@ -495,13 +495,6 @@
   </url>
   
   <url>
-    <loc>https://wangxf2023.github.io/Wangxf/tags/docker/</loc>
-    <lastmod>2023-12-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://wangxf2023.github.io/Wangxf/tags/kali/</loc>
     <lastmod>2023-12-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -523,6 +516,13 @@
   </url>
   
   <url>
+    <loc>https://wangxf2023.github.io/Wangxf/tags/docker/</loc>
+    <lastmod>2023-12-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://wangxf2023.github.io/Wangxf/tags/%E6%8A%98%E8%85%BE/</loc>
     <lastmod>2023-12-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -530,14 +530,14 @@
   </url>
   
   <url>
-    <loc>https://wangxf2023.github.io/Wangxf/tags/java/</loc>
+    <loc>https://wangxf2023.github.io/Wangxf/tags/%E7%94%9F%E6%B4%BB/</loc>
     <lastmod>2023-12-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wangxf2023.github.io/Wangxf/tags/%E7%94%9F%E6%B4%BB/</loc>
+    <loc>https://wangxf2023.github.io/Wangxf/tags/java/</loc>
     <lastmod>2023-12-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
