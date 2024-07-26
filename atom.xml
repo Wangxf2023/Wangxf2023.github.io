@@ -6,7 +6,7 @@
   <link href="https://wangxf2023.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxf2023.github.io/"/>
-  <updated>2024-02-18T15:12:51.200Z</updated>
+  <updated>2024-07-26T03:15:17.515Z</updated>
   <id>https://wangxf2023.github.io/</id>
   
   <author>
@@ -15,6 +15,143 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Chinese Football乐队live</title>
+    <link href="https://wangxf2023.github.io/2024/06/10/Chinese%20Football%E4%B9%90%E9%98%9Flive/"/>
+    <id>https://wangxf2023.github.io/2024/06/10/Chinese%20Football%E4%B9%90%E9%98%9Flive/</id>
+    <published>2024-06-10T08:40:11.000Z</published>
+    <updated>2024-07-26T03:15:17.515Z</updated>
+    
+    <content type="html"><![CDATA[<p>Chinese Football是一支于2011年在武汉成立的独立摇滚乐队。他们跟足球没有什么关系，主唱徐波形容自己连球迷都算不上。乐队名字最初取义中国足球队的口号——冲出亚洲，走向世界。</p><p>第一次接触的歌《电动少女》，这次巡演去晚了一会没听到，在网易云上面看到这次巡演第一首歌就是这首。</p><p>风格个人感觉是emo朋克，数摇。热爱舞台，热爱音乐的一群年轻人，少年气质，数摇的鼓手很精彩的，国足的女鼓手唱歌也不错的，时长良心，舞台投入，期间有口琴，口风琴出现，有现场人还是多的，有安可，特别最后一首结尾时候一起打鼓。歌名似乎中二，看了巡演后他们是一群热爱音乐爱舞台的年轻人，祝愿他们有更精彩的作品。</p><p><img src="https://s3.bmp.ovh/imgs/2024/06/12/5e56f4cb8712522d.jpg"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Chinese Football是一支于2011年在武汉成立的独立摇滚乐队。他们跟足球没有什么关系，主唱徐波形容自己连球迷都算不上。乐队名字最初取义中国足球队的口号——冲出亚洲，走向世界。&lt;/p&gt;
+&lt;p&gt;第一次接触的歌《电动少女》，这次巡演去晚了一会没听到，在网易云上面看到</summary>
+      
+    
+    
+    
+    
+    <category term="live" scheme="https://wangxf2023.github.io/tags/live/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记一次微信小程序、微信公众号修改密码</title>
+    <link href="https://wangxf2023.github.io/2024/05/31/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E3%80%81%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/"/>
+    <id>https://wangxf2023.github.io/2024/05/31/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E3%80%81%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81/</id>
+    <published>2024-05-31T02:17:00.000Z</published>
+    <updated>2024-05-31T02:22:28.928Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="记一次微信小程序、微信公众号修改密码"><a href="#记一次微信小程序、微信公众号修改密码" class="headerlink" title="记一次微信小程序、微信公众号修改密码"></a>记一次微信小程序、微信公众号修改密码</h1><h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><p>最近遇到需要在微信开放平台绑定小程序、公众号、APP。小程序和公众号绑定要求的是<strong>必须用账号密码来绑定</strong>，这时就碰到问题了。小程序和公众号后台登录往往都直接微信扫码登录，密码不一定找得到，找了一番之后发现找不到。网上搜了一会，看了几篇帖子写的不能解决问题或者也在问这种情况怎么处理。</p><h2 id="二、过程"><a href="#二、过程" class="headerlink" title="二、过程"></a>二、过程</h2><p>找不到密码的话只有重置密码了，刚好小程序和公众号都是前人申请，注册用的是自己的QQ邮箱，一是问了其他同事之后联系不上，二是在信息如此爆炸的今天，可能注册者自己也不知道密码了，但只要能联系上注册邮箱所有者就能通过邮件重置密码，但是没有下文。</p><p>那怎么办呢？<strong>通过换绑邮箱，再通过换绑后的邮箱重置密码，得到新密码。</strong></p><p>微信小程序换绑登录邮箱，直接可以管理员扫码换绑登录邮箱，然后换绑登录邮箱后再<strong>找回密码</strong>，去邮箱重置密码，设置新的登录密码。</p><p>而微信公众号是不支持这样操作，换绑登录邮箱要密码，而我本身就是不知道密码才要这么一堆操作拿到密码。如何解决呢？微信生态圈拥有如此庞大用户量，必然考虑到种种问题的解决办法。</p><p>通过<strong>找回账号</strong>，用法人微信人脸认证或者对公账户打款（打款金额一般是几角钱，在找回后打款金额原路退回），在这个操作中能更换管理员、<strong>更换登录邮箱</strong>。操作成功后会更换以上信息，这时候再通过<strong>找回密码</strong>，去邮箱重置密码，设置新的登录密码。</p><p>为什么公众号和小程序换绑登录邮箱安全性不同，以下我个人思考：小程序内容发布是需要平台审核的通过后才能对公众可见的，公众号内容发布也有审核，但审核规则似乎更简单一些，如判断是否全文内容转载、抄袭、内容合规性、敏感话题等。可能公众号内容发布门槛更低，所以对它的账号安全性等操作，要求的参数规则等更多更严格。</p><h2 id="三、结语"><a href="#三、结语" class="headerlink" title="三、结语"></a>三、结语</h2><p>我们每天接触那么多信息化产品，在当下忘记密码几乎是很常见的事情。我们不可能所有信息化产品都设置一样的密码，更不可能设置简单的xxx123456甚至连产品密码规则都过不了。</p><p>一个较好的密码管理方法、工具等，以及自己的一套密码设置规则等，都能帮助我们在生活中更好的处理这类问题。</p><p>再者就是在产品设计迭代时，一套多方面因素考虑的账号密码找回规则无论是对安全性、用户体验性等都是不可忽视的考量。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;记一次微信小程序、微信公众号修改密码&quot;&gt;&lt;a href=&quot;#记一次微信小程序、微信公众号修改密码&quot; class=&quot;headerlink&quot; title=&quot;记一次微信小程序、微信公众号修改密码&quot;&gt;&lt;/a&gt;记一次微信小程序、微信公众号修改密码&lt;/h1&gt;&lt;h2 id=&quot;一</summary>
+      
+    
+    
+    
+    
+    <category term="经验" scheme="https://wangxf2023.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>蛙池乐队live</title>
+    <link href="https://wangxf2023.github.io/2024/05/11/%E8%9B%99%E6%B1%A0%E4%B9%90%E9%98%9Flive/"/>
+    <id>https://wangxf2023.github.io/2024/05/11/%E8%9B%99%E6%B1%A0%E4%B9%90%E9%98%9Flive/</id>
+    <published>2024-05-11T06:59:04.000Z</published>
+    <updated>2024-07-26T03:09:32.641Z</updated>
+    
+    <content type="html"><![CDATA[<p>蛙池，中国摇滚乐队，2017年成立于广东省东莞市。一开始我以为是台湾的乐队，2023年蛙池出了新专辑《郊游》。蛙池是少有的女主唱的国内摇滚乐队，唱的是当代年轻人的故事。</p><p>第一次接触蛙池听的是《河流》，《郊游》这张专辑听了几遍，现场的蛙池，女主唱有着各种舞蹈动作加入，很投入，也是一支热爱音乐的年轻乐队，会和观众有互动，有凝聚力。广东是一个开放包容的城市，蛙池也一样，有着年轻人的劲。</p><p>期待蛙池乐队更好的作品，也祝愿他们成长、发展越来越好！</p><p><img src="https://s3.bmp.ovh/imgs/2024/07/26/cd69a2f55b555d67.jpg"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;蛙池，中国摇滚乐队，2017年成立于广东省东莞市。一开始我以为是台湾的乐队，2023年蛙池出了新专辑《郊游》。蛙池是少有的女主唱的国内摇滚乐队，唱的是当代年轻人的故事。&lt;/p&gt;
+&lt;p&gt;第一次接触蛙池听的是《河流》，《郊游》这张专辑听了几遍，现场的蛙池，女主唱有着各种舞蹈动作</summary>
+      
+    
+    
+    
+    
+    <category term="live" scheme="https://wangxf2023.github.io/tags/live/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>文雀乐队live</title>
+    <link href="https://wangxf2023.github.io/2024/04/25/%E6%96%87%E9%9B%80%E4%B9%90%E9%98%9Flive/"/>
+    <id>https://wangxf2023.github.io/2024/04/25/%E6%96%87%E9%9B%80%E4%B9%90%E9%98%9Flive/</id>
+    <published>2024-04-25T06:58:52.000Z</published>
+    <updated>2024-07-26T03:16:35.807Z</updated>
+    
+    <content type="html"><![CDATA[<p>文雀乐队（Sparrow）成立于2008年，是一支来自北京由四个男青年组成的“后摇滚”乐队。北京，对于那个年代玩音乐的人们来说，是更好的圈子聚集地，2024年文雀十五周年巡演，期间乐队有没有重组过没了解过，确切的说对于文雀乐队我也不了解。</p><p>初听是从推荐机制看到的国内后摇乐队，专辑、歌曲名字是有所思考雕琢意味在我看来。对于此次巡演，没有听过后摇的现场是什么样子，想去看看，十五周年巡演应该质量不错。</p><p>现场人不是很多相比我去过的其他乐队现场，尤其girl似乎更少（写这篇的时候已经过去快几个月了吧不太记得了），大家都很享受当下现场，沉浸其中，大家都不怎么掏手机出来拍，给我的感觉就是，乐队在上面很投入忘我的表演，下面的观众也很共振的享受其中，这是很好的！</p><p>希望文雀乐队在未来能够产出更多好的作品，也祝愿他们发展越来越好！</p><p><img src="https://s3.bmp.ovh/imgs/2024/07/26/691c3f63c0cfb4c7.jpg"></p><p>P.S.本来这个位置合照能看到脸的，结果被一个老哥后面走上来挡住了大部分</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;文雀乐队（Sparrow）成立于2008年，是一支来自北京由四个男青年组成的“后摇滚”乐队。北京，对于那个年代玩音乐的人们来说，是更好的圈子聚集地，2024年文雀十五周年巡演，期间乐队有没有重组过没了解过，确切的说对于文雀乐队我也不了解。&lt;/p&gt;
+&lt;p&gt;初听是从推荐机制看到</summary>
+      
+    
+    
+    
+    
+    <category term="live" scheme="https://wangxf2023.github.io/tags/live/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>陈鸿宇live</title>
+    <link href="https://wangxf2023.github.io/2024/04/12/%E9%99%88%E9%B8%BF%E5%AE%87live/"/>
+    <id>https://wangxf2023.github.io/2024/04/12/%E9%99%88%E9%B8%BF%E5%AE%87live/</id>
+    <published>2024-04-12T06:57:05.000Z</published>
+    <updated>2024-07-26T03:10:29.768Z</updated>
+    
+    <content type="html"><![CDATA[<p>陈鸿宇2024年巡演，初次听到《理想三旬》应该是高中那会，最近几年新专辑没怎么听。</p><p>声音有特色，一股文艺青年范，歌有接地气的乡土风景等。</p><p>那晚有趣的是我有会来站着最后面（进门口的后的那个位置），看见一哥们挂着场务的牌子和旁边应该是同事站一起聊着，于是我凑过去搭了几句，试音排练了多久？这次巡演准备了几首歌？聊着聊着发现这哥们和另外一人说话口音像我家乡，一问起来，两人都是老乡，在这里这种情景遇到老乡我是很震惊的。后面加了这哥们微信，他是众乐记场务的（或者应该不止众乐记），看了下他朋友圈，喜欢音乐在做各种音乐节大小演出的场务，感受现场最热烈的情感，有点羡慕的哈哈。</p><p>说回演出，中规中矩（略有平淡没新意），《理想三旬》以新的编曲呈现有种越过山川的感觉。</p><p><img src="https://s3.bmp.ovh/imgs/2024/06/01/dc01c25fb299ec01.jpg"></p><p><img src="https://s3.bmp.ovh/imgs/2024/06/01/9c437ca94b90c7ca.jpg"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;陈鸿宇2024年巡演，初次听到《理想三旬》应该是高中那会，最近几年新专辑没怎么听。&lt;/p&gt;
+&lt;p&gt;声音有特色，一股文艺青年范，歌有接地气的乡土风景等。&lt;/p&gt;
+&lt;p&gt;那晚有趣的是我有会来站着最后面（进门口的后的那个位置），看见一哥们挂着场务的牌子和旁边应该是同事站一起聊着，</summary>
+      
+    
+    
+    
+    
+    <category term="live" scheme="https://wangxf2023.github.io/tags/live/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>九宝乐队live</title>
+    <link href="https://wangxf2023.github.io/2024/03/24/%E4%B9%9D%E5%AE%9D%E4%B9%90%E9%98%9Flive/"/>
+    <id>https://wangxf2023.github.io/2024/03/24/%E4%B9%9D%E5%AE%9D%E4%B9%90%E9%98%9Flive/</id>
+    <published>2024-03-24T06:47:37.000Z</published>
+    <updated>2024-07-26T03:10:40.472Z</updated>
+    
+    <content type="html"><![CDATA[<p>九宝乐队，组建于2011年，是一支带有蒙古<a href="https://baike.baidu.com/item/%E6%B0%91%E6%97%8F%E9%A3%8E%E6%A0%BC/3377112?fromModule=lemma_inlink">民族风格</a>的<a href="https://baike.baidu.com/item/%E9%87%91%E5%B1%9E%E4%B9%90%E9%98%9F/820325?fromModule=lemma_inlink">金属乐队</a>。</p><p>金属乐我听的很少，九宝乐队的歌我只听过那几首。买票的理由是，九宝乐队是蒙古器乐融合金属乐，作品极具民族特色，且是一支走出国门，登上欧洲舞台的乐队。</p><p>现场也确实很燃，主唱声音中气十足，饱满洪亮，整个乐队演奏气势十足，现场人比起常规乐队巡演确实多了不少，是一支很成熟的乐队。</p><p><img src="https://s3.bmp.ovh/imgs/2024/06/01/ad617b9fdf7b444d.jpg"></p><p><img src="https://s3.bmp.ovh/imgs/2024/06/01/11b165cbc610ebe2.jpg"></p><p><em>P.S.图片是从九宝乐队官方微博保存的</em></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;九宝乐队，组建于2011年，是一支带有蒙古&lt;a href=&quot;https://baike.baidu.com/item/%E6%B0%91%E6%97%8F%E9%A3%8E%E6%A0%BC/3377112?fromModule=lemma_inlink&quot;&gt;民族风格&lt;/a&gt;</summary>
+      
+    
+    
+    
+    
+    <category term="live" scheme="https://wangxf2023.github.io/tags/live/"/>
+    
+  </entry>
   
   <entry>
     <title>记一次C语言编译运行失败原因</title>
@@ -307,10 +444,10 @@
   
   <entry>
     <title>霜冻前夜乐队live</title>
-    <link href="https://wangxf2023.github.io/2023/05/22/%E9%9C%9C%E5%86%BB%E5%89%8D%E5%A4%9C%E4%B9%90%E9%98%9Flive/"/>
-    <id>https://wangxf2023.github.io/2023/05/22/%E9%9C%9C%E5%86%BB%E5%89%8D%E5%A4%9C%E4%B9%90%E9%98%9Flive/</id>
-    <published>2023-05-22T01:14:01.000Z</published>
-    <updated>2023-06-28T14:10:00.802Z</updated>
+    <link href="https://wangxf2023.github.io/2023/05/20/%E9%9C%9C%E5%86%BB%E5%89%8D%E5%A4%9C%E4%B9%90%E9%98%9Flive/"/>
+    <id>https://wangxf2023.github.io/2023/05/20/%E9%9C%9C%E5%86%BB%E5%89%8D%E5%A4%9C%E4%B9%90%E9%98%9Flive/</id>
+    <published>2023-05-20T01:14:01.000Z</published>
+    <updated>2024-07-26T03:10:49.162Z</updated>
     
     <content type="html"><![CDATA[<p>霜冻前夜——北京城里还在桀骜展声的一支金属乐队。2004年，霜冻前夜乐队于北京成立，是国内尝试叙事主题旋律金属风格的先行者。</p><p>重金属我基本没听过，现场live更是没有，之所以再三纠结下还是买了，看到一次抖音自媒体人打歌介绍，那是我第一次听霜冻前夜，乐队这个名字听着比较牛逼，而且成立十多年了，所以还是去了。</p><p>现场排队进场的时候我就感觉金属乐迷跟其他不太一样，都很酷酷的，更有装扮者。现场当然也是很轰炸啊，第一次在现场亲眼看到像迷笛音乐节战国舞台一排排搭建甩头。主唱肌肉男。现场很炸，当晚回来一直到第二天耳朵还是耳鸣嗡嗡嗡的。</p><p>比较欣赏的一点就是，不拘泥于传统印象重金属，歌曲会穿插中国传统乐器，这点很欣慰。美中不足是，迟到，没有安可，一个现场停下来有点审美疲劳。贴几张现场图，视频就不太想传了，有点麻烦。</p><p><img src="https://s3.bmp.ovh/imgs/2023/05/23/004052796a56de3d.jpg"></p><p><em>PS：崩了模糊了</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/05/23/9b3b82f995ebe0ab.jpg"></p><p><em>PS：太酷辣！</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/05/23/f7fce6cf181c2768.jpg"></p><p><img src="https://s3.bmp.ovh/imgs/2023/05/23/7c76dbc2f4452786.jpg"></p><p><img src="https://s3.bmp.ovh/imgs/2023/05/31/cb6b478600bfd0ee.jpg"></p><p><em>PS：认识我的人有没有看到我在哪？</em></p>]]></content>
     
@@ -325,142 +462,6 @@
     
     
     <category term="live" scheme="https://wangxf2023.github.io/tags/live/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>视频语音自动识别生成字幕工具VideoSrt</title>
-    <link href="https://wangxf2023.github.io/2023/05/09/%E8%A7%86%E9%A2%91%E8%AF%AD%E9%9F%B3%E8%87%AA%E5%8A%A8%E8%AF%86%E5%88%AB%E7%94%9F%E6%88%90%E5%AD%97%E5%B9%95%E5%B7%A5%E5%85%B7VideoSrt/"/>
-    <id>https://wangxf2023.github.io/2023/05/09/%E8%A7%86%E9%A2%91%E8%AF%AD%E9%9F%B3%E8%87%AA%E5%8A%A8%E8%AF%86%E5%88%AB%E7%94%9F%E6%88%90%E5%AD%97%E5%B9%95%E5%B7%A5%E5%85%B7VideoSrt/</id>
-    <published>2023-05-09T06:27:02.000Z</published>
-    <updated>2023-05-13T15:59:16.544Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前段时间在弄一个短视频的时候给它配了字幕，非常笨的方法，一句一句卡点给打上的😅。可能以后还会弄到，不可能一直这么纯手动卡点打上吧，如果视频比较短还好，效率和卡点纯手工始终有点不行。</p><p>其实一开始也想过找一个根据视频语音自动生成字幕的工具，找了好几个大多要不光看界面就很垃圾，要不就晚上那些工具的老套路，注册开通vip充值，但是有点太贵，我只是偶尔会弄个视频要点字幕，而且也不敢保证这个工具的质量如何，充值了vip后会不会没多久就倒闭跑路了，数据安全问题能得到保障吗？</p><p>终于今天在52pj看到一个界面比较清爽的工具<code>VideoSrt</code>，看了一下还是开源的，只不过pro版本提供收费服务。</p><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><blockquote><p><a href="https://github.com/wxbool/video-srt-windows">https://github.com/wxbool/video-srt-windows</a></p></blockquote><p><code>VideoSrt</code> 是用 <code>Golang</code>语言，基于 <a href="https://github.com/lxn/walk">lxn/walk</a> Windows-GUI 工具包开发。</p><p>这是一个可以识别视频语音自动生成字幕SRT文件的开源软件工具。<br>适用于快速、批量的为媒体（视频/音频）生成中/英文字幕、文本文件的业务场景。</p><p>0.3.5 版本会用到以下接口：</p><ul><li>阿里云 OSS对象存储</li><li>阿里云 录音文件识别</li><li>腾讯云 翻译Api / 百度云 翻译Api</li></ul><p>工具的大致原理是，调用ffmpeg将视频转为mp3存储到阿里云OSS，然后用阿里云(或者其他)语音识别服务识别成文本，如果存在需要翻译的话调用翻译服务，然后生成字幕格式文件SRT或者LRC。</p><h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><ul><li><p>创建阿里云OSS，这里需要注意的是读写权限设置为<strong>公共读</strong>（我一开始用的私有，测试错误提示要改为公共读），记下Endpoint、AccessKeyId、AccessKeySercet、BucketName、BucketDomain填写到工具的阿里云OSS配置。</p></li><li><p>开通智能语音交互服务，创建项目，应该是可以创建多个项目的，语音识别类型可以有很多，中文普通话、英文、四川话、北京话、粤语等等。</p></li><li><p>开通腾讯云机器翻译</p></li></ul><p>然后以上都搞好后，依次配置到工具对应的配置。</p><p>具体创建我这里就不想写了(截图，压缩，水印，上传图床太繁琐了)，可参考作者给的<a href="https://www.yuque.com/viggo-t7cdi/videosrt">VideoSrt文档 (yuque.com)</a></p><p><img src="https://s3.bmp.ovh/imgs/2023/05/09/6a1f6077ff0a41fb.png"></p><p>PS：可以猜得出来是我国哪个地方口音？好像不行</p><p>如果不选择文件输出目录，会默认保存到和原视频同一位置，工具的右下角地方有执行日志，而且生成完毕后会自动清理掉阿里云OSS的存储。</p><h4 id="收费"><a href="#收费" class="headerlink" title="收费"></a>收费</h4><p>工具本身是开源的，收费的只是这些第三方云服务，以下是作者给的说明文档上面的。</p><p>具体的费用资费，请参考各大平台的产品介绍及价格明细表，参考链接如下：</p><ul><li><p>阿里云OSS对象存储：<a href="https://www.aliyun.com/price/product?spm=5176.7933691.1309819.7.77572a66GPAu1Y&amp;aly_as=bQ0LXW2f#/oss/detail">https://www.aliyun.com/price/product?spm=5176.7933691.1309819.7.77572a66GPAu1Y&amp;aly_as=bQ0LXW2f#/oss/detail</a></p></li><li><p>阿里云录音文件识别：<a href="https://help.aliyun.com/document_detail/84881.html?spm=5176.12157752.1251724..3fee75acYOrZ60#h1-u8BA1u8D39u65B9u5F0Fu548Cu62A5u4EF73">https://help.aliyun.com/document_detail/84881.html?spm=5176.12157752.1251724..3fee75acYOrZ60#h1-u8BA1u8D39u65B9u5F0Fu548Cu62A5u4EF73</a></p></li><li><p>百度翻译：<a href="http://api.fanyi.baidu.com/product/112">http://api.fanyi.baidu.com/product/112</a></p></li><li><p>腾讯云翻译：<a href="https://cloud.tencent.com/product/tmt/pricing">https://cloud.tencent.com/product/tmt/pricing</a></p></li></ul><p>目前，阿里云录音文件识别、百度翻译、腾讯云翻译 等服务目前都有一定的免费额度。</p><p>免费额度说明如下：</p><ul><li><p><a href="https://ai.aliyun.com/nls/filetrans?spm=5176.12061031.1228726.1.47fe3cb43I34mn">阿里云录音文件识别</a>（可开通试用版，允许每日 2小时 免费识别时长额度，试用版从开通之日起，有3个月的使用时间，3个月之后将会自动切换为商业版，按照后付费的方式计费）</p></li><li><p><a href="http://api.fanyi.baidu.com/api/trans/product/index">百度翻译</a>（通用翻译服务，标准版免费，高级版每月 200 万字免费）</p></li><li><p><a href="https://cloud.tencent.com/product/tmt">腾讯云翻译</a>（文本翻译服务，每月免费额度 500万 字符）</p></li><li><p><a href="https://www.aliyun.com/product/oss?spm=5176.8030368.h2v3icoap.38.1ad03aa49m8j4m">阿里云OSS对象存储</a>（无免费额度，正常情况下，仅会产生少量的流量费用，在不开通 <a href="https://ai.aliyun.com/nls/filetrans?spm=5176.12061031.1228726.1.47fe3cb43I34mn">录音文件识别商业版</a> 的情况下，充值1元可以正常使用30~60天左右）</p></li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>繁琐的是创建开通自己的这些云服务，费用的话就是语音识别有点贵，OSS和翻译不贵。今天我试了一下一个三分钟左右的视频，翻译字符数272，腾讯云每月免费额度500万字符，语音识别试用版三个月每天允许2小时，OSS我以前用的时候冲了10块，这个不贵的。</p><p>把生成的SRT字幕打开把不对的地方修改下，然后导入到视频剪辑工具，省事省力。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;前段时间在弄一个短视频的时候给它配了字幕，非常笨的方法，一句一句卡点给打上的😅。可能以后还会弄到，不可能一直这么纯手动卡点打上吧，如果视频</summary>
-      
-    
-    
-    
-    
-    <category term="工具" scheme="https://wangxf2023.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>密码管理工具KeePass</title>
-    <link href="https://wangxf2023.github.io/2023/04/21/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7KeePass/"/>
-    <id>https://wangxf2023.github.io/2023/04/21/%E5%AF%86%E7%A0%81%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7KeePass/</id>
-    <published>2023-04-21T03:39:11.000Z</published>
-    <updated>2023-04-21T06:27:17.478Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在当下这个时代，我们会接触到很多产品，这就难免会导致一些平台过段时间来登录的时候忘记了账号密码，大多数是忘记了密码。有的产品忘记密码只需要邮箱或者电话号码找回密码，最多再加下人脸验证等，但是有的产品的话忘记密码是很糟糕的，很难找回的，有的产品可能因为网络等原因导致频繁响应然后异常封号，如twitter。而且，经常忘记密码找回这个事情本身就很繁琐。</p><p>所以，我一直想找一款可以记录存储账号密码的并且可以加密的工具。</p><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><code>KeePass</code>，一款开源、免费、支持全平台（官网只提供Windows版本，但是也提供了第三方的下载链接，如Linux、Mac等）、数据存储在本地，也可以通过WebDAV服务同步数据到云端，如国内的坚果云。</p><blockquote><p>​    官网：<a href="https://keepass.info/">KeePass Password Safe</a></p></blockquote><p>下载安装后，默认语言是英语，可以到官网（Translations）板块下载语言包，有中文简体语言包。</p><p>创建数据库，创建管理数据库的密码，注意：<strong>这个密码非常重要，它是打开这个数据库的唯一凭证，如果忘记将打不开数据库</strong>，然后选择位置，我们可以放到坚果云文件夹下，这样的话，每次添加记录保存的话会自动同步到坚果云文件夹下。</p><p>添加记录，填写标题，账号，密码，备注，网址等。</p><p>设置安全策略，软件默认是关闭后每次打开都需要输入数据库管理密码的，还可以设置比如当系统切换用户、系统挂起时等等的反正安全策略有很多，如全局页面下按<code>Esc</code>键锁定，密码定时过期，提醒，生成密码等。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在这之前我一直都是把一些账号密码记在文档里面，以及靠浏览器自动保存账号密码。其实，密码保存的工具有很多，我粗略的对比了之下我选择了<code>KeePass</code>，有的密码存储在云端（需要网络），有的需要付费使用等。</p><p>当然，没有绝对的安全，定期更换密码，增加密码复杂度，做什么有个安全隐私的思想等相对要好一点。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在当下这个时代，我们会接触到很多产品，这就难免会导致一些平台过段时间来登录的时候忘记了账号密码，大多数是忘记了密码。有的产品忘记密码只需要邮</summary>
-      
-    
-    
-    
-    
-    <category term="工具" scheme="https://wangxf2023.github.io/tags/%E5%B7%A5%E5%85%B7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>不止喜剧——大乐透拼盘</title>
-    <link href="https://wangxf2023.github.io/2023/04/21/%E4%B8%8D%E6%AD%A2%E5%96%9C%E5%89%A7%E2%80%94%E2%80%94%E5%A4%A7%E4%B9%90%E9%80%8F%E6%8B%BC%E7%9B%98/"/>
-    <id>https://wangxf2023.github.io/2023/04/21/%E4%B8%8D%E6%AD%A2%E5%96%9C%E5%89%A7%E2%80%94%E2%80%94%E5%A4%A7%E4%B9%90%E9%80%8F%E6%8B%BC%E7%9B%98/</id>
-    <published>2023-04-21T03:06:26.000Z</published>
-    <updated>2023-05-13T15:54:42.733Z</updated>
-    
-    <content type="html"><![CDATA[<p>本来那天是去看纪念黄家驹30载致敬beyond的演出的，结果去了发现被延期了，今天是脱口秀，票价也便宜，也还有余票，来都来了就买了一张看。第一次看脱口秀，它这个是大乱斗拼盘，演员还是各有一般刷子，即兴表达发挥和舞台能力都非常不错。</p><p><img src="https://s3.bmp.ovh/imgs/2023/05/13/908e4d665c51d4c5.jpg"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;本来那天是去看纪念黄家驹30载致敬beyond的演出的，结果去了发现被延期了，今天是脱口秀，票价也便宜，也还有余票，来都来了就买了一张看。第一次看脱口秀，它这个是大乱斗拼盘，演员还是各有一般刷子，即兴表达发挥和舞台能力都非常不错。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http</summary>
-      
-    
-    
-    
-    
-    <category term="live" scheme="https://wangxf2023.github.io/tags/live/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记一次百度智能云OCR简单了解</title>
-    <link href="https://wangxf2023.github.io/2023/03/07/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BE%E5%BA%A6%E6%99%BA%E8%83%BD%E4%BA%91OCR%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/"/>
-    <id>https://wangxf2023.github.io/2023/03/07/%E8%AE%B0%E4%B8%80%E6%AC%A1%E7%99%BE%E5%BA%A6%E6%99%BA%E8%83%BD%E4%BA%91OCR%E7%AE%80%E5%8D%95%E4%BA%86%E8%A7%A3/</id>
-    <published>2023-03-07T07:18:26.000Z</published>
-    <updated>2023-03-07T09:26:38.997Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><strong>OCR</strong>(Optical Character Recognition)光学字符识别，这个东西现在已经做的很好很成熟了，昨天跟别人聊到一个东西的时候说起来，大概是把那种word表格拍照然后上传到一个系统，然后这个系统导出word或者pdf报告。</p><h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>如果让我来做这个事情以我现在的认知水平，我的做法是把拍照上传的照片通过OCR提取想要的字段，然后代码操作（例如POI）word或者pdf。</p><p>我新用户百度智能云，个人认证之后可以免费领取一定时长的资源包使用，于是试了一下自定义模板OCR识别，简单的说一下使用感受。</p><p>识别的时候还是依靠你所框选的识别区域，比较适用于所框选的区域是比较固定面积大小的那种，比如规格定制的那种表单，识别区域所占大小其实差不大多，这样的话识别准确率才高，但是如果识别区域大小面积不固定，你在按照那个模板来识别就会把其他区域也识别进去，得重新制作模板。然后可以创建一个分类器，至少要求添加两个模板，每个模板至少上传30张训练集图片，才可训练模型。</p><p><img src="https://s3.bmp.ovh/imgs/2023/03/07/a5c87ce56b1b626e.png"></p><p><em>注：识别区域(费用类别和主要业务说明)内容面积不大</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/03/07/f35f9ae2da4fb410.png"></p><p><em>注：识别区域(费用类别和主要业务说明)内容面积较大</em></p><p>如上是我自定义的两个模板，一个费用类别和主要业务说明这两块内容比较少（面积比较小），一个比较大。按理说通过分类器的上传的图片训练集训练后，费用类别和主要业务说明这两块内容（面积大小）夹在这个区间之内的图片都应该有一个较准确的识别率，但是测试结果识别准确率只有19.22%，我的理想状态是内容（面积大小）夹在这个区间之内的图片应该可以较准确的识别出来起码有个80%以上。</p><p>可能是我的训练集图片不够有价值，因为我偷懒只是搞了十张各种不同的，其余的是这十张的复制，导致这个训练集没有价值。再一个是模板只有两个，可能代表性不足。</p><p>后面我又重新加了模板（有代表性的那种），先是加了一个，后面加了两个，测试OCR短准确率较上一版降低了，而测试OCR长提高了，四个模板的分类器测试结果识别准确率只有8.61%，测试后反而是在内容面积不大的会分类到识别内容面积大的那个模板，自然就导致用了识别区域面积较大模板而把本身在要识别区域下面的不识别的区域也给识别上了，例如原本应该是 <code>实报金额  666元 </code>，但是结果是 <code>实报金额  666元总经理签</code>，因为分类到识别内容面积大的那个模板，而把这个单元格下面的内容也识别上了一部分。</p><p><img src="https://s3.bmp.ovh/imgs/2023/03/07/a6c99c484471966e.png"></p><p><img src="https://s3.bmp.ovh/imgs/2023/03/07/04043d229d1008b2.png"></p><p><em>注：使用四个模板的训练准确率</em></p><p>而在使用两个模板的时候，上面这种情况基本不会出现，识别内容面积不大的基本都是正确的。</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后，总的来说还是很厉害的百度智能云的自定义模板OCR识别，我感觉可能更适用于那种识别区域所占面积大小比较固定的，然后你标出识别区域范围变化不会太大，这种情况下识别准确率会很高。</p><p>继而就想到有时候有些东西规范化有它的好处，方便管理、使用，例如身份证、驾驶证这种，都一样的布局，假若要使用OCR识别的话，因为它的布局和字段等都是固定统一的，所以操作起来就会好很多，甚至都不用你自定义模板OCR识别，有人家给你做好的现成的xxOCR识别。但凡事不是绝对的，很多时候要学会根据实际场景需求来个性化定制这点很重要。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;OCR&lt;/strong&gt;(Optical Character Recognition)光学字符识别，这个东西现在已经做的很好</summary>
-      
-    
-    
-    
-    
-    <category term="OCR" scheme="https://wangxf2023.github.io/tags/OCR/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《米店》</title>
-    <link href="https://wangxf2023.github.io/2023/03/01/%E3%80%8A%E7%B1%B3%E5%BA%97%E3%80%8B/"/>
-    <id>https://wangxf2023.github.io/2023/03/01/%E3%80%8A%E7%B1%B3%E5%BA%97%E3%80%8B/</id>
-    <published>2023-03-01T01:30:25.000Z</published>
-    <updated>2023-03-01T02:02:04.933Z</updated>
-    
-    <content type="html"><![CDATA[<p>又到了三月了，又想起这首歌《米店》，点开听了几遍，网上看到的一段摘抄：</p><p>“  其实三月成为“米店月”的字面原因非常简单，无非是因为《米店》开头的那一句：<strong>“三月的烟雨飘摇的南方。”</strong></p><p>这是张玮玮写于<strong>2007年的</strong>一首歌，就像很多民谣歌曲中俗套的“南方”和“姑娘”这种爱情故事一样，<strong>当时的张玮玮一个人在北京，他的爱人在南方，而“米店”是他爱人当时想要开的一家杂货铺的名字。</strong></p><p>但《米店》的魅力在于，<strong>它写出来一种独属于春天的温柔又迷蒙的情绪，关乎于爱情，但并不止于爱情。</strong></p><p>从烟雨飘摇的春天到街上匆忙的人群，再到舞步划过空房间的寂寞和码头上停泊的船只，<strong>《米店》在情歌之外，延展出一种从日常到命运的人生隐喻，让人逐渐迷失在那些悱恻的阴雨天气，在手风琴怀旧的旋律中徘徊良久。</strong> ”</p><p>《米店》这首歌有很多歌手、乐队翻唱、改编过，一首歌听了很多翻唱后还是最喜欢原唱，我觉得真情实感，有自己的创作理解。</p><p>三月的烟雨飘摇的南方<br>你坐在你空空的米店<br>你一手拿着苹果一手拿着命运<br>在寻找你自己的香</p><p>窗外的人们匆匆忙忙<br>把眼光丢在潮湿的路上<br>你的舞步划过空空的房间<br>时光就变成了烟</p><p>爱人 你可感到明天已经来临<br>码头上停着我们的船<br>我会洗干净头发爬上桅杆<br>撑起我们葡萄枝嫩叶般的家</p><p>《米店》——张玮玮</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;又到了三月了，又想起这首歌《米店》，点开听了几遍，网上看到的一段摘抄：&lt;/p&gt;
-&lt;p&gt;“  其实三月成为“米店月”的字面原因非常简单，无非是因为《米店》开头的那一句：&lt;strong&gt;“三月的烟雨飘摇的南方。”&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;这是张玮玮写于&lt;strong&gt;2</summary>
-      
-    
-    
-    
-    
-    <category term="音乐" scheme="https://wangxf2023.github.io/tags/%E9%9F%B3%E4%B9%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一次游记——云南丽江</title>
-    <link href="https://wangxf2023.github.io/2023/02/13/%E4%B8%80%E6%AC%A1%E6%B8%B8%E8%AE%B0-%E4%BA%91%E5%8D%97%E4%B8%BD%E6%B1%9F/"/>
-    <id>https://wangxf2023.github.io/2023/02/13/%E4%B8%80%E6%AC%A1%E6%B8%B8%E8%AE%B0-%E4%BA%91%E5%8D%97%E4%B8%BD%E6%B1%9F/</id>
-    <published>2023-02-13T08:54:29.000Z</published>
-    <updated>2023-02-13T15:02:45.684Z</updated>
-    
-    <content type="html"><![CDATA[<p>时间过得真快，不知不觉新的一年真正意义上的开始。风乍暖，日初长，花竞开，大家也都各自忙活，有机会三两朋友凑到一起出去逛逛很难得，记录下那惬意时光。</p><p>出发时候我已经够晚了，我们四连票，当时只剩不到十分钟他们还没上来，然后再只剩一分钟了还没来，我心想，卧槽不会出什么意外了吧？不会被放鸽子了吧？发消息也没人回，直到车已经开了快两分钟了，他们才从前面车厢找着过来，一个二个一头汗，喘着大气，有一个直接把衣服脱了，好家伙我一摸一身汗，才知道他们在检票的最后时候跑着上来的，赶忙从前面车厢先钻进来哈哈哈哈。</p><p>去玉龙雪山那天，早上五点多就起来，我们去的是早上，那天是多云，整个就是白茫茫天灰灰的样子，快要下山的时候出了一阵子太阳，当时山上好多人开心的叫着，下午到蓝月谷的时候天晴了，眼光下那种青蓝色水闪着亮晶晶的光斑波光粼粼，又是冬天下午的舒服的太阳，看见好几对新人在拍婚纱照，祝福他们！</p><p>下面是选了一些照片弄了个视频，嵌入进来就是不能显示1080P，播放起来很糊。视频原链接<a href="https://www.bilibili.com/video/BV1as4y1a79p/?vd_source=46e6ace7c5bc985e088f5baf62c27ecf">https://www.bilibili.com/video/BV1as4y1a79p/?vd_source=46e6ace7c5bc985e088f5baf62c27ecf</a></p><iframe src="//player.bilibili.com/player.html?aid=949372457&bvid=BV1as4y1a79p&cid=1006503846&page=1&high_quality=1&danmaku=0" allowfullscreen="allowfullscreen" width="100%" height="500" scrolling="no" frameborder="0" sandbox="allow-top-navigation allow-same-origin allow-forms allow-scripts"> </iframe><p>原图、原视频都还是清晰的，贴两张原图如下，B站嵌入外链参数加上了也只有720P，点视频原链接的来看比较就没压缩了。</p><p><img src="https://s3.bmp.ovh/imgs/2023/02/13/e26e45377051833d.jpg"></p><p><em>注：玉龙雪山4680</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/02/13/e066249458a85424.jpg"></p><p><em>注：象牙山半山腰</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/02/13/056fa217d4844e96.jpg"></p><p><em>注：蓝月谷</em></p><p>记录一下的意义对于我是什么？有时候你看着院子里的那颗花，想起种下去的时候才一小颗苗，过些日子来看，咦！长这么大哩，开花了，人的成长似乎也是如此，不知不觉的一天天在成长。以前看过个帖子，古书中三十万难民就概括了老百姓的一生，所以，你想记录些的时候就记录下来，日后不经意间翻翻看看也是一种美好的回忆！</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;时间过得真快，不知不觉新的一年真正意义上的开始。风乍暖，日初长，花竞开，大家也都各自忙活，有机会三两朋友凑到一起出去逛逛很难得，记录下那惬意时光。&lt;/p&gt;
-&lt;p&gt;出发时候我已经够晚了，我们四连票，当时只剩不到十分钟他们还没上来，然后再只剩一分钟了还没来，我心想，卧槽不会出什</summary>
-      
-    
-    
-    
-    
-    <category term="游记" scheme="https://wangxf2023.github.io/tags/%E6%B8%B8%E8%AE%B0/"/>
     
   </entry>
   
