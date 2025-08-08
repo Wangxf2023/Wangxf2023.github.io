@@ -6,7 +6,7 @@
   <link href="https://blog.likasi.top/atom.xml" rel="self"/>
   
   <link href="https://blog.likasi.top/"/>
-  <updated>2025-08-07T14:40:16.254Z</updated>
+  <updated>2025-08-08T14:15:57.121Z</updated>
   <id>https://blog.likasi.top/</id>
   
   <author>
@@ -17,19 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>记一次git部署22端口拒绝连接</title>
+    <link href="https://blog.likasi.top/2025/08/08/%E8%AE%B0%E4%B8%80%E6%AC%A1git%E9%83%A8%E7%BD%B222%E7%AB%AF%E5%8F%A3%E6%8B%92%E7%BB%9D%E8%BF%9E%E6%8E%A5/"/>
+    <id>https://blog.likasi.top/2025/08/08/%E8%AE%B0%E4%B8%80%E6%AC%A1git%E9%83%A8%E7%BD%B222%E7%AB%AF%E5%8F%A3%E6%8B%92%E7%BB%9D%E8%BF%9E%E6%8E%A5/</id>
+    <published>2025-08-08T14:45:04.000Z</published>
+    <updated>2025-08-08T14:15:57.121Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="记一次git部署22端口拒绝连接"><a href="#记一次git部署22端口拒绝连接" class="headerlink" title="记一次git部署22端口拒绝连接"></a>记一次git部署22端口拒绝连接</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近重新弄了下hexo博客，更新了几篇文章，删了一些没大用的东西，在部署时候发现部署不了</p><p>提示22端口拒绝连接</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh: connect to host github.com port 22: Connection refused<br>fatal: Could not read from remote repository.<br><br>Please make sure you have the correct access rights<br>and the repository exists.<br>[41mFATAL[49m &#123;<br>  err: Error: Spawn failed<br>      at ChildProcess.&lt;anonymous&gt; (D:\XXX\node_modules\hexo-util\lib\spawn.js:51:21)<br>      at ChildProcess.emit (node:events:390:28)<br>      at ChildProcess.cp.emit (D:\XXX\node_modules\cross-spawn\lib\enoent.js:34:29)<br>      at Process.ChildProcess._handle.onexit (node:internal/child_process:290:12) &#123;<br>    code: 128<br>  &#125;<br>&#125; Something&#x27;s wrong. Maybe you can find the solution here: %s [4mhttps://hexo.io/docs/troubleshooting.html[24m<br></code></pre></td></tr></table></figure><h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p>改用备用的443端口访问，</p><p>在C:\Users\XXX\.ssh目录下，config文件写入如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">Host github.com<br>  Hostname ssh.github.com<br>  Port 443<br></code></pre></td></tr></table></figure><p>如果没有config文件，可创建config.txt文件，然后编辑后删除.txt后缀保存为config文件</p><p>再次使用<code>ssh -T git@github.com</code>测试是否能连接上，是否继续连接时，回答yes</p><p>出现Hi XXX! You’ve successfully authenticated, but GitHub does not provide shell access.说明连接成功了</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">The authenticity of host &#x27;[ssh.github.com]:443 ([20.205.243.160]:443)&#x27; can&#x27;t be established.<br>ED25519 key fingerprint is SHA256:xxxxxxxxxxx.<br>This key is not known by any other names.<br>Are you sure you want to continue connecting (yes/no/[fingerprint])? yes<br>Warning: Permanently added &#x27;[ssh.github.com]:443&#x27; (ED25519) to the list of known hosts.<br>Hi XXX! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.<br></code></pre></td></tr></table></figure><p>部署后我发现还是访问不了，我看了下仓库是更新的，直接用xxx.github.io也能访问，看了下pages，发现自定义域名这没了，加上后正常访问了</p><h2 id="问题排查"><a href="#问题排查" class="headerlink" title="问题排查"></a>问题排查</h2><p>为什么会出现这种情况呢？</p><p>可能是22端口被防火墙、路由等屏蔽了，也看别网上有换成手机热点连接就正常22端口访问的，也有流量换营运商的也正常访问</p><p>还有我猜测最近我访问github长这样，应该就是一类原因</p><p><img src="https://s3.bmp.ovh/imgs/2025/08/08/16b4d70a81f53c43.png"></p><p>我本地并未手动指定DNS，host记录也没有指定映射</p><p>后面发现竟然是运营商的DNS污染！电信和联通是正常的，我的正是移动哈哈哈</p><p><img src="https://s3.bmp.ovh/imgs/2025/08/08/88e513e4dbac29c6.png"></p><h2 id="解决建议"><a href="#解决建议" class="headerlink" title="解决建议"></a>解决建议</h2><p>手动指定DNS或者修改本地host添加映射</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;记一次git部署22端口拒绝连接&quot;&gt;&lt;a href=&quot;#记一次git部署22端口拒绝连接&quot; class=&quot;headerlink&quot; title=&quot;记一次git部署22端口拒绝连接&quot;&gt;&lt;/a&gt;记一次git部署22端口拒绝连接&lt;/h1&gt;&lt;h2 id=&quot;前言&quot;&gt;&lt;a hr</summary>
+      
+    
+    
+    
+    
+    <category term="git" scheme="https://blog.likasi.top/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>好好</title>
-    <link href="https://blog.likasi.top/2025/08/07/%E5%A5%BD%E5%A5%BD/"/>
-    <id>https://blog.likasi.top/2025/08/07/%E5%A5%BD%E5%A5%BD/</id>
-    <published>2025-08-07T12:51:56.000Z</published>
-    <updated>2025-08-07T14:40:16.254Z</updated>
+    <link href="https://blog.likasi.top/2025/08/08/%E5%A5%BD%E5%A5%BD/"/>
+    <id>https://blog.likasi.top/2025/08/08/%E5%A5%BD%E5%A5%BD/</id>
+    <published>2025-08-08T12:51:56.000Z</published>
+    <updated>2025-08-08T14:23:57.781Z</updated>
     
-    <content type="html"><![CDATA[<p>最近在续费域名的时候，翻了下博客，8个月没更新过，都快忘了，其实也没啥写的哈哈。删除了一些东西，一些以前折腾的没啥大用花里胡哨的东西，这过程的心理历程就像某天翻到QQ空间或者相册啥，然后看了会删了好多东西。</p><p>好好，是五月天的一首歌，我记得好像还是当年有个动漫电影《你的名字》的tw宣传曲，16年至今已经有快10年。为什么用这个呢？是朋友圈最近看到有人发这个，点开回味了下。</p><p>好好，</p><p>好好生活，</p><p>好好工作，</p><p>好好学习，</p><p>大家都好好…</p><p>讲一下最近记录的一些事情：</p><p>钓鱼邮件，起因是这种的，有天我收到一条短信，号码也是西南地区的，要邮箱我没太注意，我发过去了，之后收到的邮件其实第二条我就发现铁钓鱼邮件无疑了，虽然说信息获取很泛滥了，但是真发生自己手里还是想吐槽，图就不放了。</p><p>植树，梁王山为滇中第一高峰，大家一棵棵树苗从山底传到山顶，会是很难忘的回忆，稍微有点遗憾是运树苗后时间不早了，没亲自种上几棵哈哈哈。“ 多年后滇中第一高峰主峰再次绿树成荫，有大家的一份贡献！”</p><p>最近做了一个决定，很感激我的领导们同事们陪伴的一路，看到那个初代同事等于职场发小哈哈哈，感谢和大家的点滴，常联系！</p><p><img src="https://s3.bmp.ovh/imgs/2025/08/07/cd4222da4990d7b2.jpg"></p><p>注：人形长城</p><p><img src="https://s3.bmp.ovh/imgs/2025/08/07/9a4e9232b9ba3951.jpg"></p><p>注：主峰山上</p><p><img src="https://s3.bmp.ovh/imgs/2025/08/07/1bd991f504cff881.jpg"></p><p>注：阵雨过后</p>]]></content>
+    <content type="html"><![CDATA[<p>最近在续费域名的时候，翻了下博客，8个月没更新过，都快忘了，其实也没啥写的哈哈。</p><p>删除了一些东西，一些以前折腾的没啥大用花里胡哨的东西，这过程的心理历程就像某天翻到QQ空间或者相册啥，然后看了会删了好多东西。</p><p>好好，是五月天的一首歌，我记得是当年有部动漫电影《你的名字》的TW地区宣传曲，16年至今已经有快10年。为什么用这个呢？是朋友圈最近看到有人发这个，点开回味了下。</p><p>好好，</p><p>好好生活，</p><p>好好工作，</p><p>好好学习，</p><p>大家都好好…</p><p>讲一下最近记录的一些事情：</p><p>一封钓鱼邮件，起因是这种的，有天我收到一条短信，号码也是西南地区的，没有太多心机把我邮箱发了，之后收到的邮件其实第二条我就发现铁钓鱼邮件无疑了，拙劣。虽然说信息获取很泛滥了，但是一颗时刻注意的心不能落下，你无法预料会造成什么！</p><p>一次植树，梁王山为滇中第一高峰，大家一棵棵树苗从山底传到山顶，很难忘的回忆，稍微有点遗憾是运树苗后时间不早了，没亲自种上几棵哈哈哈。</p><p>“ 多年后滇中第一高峰主峰再次绿树成荫，有大家的一份贡献！”</p><p>最近做了一个决定，很感激我的领导们同事们的一路陪伴相处，初代同事等于职场发小哈哈哈，感谢和大家相处的点点滴滴，好好！</p><p><img src="https://s3.bmp.ovh/imgs/2025/08/07/cd4222da4990d7b2.jpg"></p><p>注：人形长城</p><p><img src="https://s3.bmp.ovh/imgs/2025/08/07/9a4e9232b9ba3951.jpg"></p><p>注：主峰山上</p><p><img src="https://s3.bmp.ovh/imgs/2025/08/07/1bd991f504cff881.jpg"></p><p>注：阵雨过后</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;最近在续费域名的时候，翻了下博客，8个月没更新过，都快忘了，其实也没啥写的哈哈。删除了一些东西，一些以前折腾的没啥大用花里胡哨的东西，这过程的心理历程就像某天翻到QQ空间或者相册啥，然后看了会删了好多东西。&lt;/p&gt;
-&lt;p&gt;好好，是五月天的一首歌，我记得好像还是当年有个动漫电</summary>
+    <summary type="html">&lt;p&gt;最近在续费域名的时候，翻了下博客，8个月没更新过，都快忘了，其实也没啥写的哈哈。&lt;/p&gt;
+&lt;p&gt;删除了一些东西，一些以前折腾的没啥大用花里胡哨的东西，这过程的心理历程就像某天翻到QQ空间或者相册啥，然后看了会删了好多东西。&lt;/p&gt;
+&lt;p&gt;好好，是五月天的一首歌，我记得是当年</summary>
       
     
     
@@ -41,10 +64,10 @@
   
   <entry>
     <title>苏紫旭live</title>
-    <link href="https://blog.likasi.top/2025/08/07/%E8%8B%8F%E7%B4%AB%E6%97%ADlive/"/>
-    <id>https://blog.likasi.top/2025/08/07/%E8%8B%8F%E7%B4%AB%E6%97%ADlive/</id>
-    <published>2025-08-07T12:30:39.000Z</published>
-    <updated>2025-08-07T14:38:26.834Z</updated>
+    <link href="https://blog.likasi.top/2025/08/08/%E8%8B%8F%E7%B4%AB%E6%97%ADlive/"/>
+    <id>https://blog.likasi.top/2025/08/08/%E8%8B%8F%E7%B4%AB%E6%97%ADlive/</id>
+    <published>2025-08-08T12:30:39.000Z</published>
+    <updated>2025-08-08T14:09:25.943Z</updated>
     
     <content type="html"><![CDATA[<p>苏紫旭，有人是这样评价的，90后华语乐坛摇滚领军人。</p><p>我听的很少，但是我很尊重这类音乐人，很有才华，优秀、酣畅淋漓、高质量的作品，很real的人。</p><p>这次现场只有他一个人，看得出来他有些疲惫，当晚已经是三个城市连着演了三场，出门三个月了。</p><p>人琴和一，很少看到这种一开始要自己来一段solo进入状态的了，有个人特色的世界音乐、诗性的音乐，随性、洒脱，超脱了学院派、流水式的套路，做自己的音乐，作为听众，不得不承认自己是幸运的，下次的大乐队哈哈</p><p>多的不说，加油，期待更多优秀的作品！</p><p><img src="https://s3.bmp.ovh/imgs/2025/08/07/2b4b6e3a3ce2f16c.jpg"></p>]]></content>
     
@@ -445,28 +468,6 @@
     
     
     <category term="python" scheme="https://blog.likasi.top/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MacBook Pro A1706更换touchbar</title>
-    <link href="https://blog.likasi.top/2023/06/28/MacBook-Pro-A1706%E6%9B%B4%E6%8D%A2touchbar/"/>
-    <id>https://blog.likasi.top/2023/06/28/MacBook-Pro-A1706%E6%9B%B4%E6%8D%A2touchbar/</id>
-    <published>2023-06-28T14:11:24.000Z</published>
-    <updated>2023-06-28T15:01:11.587Z</updated>
-    
-    <content type="html"><![CDATA[<p>手上有个MacBook Pro A1706，touchbar能用但是整个右半边不会亮了，看着自然不爽。搜了下配件，淘宝找到一家，看着评论大家换了都不错，和店家沟通感觉也实在。苹果专卖店问过，有的开价到1700多，我向来很相信电子产品的京东问了一家，也是坑的我和客服沟通不愉快。于是买了touchbar配件(带排线)和螺丝刀。</p><p>MacBook Pro恶心的很啊，说下整个过程，首先拆后盖，螺丝用的就不是常规的梅花，该叫六角梅花吗，说不来，两长四短，靠近风扇位置的那两颗长，拆后盖，需要先从底部翘起来，直到听到扳开的声音，然后拿着后盖往下拽，得使劲拽。</p><p>接下来拆主板，各种大小不一的螺丝，起码两三种，给我的感觉就是，有点像塑料材质的接线末端带金属导线插到主板口子上，几乎都是那种很小很小的插口，然后用金属片上螺丝盖住。因为第一次接触，给我的感觉就是很恶心，生怕别人拆开来一样！然后换个touchar就得把主板拆下来，风扇还是什么排线，就这么三个点按在主板上！</p><p>把旧的touchbar拿下来，没工具，没办法只能暴力铲除，本来想学网上把底部胶吹热一整个划起来，人家用的热熔枪，我用吹风机，结果把我键盘两个键帽吹了烫了变形用不了，整个铲除过程太恶心了，这个胶粘的死的一比。花了起码四十多分钟。</p><p>装上之后上主板螺丝说实话心理都没谱，有的螺丝感觉上错了，虽然最后还是上完了（整个后盖都装上发现还剩一颗螺丝，检查了不知道是哪的，也没管，不想拆了）。</p><p>不出所料，开不开机，后来我把电源线重新扣了一下，应该是压着电源排线那颗大螺丝没上紧，重新上紧了，开机了，试了touchbar也正常。然后我上后盖，上后盖的时候我感觉我为了压紧拍了后盖，装touchbar排线那个地方我也拍了，导致装上后盖开机能正常显示变化，就是点了不起作用，我心想，新换的不会这么一下次就坏了吧，后来把后盖拆了，重新扣了下touchbar排线，上了下那里螺丝，正常了，然后这次上后盖没敢为了压紧使劲拍后盖了哈哈，装上也正常。</p><p>就是我记着这款四个typec接口，充电都行的，但是我的左边插上没反应了，当时心里一惊，卧槽，怎么办充电坏了，好在右边能充，也懒得拆了，有朋友知道是为什么吗？难道跟那个剩下的螺丝有关，那个螺丝是上在左边有个双排线的地方吗？</p><p>最后放几张图</p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/5600faec43925008.jpg"></p><p><em>PS：硬是怕别人拆解更换零件吗？</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/ff5d33a19e3999dc.jpg"></p><p><em>PS：MD屎都铲出来了</em></p><p><img src="https://s3.bmp.ovh/imgs/2023/06/28/c9ede44a81f44e74.jpg"></p><p><em>PS：看着不戳眼睛了</em></p><p>网上各种搜，没搜到这款完整的拆机视频，很失望，修这个东西报价也是大几百到一千多都有。我的配件连上买的一套螺丝刀一百出头点。</p><p>后来是照着油管的搜到的这款拆机更换touchar看到一半怎么拆主板，然后自己摸索着换了touchbar。</p><p>贴个视频链接：<a href="https://www.youtube.com/watch?v=Yp2k0bdgIXU">https://www.youtube.com/watch?v=Yp2k0bdgIXU</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;手上有个MacBook Pro A1706，touchbar能用但是整个右半边不会亮了，看着自然不爽。搜了下配件，淘宝找到一家，看着评论大家换了都不错，和店家沟通感觉也实在。苹果专卖店问过，有的开价到1700多，我向来很相信电子产品的京东问了一家，也是坑的我和客服沟通不愉快</summary>
-      
-    
-    
-    
-    
-    <category term="折腾" scheme="https://blog.likasi.top/tags/%E6%8A%98%E8%85%BE/"/>
     
   </entry>
   
